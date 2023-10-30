@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Euclid Circular A"; // шрифт по умолчанию по сайту
+  font-family: 'Inter', sans-serif;
   font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
   font-style: normal;
   font-weight: normal;
@@ -21,7 +21,7 @@ body {
   line-height: 1.2;
   margin: 0;
   padding: 0;
-  color: #262525; // цвет по умолчанию текста по сайту
+  color: #031E16;
   background-color: #ffffff;
 }
 
@@ -99,7 +99,7 @@ ul li {
 }
 
 .container {
-  width: 141rem;
+  width: 136rem;
   margin: 0 auto;
 }
 
@@ -132,7 +132,7 @@ input[type="number"] {
   }
 
   .container {
-    padding: 0 4rem; // в моб версии отступ от края задаем для всех контейнеров, а там где не нужно можем точечно убрать
+    padding: 0 3.2rem; // в моб версии отступ от края задаем для всех контейнеров, а там где не нужно можем точечно убрать
     width: 100%;
   }
 }
