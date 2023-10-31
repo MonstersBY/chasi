@@ -5,7 +5,7 @@
 }
 html {
   font-family: 'Inter', sans-serif;
-  font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
+  font-size: 0.694vw; // на разрешении 1440 0.694vw === 10px
   font-style: normal;
   font-weight: normal;
   -webkit-animation: bugfix infinite 1s;
@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   color: #031E16;
-  background-color: #ffffff;
+  background-color: #F1F3F3;
 }
 
 input,
@@ -113,7 +113,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1440px) {
   html {
     font-size: 10px;
   }
@@ -129,6 +129,7 @@ input[type="number"] {
 
   body {
     -webkit-text-size-adjust: none;
+    background-color: #FFF;
   }
 
   .container {
