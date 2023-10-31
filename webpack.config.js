@@ -14,6 +14,8 @@ const devtool = devMode ? "source-map" : undefined;
 const entryPoints = {
   index: path.resolve(__dirname, "src", "index.js"),
   home_page: path.resolve(__dirname, "src", "index.js"),
+  favorites_page: path.resolve(__dirname, "src", "index.js"),
+  seller_card: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
