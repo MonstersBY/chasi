@@ -15,6 +15,8 @@ const entryPoints = {
   index: path.resolve(__dirname, "src", "index.js"),
   home_page: path.resolve(__dirname, "src", "index.js"),
   adv_card_page: path.resolve(__dirname, "src", "index.js"),
+  favorites_page: path.resolve(__dirname, "src", "index.js"),
+  seller_card: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 

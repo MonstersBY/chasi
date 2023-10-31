@@ -20,7 +20,12 @@
     }
     &__list {
         display: flex;
-        justify-content: space-between;
+        gap: 2rem;
+
+        &_endlessly {
+            flex-wrap: wrap;
+            row-gap: 4rem;
+        }
     }
     &__item {
         display: flex;
@@ -172,6 +177,40 @@
             object-fit: cover;
         }
     }
+
+    &__tubs {
+        border-bottom: 0.1rem solid #F1F3F3;
+        margin: 0 -3.2rem;
+        padding: 0 3.2rem;
+        display: flex;
+        gap: 2.4rem;
+    }
+    &__tub {
+        color: #000;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        padding-bottom: 1.4rem;
+
+
+        &.active {
+            font-weight: 600;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 0.2rem;
+                bottom: -0.2rem;
+                left: 0;
+                border-radius: 0.2rem 0.2rem 0 0;
+                background: #298267;
+            }
+        }
+    }
 }
 
 @media (max-width: 48em) {
@@ -193,7 +232,12 @@
         }
         &__list {
             display: flex;
-            justify-content: space-between;
+            gap: 3rem;
+
+            &_endlessly {
+                flex-wrap: wrap;
+                row-gap: 4.8rem;
+            }
         }
         &__item {
             display: flex;
@@ -294,6 +338,47 @@
         }
         &__right {
             display: none;
+        }
+        &__tubs {
+            width: 100%;
+            height: 8rem;
+            background: #F1F3F3;
+
+            border-bottom: 0;
+            margin: 0;
+            padding: 0.2rem;
+            display: flex;
+            gap: 0;
+            border-radius: 1.6rem;
+        }
+        &__tub {
+            flex: 1;
+            color: #298267;
+            font-size: 2.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 123.077%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 0;
+
+            &:nth-child(1) {
+                border-radius: 1.6rem 0 0 1.6rem;
+            }
+            &:nth-child(2) {
+                border-radius: 0 1.6rem 1.6rem 0;
+            }
+            
+    
+            &.active {
+                font-weight: 400;
+                background: #FFF;
+    
+                &::after {
+                    content: unset;
+                }
+            }
         }
     }
 }

@@ -15,6 +15,23 @@
     }
   }
 }
+.like {
+  cursor: pointer;
+
+  // &:hover {
+  //   path {
+  //     fill: #298267;
+  //     stroke-width: 0;
+  //   }
+  // }
+
+  &_liked {
+    path {
+      fill: #298267;
+      stroke-width: 0;
+    }
+  }
+}
 
 @media (max-width: 48em) {
   .swiper-horizontal > .swiper-pagination-bullets.pagination__slides {
