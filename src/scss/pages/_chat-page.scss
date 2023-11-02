@@ -1,0 +1,549 @@
+.chat {
+  padding: 4rem 0;
+
+  .container {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+    max-height: 97vh;
+  }
+
+  .dialogs__pic {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 100%;
+    border: 0.2rem solid rgba(40, 130, 103, 0.2);
+    background-color: #f1f3f3;
+
+    position: relative;
+
+    img {
+      object-fit: cover;
+      border-radius: 100%;
+    }
+
+    .online-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #298267;
+      border: 0.2rem solid #fff;
+      border-radius: 100%;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  &__dialogs,
+  &__dialog {
+    background-color: #fff;
+    border-radius: 1.6rem;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 4rem 3.2rem 0;
+
+    max-height: 90vh;
+  }
+
+  &__dialogs {
+    position: relative;
+    width: 44rem;
+    display: flex;
+    flex-direction: column;
+
+    .dialogs-wrapper{
+      overflow: auto;
+      margin-right: -1.8rem;
+
+      &::-webkit-scrollbar {
+        width: 0.4rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #7E8582;
+      border-radius: 1.2rem;
+    }
+  }
+
+    &__title {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 3.6rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .dialogs {
+
+      &__item {
+        height: 7.2rem;
+        margin-right: 1.8rem;
+      }
+      &__item a {
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-column-gap: 1.2rem;
+        align-items: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #298267;
+          color: #fff;
+
+          svg {
+            path {
+              stroke: #fff;
+            }
+          }
+
+          .dialogs__last-message,
+          .dialogs__time {
+            color: #fff;
+          }
+
+          .dialogs__unread {
+            background-color: #fff;
+            color: #298267;
+          }
+        }
+      }
+
+      &__name {
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 24.4rem;
+
+        justify-self: center;
+      }
+
+      &__last-message {
+        color: #7e8582;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        white-space: nowrap;
+        max-width: 24.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &__item__col:nth-child(3) {
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: start;
+        gap: 0.4rem;
+      }
+
+      &__time {
+        color: #7e8582;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+      }
+
+      &__unread {
+        border-radius: 2rem;
+        background-color: #298267;
+        padding: 0 1rem;
+        color: #fff;
+        line-height: 2.4rem;
+        font-size: 1.6rem;
+
+        transition: all 0.2s ease;
+      }
+    }
+
+    &__support {
+      margin-bottom: 2.4rem;
+
+      .dialogs {
+         &__item{
+            margin-right: 0;
+
+            a {
+               background-color: #f5fbf6;
+             }
+         }
+        
+
+        &__pic {
+          padding-top: 0.3rem;
+          border-radius: unset;
+          border: unset;
+          width: 100%;
+          height: 4rem;
+          background-color: transparent;
+        }
+      }
+
+      .btn--go-to {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+
+      .dialogs__item__col:nth-child(3) {
+        align-self: center;
+      }
+    }
+  }
+
+  &__dialog {
+    width: 90rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    justify-content: flex-end;
+
+    &__header {
+      .user-data {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+
+        &__name {
+          font-size: 1.6rem;
+          font-weight: 600;
+          line-height: 2.4rem;
+
+          max-width: 26.6rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        &__status {
+          color: #298267;
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+        }
+      }
+    }
+
+    .dialog {
+      margin: 0 auto;
+      text-align: center;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+
+      // flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .dialog-wrapper {
+        overflow: auto;
+        width: 100%;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+
+      &__empty {
+        color: #7e8582;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        width: 30rem;
+        display: flex;
+        margin: auto;
+      }
+
+      &__date {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 2.4rem;
+      }
+
+      &__messages {
+        margin-bottom: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        width: 100%;
+      }
+
+      &__message {
+        border-radius: 2rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        padding: 1.2rem;
+
+        display: flex;
+        align-items: flex-end;
+        gap: 1.2rem;
+
+        max-width: 51.2rem;
+
+        .time {
+          font-size: 1rem;
+          line-height: 1.2rem;
+        }
+
+        &--outgoing {
+          background-color: #298267;
+          color: #fff;
+          text-align: right;
+          align-self: flex-end;
+
+          .time {
+            opacity: 0.4;
+          }
+        }
+
+        &--incoming {
+          background-color: #f1f3f3;
+          align-self: start;
+          text-align: left;
+
+          .time {
+            color: #7e8582;
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      position: relative;
+      margin-top: auto;
+
+      &::after {
+        position: absolute;
+        content: " ";
+        position: absolute;
+        left: -3.7rem;
+        right: 0;
+        top: 0;
+        width: 113%;
+        height: 0.1rem;
+        background-color: #f1f3f3;
+      }
+
+      .message-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        width: 100%;
+        padding-top: 2rem;
+
+        textarea {
+          resize: none;
+          width: 100%;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          height: 2.4rem;
+        }
+
+        &__icons {
+          display: flex;
+          gap: 2.4rem;
+
+          button {
+            width: 3.2rem;
+            height: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .btn--go-back{
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+}
+
+//Mobile
+
+@media (max-width: 48em) {
+
+   .chat{
+      padding: 4.8rem 0 0;
+      
+
+      &__dialog{
+        padding: 0 0 3.2rem;
+        max-height: unset;
+       height: 100vh;
+
+        display: none;
+
+
+        &__header{
+         display: flex;
+         gap: 3.2rem;
+         align-items: center;
+         padding-bottom: 2.4rem;
+
+
+         .user-data{
+            
+         .dialogs__pic{
+            width: 8rem;
+            height: 8rem;
+         }
+
+         &__name{
+            font-size: 3.2rem;
+            max-width: 50.3rem;
+            line-height: 4.8rem;
+         }
+
+         &__status{
+            font-size: 2.6rem;
+            line-height: 3.2rem;
+         }
+         }
+         
+
+
+        }
+
+        .dialog{
+         
+         &__date{
+               font-size: 3.2rem;
+               line-height: 4.8rem;
+         }
+
+         &__messages{
+        margin-bottom: 4.8rem;
+         }
+
+         &__message{
+            border-radius: 3.6rem;
+            padding: 1.4rem 2.4rem;
+            font-size: 3.2rem;
+            line-height: 4.8rem;
+
+            .time{
+               font-size: 2rem;
+               line-height: 2.4rem;
+            }
+         }
+        }
+
+        &__footer{
+         .message-input{
+            padding: 3.2rem 0;
+
+            textarea{
+               font-size: 3.2rem;
+               line-height: 4.8rem;
+               height: 8rem;
+            }
+
+            &__icons{
+               gap: 2.4rem;
+
+               button{
+                  width: 4.8rem;
+                  height: 4.8rem;
+               }
+            }
+         }
+        }
+      }
+
+      &__dialogs{
+         width: 100%;   
+         padding:0;
+         max-height: 100vh;
+
+         &__title{
+            text-align: center;
+            gap: 20rem;
+
+            font-size: 3.2rem;
+            margin-bottom: 8rem;
+            position: relative;
+
+            .btn--go-back{
+               position: absolute;
+               left: 0;
+               top: 50%;
+               transform: translateY(-50%);
+            }
+         }
+
+         &__support{
+            margin-bottom: 4.8rem;
+
+            .dialogs__pic{
+               height: 8rem;
+               width: 8rem;
+            }
+         }
+
+         .dialogs{
+
+            &__item{
+               height: 12.8rem;
+               a{
+                  padding: 2.4rem;
+                  grid-column-gap: 2.4rem;
+                  border-radius: 1.6rem;
+               }
+
+               &__col{
+                  &:nth-child(3){
+                     gap: 0.8rem;
+                  }
+               }
+               
+            }
+
+            &__pic{
+               height: 9.6rem;
+               width: 9.6rem;
+
+               .online-icon{
+                  height: 2.8rem;
+                  width: 2.8rem;
+               }
+            }
+
+            &__name{
+               line-height: 4.8rem;
+               font-size: 3.2rem;
+               max-width: 41rem;
+            }
+
+            &__last-message{
+               font-size: 2.6rem;
+               line-height: 3.2rem;
+               max-width: 41rem;
+            }
+
+            &__time{
+               line-height: 3.2rem;
+               font-size: 2.6rem;
+            }
+
+            &__unread{
+               font-size: 3.2rem;
+               padding: 1rem 2rem;
+               border-radius: 4rem;
+            }
+         }
+
+         &__list{
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+         }
+      }
+
+   }
+}
