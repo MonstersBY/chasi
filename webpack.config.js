@@ -18,6 +18,7 @@ const entryPoints = {
   favorites_page: path.resolve(__dirname, "src", "index.js"),
   seller_card: path.resolve(__dirname, "src", "index.js"),
   chat_page: path.resolve(__dirname, "src", "index.js"),
+  draft_page: path.resolve(__dirname, "src", "index.js"),
 
   // Добавьте другие страницы здесь
 };
