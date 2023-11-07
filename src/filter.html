@@ -6,17 +6,76 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<title>Главная</title>
+	<title>Поиск через фильтр</title>
 </head>
 
 <body>
     <header class="header">
         <div class="container"></div>
     </header>
-    <section class="main-page">
+    <div class="filter-page">
         <div class="container">
-            <div class="main-page__left">
-                <div class="main-page__title">Объявления</div>
+            <div class="filter-page__left">
+                <div class="filter__title">Фильтры</div>
+                <div class="filter__container">
+                    <div class="filter__dropdown">
+                        <div class="filter__dropdown_top">Город</div>
+                        <div class="filter__dropdown_bottom">
+                            <input class="input"></input>
+                            <label >
+                                <input type="radio" name="city">
+                                <span>Москва</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Казань</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Нижний-Новгород</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Город</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Москва</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Казань</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Нижний-Новгород</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="city">
+                                <span>Город</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter__item">
+                        <div class="filter__item_title">Цена, ₽</div>
+                        <div class="filter__item_numbers">
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="filter-page__right">
+                <div class="main-page__title">Результаты поиска</div>
                 <div class="main-page__list">
                     <div class="main-page__item">
                         <a class="main-page__item-img">
@@ -375,19 +434,8 @@
                     </div>
                 </div>
             </div>
-            <div class="main-page__right">
-                <div class="main-page__advertisement-small">
-                    <img src="./assets/images/main__advertisement-small.webp" alt="">
-                </div>
-                <div class="main-page__advertisement-small">
-                    <img src="./assets/images/main__advertisement-small.webp" alt="">
-                </div>
-                <div class="main-page__advertisement-big">
-                    <img src="./assets/images/main__advertisement-big.webp" alt="">
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
     <footer class="footer">
         <div class="container">
 

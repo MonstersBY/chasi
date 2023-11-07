@@ -211,6 +211,86 @@
             }
         }
     }
+    &__big {
+
+        &_swiper {
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+        &_slide {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        &_img {
+            flex: none;
+            width: 40.8rem;
+            height: 30.2rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1.2rem;
+            }
+        }
+        &_right {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+        &_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &_container {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+        &_name {
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &_city {
+            color: #7E8582;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+        }
+        &_text {
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+        }
+        &_price {
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+        }
+        &_pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+            display: flex;
+            gap: 1.1rem;
+            width: 40.8rem;
+        }
+    }
 }
 
 @media (max-width: 48em) {
