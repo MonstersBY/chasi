@@ -1,24 +1,24 @@
-const chat = document.getElementsByClassName("chat__dialog")[0];
+import $ from "jquery";
 
-if (chat) {
-  const dialogsItems = document.getElementsByClassName("dialogs__item");
-  const dialogsList = document.getElementsByClassName("chat__dialogs")[0];
-  const btnBack = document.getElementById("btnBackToDialogs");
+$(function() {
+  const chat = $(".chat__dialog");
+  const dialogsItems = $(".dialogs__item");
+  const dialogsList = $(".chat__dialogs");
+  const btnBack = $("#btnBackToDialogs");
 
-  Array.from(dialogsItems).forEach((item) => {
-    item.onclick = function () {
-      if (window.innerWidth < 769) {
-        chat.style.display = "flex";
-        dialogsList.style.display = "none";
-      } else {
-        chat.style.display = "flex";
-        dialogsList.style.display = "flex";
-      }
-    };
+  dialogsItems.on("click", function () {
+    if (window.innerWidth < 769) {
+      chat.css("display", "flex");
+      dialogsList.hide();
+    } else {
+      chat.css("display", "flex");
+      dialogsList.css("display", "flex");
+    }
   });
 
-  btnBack.onclick = function () {
-    chat.style.display = "none";
-    dialogsList.style.display = "flex";
-  };
-}
+  btnBack.on("click", function () {
+    chat.css("display", "none");
+    dialogsList.css("display", "flex");
+  });
+});
+
