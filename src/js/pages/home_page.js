@@ -34,6 +34,15 @@ const main_page__swiper_small = new Swiper(".main-page__swiper-small", {
         el: ".main-page__swiper-small_pagination",
     },
 });
+const main_page__big_swiper = new Swiper(".main-page__big_swiper", {
+    modules: [Pagination],
+    speed: 1500,
+    slidesPerView: 1,
+    spaceBetween: `${remToPx(2)}rem`,
+    pagination: {
+        el: ".main-page__big_pagination",
+    },
+});
 
 $('.like').on('click', function (evt) {
     console.log(123);
