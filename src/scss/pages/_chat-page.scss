@@ -5,7 +5,8 @@
     display: flex;
     gap: 2rem;
     overflow: hidden;
-    max-height: 97vh;
+    max-height: 96vh;
+    min-height: 90vh;
   }
 
   .dialogs__pic {

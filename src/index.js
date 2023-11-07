@@ -4,7 +4,7 @@ import "swiper/css/mousewheel";
 import "./index.scss";
 import "./js/pages/home_page";
 import "./js/pages/chat_page";
-import "./js/pages/draft_page";
+import "./js/pages/creating_adv_page";
 import "./js/pages/adv-card";
 import "./js/components/header";
 import { example } from "./js/utils/constants";
