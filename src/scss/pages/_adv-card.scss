@@ -276,45 +276,53 @@
   &__buttons {
     display: flex;
     gap: 1.2rem;
+  }
 
-    .btn {
-      background-color: #298267;
-      padding: 1.7rem 4rem;
-      color: #fff;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      border-radius: 20rem;
+  .btn {
+    background-color: #298267;
+    padding: 1.7rem 4rem;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    border-radius: 20rem;
 
+    
+    white-space: nowrap;
+
+    &-ico {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &--show-number {
       display: flex;
       gap: 0.8rem;
       align-items: center;
-      white-space: nowrap;
 
-      &--show-number {
-        @media (max-width: 48em) {
-          display: none;
-        }
-      }
-
-      &--message {
-        @media (max-width: 48em) {
-          span {
-            display: none;
-          }
-        }
-      }
-
-      &--call {
+      @media (max-width: 48em) {
         display: none;
-        @media (max-width: 48em) {
-          display: flex;
+      }
+    }
+
+    &--message {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+
+      @media (max-width: 48em) {
+        span {
+          display: none;
         }
       }
     }
 
-    .btn-ico {
-      width: 2.4rem;
-      height: 2.4rem;
+    &--call {
+      display: none;
+      @media (max-width: 48em) {
+        display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      }
     }
   }
 
@@ -560,20 +568,22 @@
       order: 3;
       justify-content: space-between;
 
-      .btn {
-        padding: 2.4rem;
-        font-size: 3.2rem;
-        line-height: 4.8rem;
 
-        .btn-ico {
-          width: 4.8rem;
-          height: 4.8rem;
-        }
+    }
 
-        &--call {
-          padding: 0 8.7rem;
-          gap: 1.6rem;
-        }
+    .btn {
+      padding: 2.4rem;
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+
+      .btn-ico {
+        width: 4.8rem;
+        height: 4.8rem;
+      }
+
+      &--call {
+        padding: 0 8.7rem;
+        gap: 1.6rem;
       }
     }
 
