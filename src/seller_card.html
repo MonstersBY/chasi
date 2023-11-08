@@ -17,12 +17,18 @@
         <div class="container">
             <div class="seller-card__left">
                 <div class="seller-card__box">
-                    <div class="seller-card__img">
-                        <img src="./assets/images/avatar1.webp" alt="">
+                    <div class="seller-card__top">
+                        <div class="seller-card__top_right">
+                            <div class="seller-card__img">
+                                <img src="./assets/images/avatar1.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="seller-card__top_left">
+                            <div class="seller-card__position">Продавец</div>
+                            <div class="seller-card__name">Константин Константинопольский</div>
+                            <div class="seller-card__city">Владивосток, Приморский край</div>
+                        </div>
                     </div>
-                    <div class="seller-card__position">Продавец</div>
-                    <div class="seller-card__name">Константин Константинопольский</div>
-                    <div class="seller-card__city">Владивосток, Приморский край</div>
                     <div class="seller-card__info">
                         <div class="seller-card__rating">
                             <span>4,8</span>
@@ -46,7 +52,7 @@
                             <span>21</span>
                         </div>
                     </div>
-                    <a class="seller-card__btn">Оставить отзыв</a>
+                    <a data-modal="seller-card" class="seller-card__btn">Оставить отзыв</a>
                 </div>
             </div>
             <div class="seller-card__right">
@@ -224,6 +230,170 @@
             </div>
         </div>
     </section>
+    <div class="seller-card-modal modal">
+		<div class="modal-back"></div>
+		<div class="modal-wrapper">
+			<div class="modal-exit desktop">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+			</div>
+            <div class="modal-return mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+			</div>
+			<div class="seller-card-modal__content modal-content">
+                <div class="seller-card-modal__title">Отзыв о продавце</div>
+                <div class="seller-card-modal__top">
+                    <div class="seller-card-modal__subtitle">Оцените продавца</div>
+                    <div class="seller-card-modal__text">Вам отзыв поможет нам улучшить качество работы нашего сервиса.</div>
+                    <div class="seller-card-modal__stars">
+                        <input type="radio" id="star5" name="rate" />
+                        <label for="star5" class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 34 33" fill="none">
+                                <path d="M16.4938 1.28018C16.6531 0.789829 17.3469 0.789829 17.5062 1.28018L20.7451 11.2486C20.9589 11.9065 21.5719 12.3519 22.2637 12.3519H32.7451C33.2607 12.3519 33.475 13.0116 33.0579 13.3147L24.5783 19.4755C24.0186 19.8821 23.7845 20.6028 23.9982 21.2607L27.2372 31.2291C27.3965 31.7194 26.8353 32.1272 26.4182 31.8241L17.9385 25.6633C17.3789 25.2567 16.6211 25.2567 16.0615 25.6633L7.58184 31.8241C7.16473 32.1272 6.6035 31.7194 6.76283 31.2291L10.0018 21.2607C10.2155 20.6028 9.98136 19.8821 9.42174 19.4755L0.942085 13.3147C0.524972 13.0116 0.739339 12.3519 1.25492 12.3519H11.7363C12.4281 12.3519 13.0411 11.9065 13.2549 11.2486L16.4938 1.28018Z" stroke="#7E8582" stroke-width="1.06445"/>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star4" name="rate" />
+                        <label for="star4" class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 34 33" fill="none">
+                                <path d="M16.4938 1.28018C16.6531 0.789829 17.3469 0.789829 17.5062 1.28018L20.7451 11.2486C20.9589 11.9065 21.5719 12.3519 22.2637 12.3519H32.7451C33.2607 12.3519 33.475 13.0116 33.0579 13.3147L24.5783 19.4755C24.0186 19.8821 23.7845 20.6028 23.9982 21.2607L27.2372 31.2291C27.3965 31.7194 26.8353 32.1272 26.4182 31.8241L17.9385 25.6633C17.3789 25.2567 16.6211 25.2567 16.0615 25.6633L7.58184 31.8241C7.16473 32.1272 6.6035 31.7194 6.76283 31.2291L10.0018 21.2607C10.2155 20.6028 9.98136 19.8821 9.42174 19.4755L0.942085 13.3147C0.524972 13.0116 0.739339 12.3519 1.25492 12.3519H11.7363C12.4281 12.3519 13.0411 11.9065 13.2549 11.2486L16.4938 1.28018Z" stroke="#7E8582" stroke-width="1.06445"/>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star3" name="rate" />
+                        <label for="star3" class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 34 33" fill="none">
+                                <path d="M16.4938 1.28018C16.6531 0.789829 17.3469 0.789829 17.5062 1.28018L20.7451 11.2486C20.9589 11.9065 21.5719 12.3519 22.2637 12.3519H32.7451C33.2607 12.3519 33.475 13.0116 33.0579 13.3147L24.5783 19.4755C24.0186 19.8821 23.7845 20.6028 23.9982 21.2607L27.2372 31.2291C27.3965 31.7194 26.8353 32.1272 26.4182 31.8241L17.9385 25.6633C17.3789 25.2567 16.6211 25.2567 16.0615 25.6633L7.58184 31.8241C7.16473 32.1272 6.6035 31.7194 6.76283 31.2291L10.0018 21.2607C10.2155 20.6028 9.98136 19.8821 9.42174 19.4755L0.942085 13.3147C0.524972 13.0116 0.739339 12.3519 1.25492 12.3519H11.7363C12.4281 12.3519 13.0411 11.9065 13.2549 11.2486L16.4938 1.28018Z" stroke="#7E8582" stroke-width="1.06445"/>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star2" name="rate" />
+                        <label for="star2" class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 34 33" fill="none">
+                                <path d="M16.4938 1.28018C16.6531 0.789829 17.3469 0.789829 17.5062 1.28018L20.7451 11.2486C20.9589 11.9065 21.5719 12.3519 22.2637 12.3519H32.7451C33.2607 12.3519 33.475 13.0116 33.0579 13.3147L24.5783 19.4755C24.0186 19.8821 23.7845 20.6028 23.9982 21.2607L27.2372 31.2291C27.3965 31.7194 26.8353 32.1272 26.4182 31.8241L17.9385 25.6633C17.3789 25.2567 16.6211 25.2567 16.0615 25.6633L7.58184 31.8241C7.16473 32.1272 6.6035 31.7194 6.76283 31.2291L10.0018 21.2607C10.2155 20.6028 9.98136 19.8821 9.42174 19.4755L0.942085 13.3147C0.524972 13.0116 0.739339 12.3519 1.25492 12.3519H11.7363C12.4281 12.3519 13.0411 11.9065 13.2549 11.2486L16.4938 1.28018Z" stroke="#7E8582" stroke-width="1.06445"/>
+                            </svg>
+                        </label>
+                        <input type="radio" id="star1" name="rate" />
+                        <label for="star1" class="star">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="33" viewBox="0 0 34 33" fill="none">
+                                <path d="M16.4938 1.28018C16.6531 0.789829 17.3469 0.789829 17.5062 1.28018L20.7451 11.2486C20.9589 11.9065 21.5719 12.3519 22.2637 12.3519H32.7451C33.2607 12.3519 33.475 13.0116 33.0579 13.3147L24.5783 19.4755C24.0186 19.8821 23.7845 20.6028 23.9982 21.2607L27.2372 31.2291C27.3965 31.7194 26.8353 32.1272 26.4182 31.8241L17.9385 25.6633C17.3789 25.2567 16.6211 25.2567 16.0615 25.6633L7.58184 31.8241C7.16473 32.1272 6.6035 31.7194 6.76283 31.2291L10.0018 21.2607C10.2155 20.6028 9.98136 19.8821 9.42174 19.4755L0.942085 13.3147C0.524972 13.0116 0.739339 12.3519 1.25492 12.3519H11.7363C12.4281 12.3519 13.0411 11.9065 13.2549 11.2486L16.4938 1.28018Z" stroke="#7E8582" stroke-width="1.06445"/>
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+                <div class="seller-card-modal__container">
+                    <div class="seller-card-modal__box">
+                        <div class="seller-card-modal__box_title">5Что понравилось больше всего?</div>
+                        <form class="seller-card-modal__form">
+                            <div class="seller-card-modal__tags">
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Вежливый</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Добросовестный</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Быстро отвечает</span>
+                                </label>
+                            </div>
+                            <button class="btn__green" disabled>Готово</button>
+                        </form>
+                    </div>
+                    <div class="seller-card-modal__box">
+                        <div class="seller-card-modal__box_title">4Что понравилось больше всего?</div>
+                        <form class="seller-card-modal__form">
+                            <div class="seller-card-modal__tags">
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Вежливый</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Добросовестный</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Быстро отвечает</span>
+                                </label>
+                            </div>
+                            <button class="btn__green" disabled>Готово</button>
+                        </form>
+                    </div>
+                    <div class="seller-card-modal__box">
+                        <div class="seller-card-modal__box_title">3Что понравилось больше всего?</div>
+                        <form class="seller-card-modal__form">
+                            <div class="seller-card-modal__tags">
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Вежливый</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Добросовестный</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Быстро отвечает</span>
+                                </label>
+                            </div>
+                            <button class="btn__green" disabled>Готово</button>
+                        </form>
+                    </div>
+                    <div class="seller-card-modal__box">
+                        <div class="seller-card-modal__box_title">2Над чем стоит поработать?</div>
+                        <form class="seller-card-modal__form">
+                            <div class="seller-card-modal__tags">
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Хамит</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Нечестный</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Долго отвечает</span>
+                                </label>
+                            </div>
+                            <button class="btn__green" disabled>Готово</button>
+                        </form>
+                    </div>
+                    <div class="seller-card-modal__box">
+                        <div class="seller-card-modal__box_title">1Над чем стоит поработать?</div>
+                        <form class="seller-card-modal__form">
+                            <div class="seller-card-modal__tags">
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Хамит</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Нечестный</span>
+                                </label>
+                                <label class="seller-card-modal__tag">
+                                    <input type="checkbox">
+                                    <span>Долго отвечает</span>
+                                </label>
+                            </div>
+                            <button class="btn__green" disabled>Готово</button>
+                        </form>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+    <div class="pop-up">
+        <div class="pop-up__text">Спасибо за ваш отзыв!</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M8 8L16 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 8L8 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
     <footer class="footer">
         <div class="container">
 
