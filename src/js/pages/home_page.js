@@ -45,6 +45,5 @@ const main_page__big_swiper = new Swiper(".main-page__big_swiper", {
 });
 
 $('.like').on('click', function (evt) {
-    console.log(123);
     $(this).toggleClass('like_liked')
 })
