@@ -47,4 +47,18 @@ $(function () {
   });
 });
 
+//Show seller's phone
+
+$(function () {
+  const btnShowNumer = $('.btn--show-number');
+  const sellerPhone = $('#sellerPhone')
+
+  btnShowNumer.on('click', function () {
+    btnShowNumer.addClass('open')
+    sellerPhone.text('+7 (000) 123-45-67')
+  })
+})
+
+
+
 

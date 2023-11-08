@@ -8,6 +8,10 @@ $(function () {
   const $switchers = $(".switcher");
   const $cards = $(".creating-adv__card");
 
+  $cards.hide();
+  let $cardDafts = $cards.filter('.card--dafts');
+  $cardDafts.show();
+
   $switchers.on("click", function (evt) {
       evt.preventDefault();
       const $this = $(this);
