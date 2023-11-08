@@ -504,12 +504,14 @@
           </div>
           <div class="chat__dialog__footer">
             <div class="message-input">
-              <textarea placeholder="Напишите сообщение"></textarea>
+              <textarea id="messageTextarea" placeholder="Напишите сообщение"></textarea>
               <div class="message-input__icons">
-                <button class="btn--add-photo">
+                <label for="addFile" class="btn btn--add-photo">
+                <input type="file"  id="addFile">
                   <img src="./assets/images/photo-ico.svg" alt="Photo" />
-                </button>
-                <button class="btn--send">
+                </label>
+                
+                <button class="btn btn--send" id="sendButton">
                   <img src="./assets/images/send-message-ico.svg" alt="Send" />
                 </button>
               </div>

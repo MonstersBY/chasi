@@ -1,5 +1,7 @@
 import $ from "jquery";
 
+//Show chat on dialog click
+
 $(function() {
   const chat = $(".chat__dialog");
   const dialogsItems = $(".dialogs__item");
@@ -21,4 +23,20 @@ $(function() {
     dialogsList.css("display", "flex");
   });
 });
+
+//Send message button
+
+$(function(){
+  const $messageTextarea = $('#messageTextarea')
+  const $sendButton = $('#sendButton')
+
+  $messageTextarea.on('input', function(){
+    if($messageTextarea.val().trim() !== ''){
+      $sendButton.show()
+    } else {
+      $sendButton.hide()
+    }
+  })
+})
+
 

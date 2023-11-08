@@ -29,22 +29,56 @@
                     <button class="btn--post-ad">Разместить объявление</button>
                 </div>
 
-                <div class="creating-adv__sections">
-                    <a
-                        href="#!"
-                        class="creating-adv__section switcher switcher--active switcher--dafts"
-                        ><span>Черновики</span></a
-                    >
-                    <a
-                        href="#!"
-                        class="creating-adv__section switcher switcher--published"
-                        ><span>Активные</span></a
-                    >
-                    <a
-                        href="#!"
-                        class="creating-adv__section switcher switcher--archive"
-                        ><span>Архив</span></a
-                    >
+                <!-- sections desktop-->
+
+                <div class="creating-adv__sections desktop">
+                    <div class="creating-adv__section creating-adv__section--active">
+                        <a href="#!" class="switcher switcher--dafts">Черновики</a>
+                    </div>
+
+                    <div class="creating-adv__section">
+                        <a href="#!" class="switcher">На проверке</a>
+                    </div>
+
+
+                    <div class="creating-adv__section">
+                        <a href="#!" class="switcher switcher--published">Опубликованные</a>
+                    </div>
+
+
+                    <div class="creating-adv__section">
+                        <a href="#!" class="switcher">Отклоненные</a>
+                    </div>
+
+                    <div class="creating-adv__section">
+                        <a href="#!" class="switcher switcher--archive">Архив</a>
+                    </div>
+                </div>
+
+                <!-- sections mobile -->
+
+                <div class="creating-adv__sections swiper switcherSwiper mobile">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide creating-adv__section creating-adv__section--active">
+                            <a href="#!" class="switcher switcher--dafts">Черновики</a>
+                        </div>
+
+                        <div class="swiper-slide creating-adv__section">
+                            <a href="#!" class="creating-adv__section switcher switcher--published">Активные</a>
+                        </div>
+
+                        <div class="swiper-slide creating-adv__section">
+                            <a href="#!" class="creating-adv__section switcher switcher--archive">Архив</a>
+                        </div>
+
+
+                        <div class="swiper-slide creating-adv__section">
+                            <a href="#!" class="creating-adv__section switcher">На проверке</a>
+                        </div>
+                        <div class="swiper-slide creating-adv__section">
+                            <a href="#!" class="creating-adv__section switcher">Отклоненные</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="creating-adv__cards">

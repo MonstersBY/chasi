@@ -2,6 +2,7 @@ import Swiper from "swiper";
 import "swiper/css";
 import 'swiper/css/pagination';
 import { Thumbs, Pagination } from "swiper/modules";
+import $ from "jquery";
 
 function remToPx(remValue) {
   var htmlFontSize = parseFloat(
@@ -30,6 +31,20 @@ const swiper = new Swiper(".adv-card__swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
-
   
 });
+
+//Show currency on click
+
+$(function () {
+  const priceButton = $(".btn--price");
+  const currencyList = $(".currency-list");
+  const priceIcon = $(".btn--price img");
+
+  priceButton.on("click", function () {
+    currencyList.toggle();
+    priceIcon.toggleClass("open");
+  });
+});
+
+
