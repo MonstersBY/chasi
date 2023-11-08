@@ -350,9 +350,17 @@
           display: flex;
           gap: 2.4rem;
 
-          button {
+          .btn {
             width: 3.2rem;
             height: 3.2rem;
+
+            &--send{
+              display: none;
+            }
+
+            input{
+              display: none;
+            }
           }
         }
       }
@@ -448,10 +456,12 @@
             &__icons{
                gap: 2.4rem;
 
-               button{
+               .btn{
                   width: 4.8rem;
                   height: 4.8rem;
                }
+
+               
             }
          }
         }
