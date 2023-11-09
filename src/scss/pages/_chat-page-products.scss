@@ -26,8 +26,12 @@
 
         }
 
+        .dialogs__name{
+            max-width: 21.8rem; 
+        }
+
         .dialogs__last-message{
-            max-width: 22.6rem;
+            max-width: 21.8rem;
 
             @media (max-width: 48em){
                 max-width: 43.4rem;

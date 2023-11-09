@@ -1,0 +1,23 @@
+.adv-card--seller-adv{
+    .btn--edit{
+        background-color: #F1F3F3;
+        color: #298267;
+    }
+    .adv-card__number--bottom{
+        margin-top: 8rem;
+        margin-bottom: 4.8rem;
+    }
+
+    .adv-card__contact__buttons{
+        @media (max-width: 48em) {
+            justify-content: space-between;
+        }
+    }
+
+    .btn--publish{
+        @media (max-width: 48em) {
+            width: 56.6rem;
+        text-align: center;
+        }
+    }
+}

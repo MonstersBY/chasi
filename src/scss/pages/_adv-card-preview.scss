@@ -1,18 +1,4 @@
 .adv-card--preview {
-    .adv-card__status {
-        position: absolute;
-        right: 0;
-        top: 0;
-        font-size: 1.3rem;
-        line-height: 1.6rem;
-        background-color: #7e8582;
-        border-radius: 0.4rem;
-        padding: 0.4rem 0.8rem;
-        color: #fff;
-        text-align: center;
-        font-weight: 400;
-    }
-
     .btn {
         &--promote {
             padding: 1.2rem 4rem;
@@ -31,39 +17,53 @@
     .adv-card__func {
         margin-bottom: 0.8rem;
     }
+}
 
-    .adv-card__contact {
-        &__title {
-            font-size: 2.4rem;
-            font-weight: 600;
-            line-height: 2.8rem;
-            margin-bottom: 3.2rem;
+.adv-card__contact {
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 2.8rem;
+        margin-bottom: 3.2rem;
 
-            @media (max-width: 48em) {
-                font-size: 4.8rem;
-                line-height: 3.6rem;
-                margin-top: 3.2rem;
-                
-            }
-        }
-
-        &__phone {
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 2.4rem;
-            margin-bottom: 4rem;
-
-            @media (max-width: 48em) {
-                font-size: 3.2rem;
-                line-height: 4.8rem;
-                margin-bottom: 3.2rem;
-                
-            }
-        }
-
-        &__buttons{
-            display: flex;
-            gap: 1.2rem;
+        @media (max-width: 48em) {
+            font-size: 4.8rem;
+            line-height: 3.6rem;
+            margin-top: 3.2rem;
+            
         }
     }
+
+    &__phone {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        margin-bottom: 4rem;
+
+        @media (max-width: 48em) {
+            font-size: 3.2rem;
+            line-height: 4.8rem;
+            margin-bottom: 3.2rem;
+            
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        gap: 1.2rem;
+    }
+}
+
+.adv-card__status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    background-color: #7e8582;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
 }
