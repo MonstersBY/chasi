@@ -9,5 +9,6 @@ import "./js/pages/adv-card";
 import "./js/pages/seller-card";
 import "./js/components/header";
 import "./js/components/modal";
+import "./js/components/forms";
 import { example } from "./js/utils/constants";
 console.log(example);

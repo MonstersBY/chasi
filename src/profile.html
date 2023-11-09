@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<title>Профиль</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container"></div>
+    </header>
+    <section class="profile">
+        <div class="container">
+            <div class="profile__left">
+                <div class="profile__img"></div>
+                <div class="profile__name">Константин <br> Константинопольский</div>
+                <div class="profile__tel">+ 7 (123) 456-78-90</div>
+                <div class="profile__links desktop">
+                    <div class="profile__link active">Персональные данные</div>
+                    <a href="" class="profile__link">Отзывы <span class="profile__messages_count">13</span></a>
+                    <a href="" class="profile__link">Служба поддержки <span class="profile__messages_count"></span></a>
+                </div>
+                <div class="profile__exit desktop">Выйти</div>
+            </div>
+            <div class="profile__container">
+                <div class="profile__container_title desktop">Персональные данные</div>
+                <form class="profile__form">
+                    <div class="profile__form_top">
+                        <label class="profile__form_item">
+                            <input type="text" value="Константин">
+                            <div class="profile__form_name active">Имя</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="text" value="Константинопольский">
+                            <div class="profile__form_name active">Фамилия</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="text" value="Кременчуг-Константиновское">
+                            <div class="profile__form_name active">Город</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="text" value="">
+                            <div class="profile__form_name">Улица</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="text" value="33, корпус 4">
+                            <div class="profile__form_name active">Дом</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="date" value="1995-03-16">
+                            <div class="profile__form_name active">Дата рождения</div>
+                        </label>
+                        <label class="profile__form_item">
+                            <input type="text" value="Мужской">
+                            <div class="profile__form_name active">Пол</div>
+                        </label>
+                    </div>
+                    <div class="profile__form_bottom">
+                        <div class="profile__unit">
+                            <div class="profile__unit_top">
+                                <div class="profile__unit_name">Телефон</div>
+                                <svg class="desktop" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="8" r="8" fill="#298267"/>
+                                    <path d="M12 5.25L6.5 10.75L4 8.25" stroke="white" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="profile__unit_bottom">
+                                <div class="profile__unit_info">+7 (123) 456-78-90</div>
+                                <svg class="desktop" data-modal="change-tel" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17.5428 10.1209L13.8828 6.46094" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.251 21.0003H3V17.7493C3 17.4843 3.105 17.2293 3.293 17.0423L16.627 3.70731C17.018 3.31631 17.651 3.31631 18.041 3.70731L20.292 5.95831C20.683 6.34931 20.683 6.98231 20.292 7.37231L6.958 20.7073C6.771 20.8953 6.516 21.0003 6.251 21.0003V21.0003Z" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div data-modal="change-tel" class="profile__unit_change mobile">Изменить</div>
+                        </div>
+                        <div class="profile__unit">
+                            <div class="profile__unit_top">
+                                <div class="profile__unit_name">Email</div>
+                                <svg class="desktop" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="8" r="8" fill="#298267"/>
+                                    <path d="M12 5.25L6.5 10.75L4 8.25" stroke="white" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="profile__unit_bottom">
+                                <div class="profile__unit_info">123mail.ru</div>
+                                <svg class="desktop" data-modal="change-email" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17.5428 10.1209L13.8828 6.46094" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.251 21.0003H3V17.7493C3 17.4843 3.105 17.2293 3.293 17.0423L16.627 3.70731C17.018 3.31631 17.651 3.31631 18.041 3.70731L20.292 5.95831C20.683 6.34931 20.683 6.98231 20.292 7.37231L6.958 20.7073C6.771 20.8953 6.516 21.0003 6.251 21.0003V21.0003Z" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div data-modal="change-email" class="profile__unit_change mobile">Изменить</div>
+                        </div>
+                        <div class="profile__unit">
+                            <div class="profile__unit_top">
+                                <div class="profile__unit_name">Пароль</div>
+                            </div>
+                            <div class="profile__unit_bottom">
+                                <div class="profile__unit_info">··················</div>
+                                <svg class="desktop" data-modal="change-password" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17.5428 10.1209L13.8828 6.46094" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.251 21.0003H3V17.7493C3 17.4843 3.105 17.2293 3.293 17.0423L16.627 3.70731C17.018 3.31631 17.651 3.31631 18.041 3.70731L20.292 5.95831C20.683 6.34931 20.683 6.98231 20.292 7.37231L6.958 20.7073C6.771 20.8953 6.516 21.0003 6.251 21.0003V21.0003Z" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div data-modal="change-password" class="profile__unit_change mobile">Изменить</div>
+                        </div>
+                    </div>
+                    <button disabled class="btn__green">Сохранить</button>
+                </form>
+            </div>
+            <div class="profile__links mobile">
+                <a href="" class="profile__link">Отзывы <span class="profile__messages_count">13</span></a>
+                <a href="" class="profile__link">Служба поддержки <span class="profile__messages_count"></span></a>
+            </div>
+            <div class="profile__exit mobile">Выйти</div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+
+        </div>
+    </footer>
+</body>
+
+</html>
