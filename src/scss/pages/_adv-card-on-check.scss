@@ -1,0 +1,56 @@
+.adv-card--on-check{
+
+    .adv-card__header{
+        margin-bottom: 10rem;
+    }
+    
+    .adv-card__contact__phone{
+        margin-bottom: 0;
+    }
+
+    .container{
+        position: relative;
+    }
+
+    .adv-card__pop-up{
+        position: absolute;
+        right: 3.2rem;
+        bottom: 4rem;
+        background-color: #031E16;
+        color: #fff;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        padding: 1.2rem 1.2rem 1.6rem 1.6rem;
+        border-radius: 1.2rem;
+        width: 30.8rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.6rem;
+
+        .btn--close{
+
+            .btn-ico{
+                @media (max-width: 48em) {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+
+        @media (max-width: 48em) {
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1010;
+            height: 21.6rem;
+            width: 100%;
+            border-radius: 0rem 0rem 4.8rem 4.8rem;
+
+            font-size: 3.2rem;
+            line-height: 4.8rem;
+            padding: 12.8rem 3.2rem 4rem;
+        }
+    }
+}

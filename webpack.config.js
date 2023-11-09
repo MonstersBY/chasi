@@ -18,6 +18,7 @@ const entryPoints = {
   adv_card_preview: path.resolve(__dirname, "src", "index.js"),
   adv_card_seller_adv: path.resolve(__dirname, "src", "index.js"),
   adv_card_draft: path.resolve(__dirname, "src", "index.js"),
+  adv_card_on_check: path.resolve(__dirname, "src", "index.js"),
   adv_card_archive: path.resolve(__dirname, "src", "index.js"),
   favorites_page: path.resolve(__dirname, "src", "index.js"),
   seller_card: path.resolve(__dirname, "src", "index.js"),
