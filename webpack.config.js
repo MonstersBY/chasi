@@ -24,6 +24,7 @@ const entryPoints = {
   creating_adv_page_empty: path.resolve(__dirname, "src", "index.js"),
   filter: path.resolve(__dirname, "src", "index.js"),
   profile: path.resolve(__dirname, "src", "index.js"),
+  characteristic: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
