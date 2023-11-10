@@ -7,6 +7,7 @@ import "./js/pages/chat_page";
 import "./js/pages/creating_adv_page";
 import "./js/pages/adv-card";
 import "./js/pages/adv-card-on-check";
+import "./js/pages/adv-card-preview";
 import "./js/pages/seller-card";
 import "./js/pages/promotion_page";
 import "./js/components/header";
