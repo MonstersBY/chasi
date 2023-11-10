@@ -86,7 +86,7 @@
         grid-template-columns: 1fr 5fr 1fr;
         grid-column-gap: 1.2rem;
         align-items: center;
-        transition: all 0.2s ease;
+        transition: background-color 0.2s ease, color 0.2s ease;
 
         &:hover {
           background-color: #298267;
@@ -117,7 +117,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 24.4rem;
+        max-width: 22.2rem;
 
         justify-self: center;
       }
@@ -127,7 +127,7 @@
         font-size: 1.3rem;
         line-height: 1.6rem;
         white-space: nowrap;
-        max-width: 24.2rem;
+        max-width: 22.2rem;
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -154,8 +154,6 @@
         color: #fff;
         line-height: 2.4rem;
         font-size: 1.6rem;
-
-        transition: all 0.2s ease;
       }
     }
 
