@@ -29,6 +29,7 @@ const entryPoints = {
   filter: path.resolve(__dirname, "src", "index.js"),
   profile: path.resolve(__dirname, "src", "index.js"),
   characteristic: path.resolve(__dirname, "src", "index.js"),
+  promotion_page: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
