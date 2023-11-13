@@ -12,7 +12,7 @@ $('.modal-exit, .modal-back').on('click', function () {
 
 
 $(function () {
-    const $switchers = $(".switcher");
+    const $switchers = $(".switcher-form");
     const $contents = $(".switcher-content");
   
     $contents.hide();
@@ -24,9 +24,9 @@ $(function () {
         const $this = $(this);
         const classToFilter = $this.attr("class").split("--")[1];
         
-        if (!$this.hasClass("switcher--active")) {
-            $switchers.removeClass("switcher--active");
-            $this.addClass("switcher--active");
+        if (!$this.hasClass("switcher-form--active")) {
+            $switchers.removeClass("switcher-form--active");
+            $this.addClass("switcher-form--active");
   
             $contents.hide();
             $contents.filter(".switcher-content--" + classToFilter).show();
