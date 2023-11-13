@@ -13,5 +13,7 @@ import "./js/pages/promotion_page";
 import "./js/components/header";
 import "./js/components/modal";
 import "./js/components/forms";
+import "./js/components/auth-modal";
+import "./js/components/reg-modal";
 import { example } from "./js/utils/constants";
 console.log(example);

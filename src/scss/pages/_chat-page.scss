@@ -205,6 +205,7 @@
         display: flex;
         gap: 1.2rem;
         align-items: center;
+        padding-bottom: 1.6rem;
 
         &__name {
           font-size: 1.6rem;
@@ -348,19 +349,24 @@
           display: flex;
           gap: 2.4rem;
 
-          .btn {
+
+
+          .btn--send, .btn--add-photo {
             width: 3.2rem;
             height: 3.2rem;
-
-            &--send{
-              display: none;
-            }
 
             input{
               display: none;
             }
           }
+
+          .btn--send{
+            display: none;
+          }
         }
+
+
+
       }
     }
   }
@@ -395,6 +401,7 @@
 
 
          .user-data{
+          padding-bottom: 2.4rem;
             
          .dialogs__pic{
             width: 8rem;
@@ -454,12 +461,10 @@
             &__icons{
                gap: 2.4rem;
 
-               .btn{
+               .btn--add-photo, .btn--send{
                   width: 4.8rem;
                   height: 4.8rem;
                }
-
-               
             }
          }
         }

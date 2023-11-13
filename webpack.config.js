@@ -30,6 +30,8 @@ const entryPoints = {
   profile: path.resolve(__dirname, "src", "index.js"),
   characteristic: path.resolve(__dirname, "src", "index.js"),
   promotion_page: path.resolve(__dirname, "src", "index.js"),
+  auth_modal: path.resolve(__dirname, "src", "index.js"),
+  reg_modal: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
