@@ -1,0 +1,49 @@
+.footer {
+    &--desktop {
+        display: flex;
+        align-items: flex-end;
+        border-top: 0.1rem solid #fff;
+        padding: 3.2rem 0 6.4rem;
+
+        &__logo {
+            width: 15.8rem;
+            height: 3.8rem;
+            margin-right: 3.2rem;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        &__info {
+            display: flex;
+            gap: 3.2rem;
+            margin-right: 16.9rem;
+
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            color: #7E8582;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        &__apps {
+            display: flex;
+            gap: 1.2rem;
+            margin-left: auto;
+        }
+
+        &__app {
+            width: 12rem;
+            height: 3.8rem;
+
+            img{
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.btn--auth-temporary{
+    color: #d51414;
+}

@@ -1,0 +1,211 @@
+.auth-modal {
+    @media (max-width: 48em) {
+        &-top-mobile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5.6rem;
+
+            .modal-exit,
+            .auth-modal-content__logo {
+                position: static;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .auth-modal-content {
+        max-width: 34.3rem;
+
+        @media (max-width: 48em) {
+            max-width: unset;
+        }
+
+        &__title {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 3.6rem;
+            margin-bottom: 1.6rem;
+        }
+
+        &__logo {
+            width: 19.8rem;
+            height: 4.8rem;
+
+            img {
+                object-fit: contain;
+            }
+        }
+
+        &__desc {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            margin-bottom: 2.4rem;
+            color: #414141;
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                margin-bottom: 4.8rem;
+            }
+        }
+
+        &__switchers {
+            background-color: #f1f3f3;
+            border: 0.1rem solid #f1f3f3;
+            border-radius: 0.8rem;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 1.6rem;
+
+            @media (max-width: 48em) {
+                border: 0.2rem solid #f1f3f3;
+                border-radius: 1.6rem;
+                margin-bottom: 3.2rem;
+            }
+
+            .switcher {
+                padding: 1.2rem 1rem 1rem;
+                width: 50%;
+                height: 4rem;
+                text-align: center;
+                color: #298267;
+                font-size: 1.3rem;
+
+                @media (max-width: 48em) {
+                    height: 8rem;
+                    padding: 2.4rem 2rem 2rem;
+                    font-size: 2.6rem;
+                }
+
+                &--email {
+                    border-radius: 0.8rem 0 0 0.8rem;
+
+                    @media (max-width: 48em) {
+                        border-radius: 1.6rem 0 0 1.6rem;
+                    }
+                }
+
+                &--phone {
+                    border-radius: 0 0.8rem 0.8rem 0;
+
+                    @media (max-width: 48em) {
+                        border-radius: 0 1.6rem 1.6rem 0;
+                    }
+                }
+
+                &--active {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &__switcher-container {
+            margin-bottom: 1.2rem;
+
+            @media (max-width: 48em) {
+                margin-bottom: 2.4rem;
+            }
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+
+            @media (max-width: 48em) {
+                gap: 3.2rem;
+            }
+
+            .input-wrapper {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    pointer-events: none;
+                    color: #7e8582;
+                    top: 1.6rem;
+                    left: 1.6rem;
+                    font-size: 1.6rem;
+                    line-height: 150%;
+
+                    transition: top 0.2s ease, font-size 0.2s ease;
+
+                    @media (max-width: 48em) {
+                        top: 3.2rem;
+                        left: 3.2rem;
+                        font-size: 3.2rem;
+                    }
+                }
+
+                input {
+                    width: 100%;
+
+                    &:focus ~ span,
+                    &:valid ~ span,
+                    &:not(:focus):valid ~ span{
+                        top: 0.8rem;
+                        font-size: 1.3rem;
+
+                        @media (max-width: 48em) {
+                            top: 1.6rem;
+                            font-size: 2.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__input {
+            font-size: 1.6rem;
+            line-height: 150%;
+            background-color: #f1f3f3;
+            border-radius: 0.8rem;
+            padding: 2.4rem 1.6rem 0.8rem;
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+                border-radius: 1.6rem;
+
+                padding: 4.8rem 3.2rem 1.6rem;
+            }
+        }
+
+        &__forgot-pwd {
+            font-size: 1.6rem;
+            line-height: 150%;
+            color: #298267;
+            margin-bottom: 2.4rem;
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+                margin-bottom: 4.8rem;
+            }
+        }
+
+        &__registration {
+            font-size: 1.6rem;
+            line-height: 150%;
+
+            a {
+                color: #298267;
+            }
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+            }
+        }
+    }
+
+    .btn--login {
+        margin-bottom: 2.4rem;
+        width: 100%;
+
+        @media (max-width: 48em) {
+            margin-bottom: 4.8rem;
+        }
+    }
+}

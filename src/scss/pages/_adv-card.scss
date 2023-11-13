@@ -524,6 +524,22 @@
     padding: 2.4rem 15.2rem;
     }
   }
+
+  &--login{
+    border-radius: 200rem;
+    text-align: center;
+
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+      border-radius: 400rem;
+      padding: 3.4rem 25rem;
+  }
+  }
+
+  &--unactive{
+    background-color: #F1F3F3;
+    color: #7E8582;
+  }
 }
 
 //Mobile
