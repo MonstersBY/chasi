@@ -1,0 +1,48 @@
+.reg-modal{
+
+    .auth-modal-content__switcher-container{
+        margin-bottom: 2.4rem;
+    }
+
+    .btn--continue{
+        margin-bottom: 2.4rem;
+        width: 100%;
+
+        @media (max-width: 48em) {
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    .btn--signup{
+        width: 100%;
+        text-align: center;
+    }
+
+    .code-input{
+        display: none;
+    }
+
+    .auth-modal-content__send-code-again{
+        display: none;
+
+        color: #298267;
+        font-size: 1.6rem;
+        line-height: 150%;
+
+        @media (max-width: 48em) {
+            font-size: 3.2rem;
+        }
+    }
+
+    .auth-modal-content__agr{
+        color: #999;
+        font-size: 1.3rem;
+        line-height: 123.077%;
+
+        @media (max-width: 48em) {
+            font-size: 2.6rem;
+        }
+
+    }
+}
+

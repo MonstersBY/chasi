@@ -516,9 +516,10 @@
   }
 
   &--continue{
+    text-align: center;
+
     @media (max-width: 48em) {
     width: 100%;
-    text-align: center;
     font-size: 3.2rem;
     line-height: 4.8rem;
     padding: 2.4rem 15.2rem;
@@ -536,11 +537,18 @@
   }
   }
 
-  &--unactive{
+  // &--unactive{
+  //   background-color: #F1F3F3;
+  //   color: #7E8582;
+  // }
+
+  &:disabled{
     background-color: #F1F3F3;
-    color: #7E8582;
+     color: #7E8582;
   }
 }
+
+
 
 //Mobile
 

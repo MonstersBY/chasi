@@ -1,65 +1,61 @@
+<div class="modal auth-modal">
+    <div class="modal-back"></div>
+    <div class="modal-wrapper">
+        <div class="auth-modal-top-mobile">
+            <div class="auth-modal-content__logo mobile">
+                <img src="./assets/images/logo.svg" alt="Logo" />
+            </div>
+            <div class="modal-exit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
 
-    <div class="modal auth-modal">
-		<div class="modal-back"></div>
-		<div class="modal-wrapper">
-            <div class="auth-modal-top-mobile">
-                <div class="auth-modal-content__logo mobile"><img src="./assets/images/logo.svg" alt="Logo"></div>
-                <div class="modal-exit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        <div class="modal-content auth-modal-content">
+            <div class="auth-modal-content__title desktop">Вход</div>
+
+            <div class="auth-modal-content__desc">Войдите, чтобы просматривать информацию в профиле</div>
+
+            <div class="auth-modal-content__switchers">
+                <button class="switcher-form switcher-form--auth switcher-form--active" data-switcher="EmailLogin">Email</button>
+                <button class="switcher-form switcher-form--auth" data-switcher="PhoneLogin">Телефон</button>
+            </div>
+
+            <div class="auth-modal-content__switcher-container">
+                <div class="switcher-content switcher-content--auth switcher-content--active" data-inputs="EmailLogin">
+                    <form class="auth-modal-content__form" id="loginByEmailForm">
+                        <div class="input-wrapper">
+                            <input type="text" class="auth-modal-content__input" required />
+                            <span>Email</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" class="auth-modal-content__input" required />
+                            <span>Пароль</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="switcher-content switcher-content--auth" data-inputs="PhoneLogin">
+                    <form class="auth-modal-content__form" id="loginByPhoneForm">
+                        <div class="input-wrapper">
+                            <input type="tel" class="auth-modal-content__input" required />
+                            <span>Телефон</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" class="auth-modal-content__input" required />
+                            <span>Пароль</span>
+                        </div>
+                    </form>
                 </div>
             </div>
-			
-			<div class="modal-content auth-modal-content">
-                <div class="auth-modal-content__title desktop">Вход</div>
-                
-
-                <div class="auth-modal-content__desc">Войдите, чтобы просматривать информацию в профиле</div>
-
-                <div class="auth-modal-content__switchers">
-                    <div class="switcher-form switcher-form--email switcher-form--active">Email</div>
-                    <div class="switcher-form switcher-form--phone">Телефон</div>
-                </div>
-
-                <div class="auth-modal-content__switcher-container">
-                    <div class="switcher-content switcher-content--active switcher-content--email">
-                        <form class="auth-modal-content__form">
-                            <div class="input-wrapper">
-                                <input type="text" class="auth-modal-content__input" required>
-                                <span>Email</span>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="password" class="auth-modal-content__input" required>
-                                <span>Пароль</span>
-                            </div>
-
-                        </form>
-                    </div>
-
-                    <div class="switcher-content switcher-content--phone">
-                        <form class="auth-modal-content__form">
-                            <div class="input-wrapper">
-                                <input type="tel" class="auth-modal-content__input" required>
-                                <span>Телефон</span>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="password" class="auth-modal-content__input" required>
-                                <span>Пароль</span>
-                            </div>
-
-                        </form>
-                    </div>
-                    
-                </div>
-                <div class="auth-modal-content__forgot-pwd">Забыли пароль?</div>
-                <button class="btn btn--login btn--unactive">Войти</button>
-                <div class="auth-modal-content__registration">
-                    <span>В первый раз здесь? </span>
-                    <a href="#!" data-modal="reg-modal">Зарегистрируйтесь</a>
-                </div>
-                
-			</div>
-		</div>
-	</div>
+            <div class="auth-modal-content__forgot-pwd">Забыли пароль?</div>
+            <button class="btn btn--login" disabled type="submit" id="loginButton">Войти</button>
+            <div class="auth-modal-content__registration">
+                <span>В первый раз здесь? </span>
+                <a href="#!" data-modal="reg-modal">Зарегистрируйтесь</a>
+            </div>
+        </div>
+    </div>
+</div>
