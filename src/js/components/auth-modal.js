@@ -11,28 +11,52 @@ $('.modal-exit, .modal-back').on('click', function () {
 });
 
 
+
 $(function () {
-    const $switchers = $(".switcher-form");
-    const $contents = $(".switcher-content");
-  
-    $contents.hide();
-    let $activeContent = $contents.filter('.switcher-content--email');
-    $activeContent.show();
-  
+    const $switchers = $(".switcher-form--auth");
+    const $contents = $(".switcher-content--auth");
+    const $loginBtn = $('#loginButton');
+
+    $contents.hide().filter('[data-inputs="EmailLogin"]').show();
+
     $switchers.on("click", function (evt) {
         evt.preventDefault();
         const $this = $(this);
-        const classToFilter = $this.attr("class").split("--")[1];
-        
+        const switcherType = $this.data("switcher");
+
         if (!$this.hasClass("switcher-form--active")) {
             $switchers.removeClass("switcher-form--active");
             $this.addClass("switcher-form--active");
-  
-            $contents.hide();
-            $contents.filter(".switcher-content--" + classToFilter).show();
+
+            $contents.hide().filter(`[data-inputs='${switcherType}']`).show();
+
+            $contents.not(`[data-inputs='${switcherType}']`).find('.auth-modal-content__input').val('');
+
+            $loginBtn.prop('disabled', true);
         }
     });
-  });
+
+    const $forms = $('#loginByEmailForm, #loginByPhoneForm');
+
+    function checkForm(form) {
+        const inputs = form.find('.auth-modal-content__input');
+        return inputs.toArray().every(input => $(input).val().trim() !== '');
+    }
+
+    $forms.on('input', function () {
+        $loginBtn.prop('disabled', !checkForm($(this)));
+    });
+});
+
+
+
+
+
+
+
+
+
+
 
   
 

@@ -3,9 +3,9 @@ import $ from "jquery";
 $(function () {
 
     const promotionPayment = $(".promotion__payment");
-    const confirmPaymentBtn = $(".btn--confirm-payment");
-    const publishBtn = $(".btn--publish");
-    const continueBtn = $(".btn--continue");
+    const confirmPaymentBtn = $("#btnConfitmPayment");
+    const publishBtn = $("#btnPublishAdv");
+    const continueBtn = $("#btnContinuePayment");
     const noPromotionCheckbox = $("#noPromotionCheckbox");
     const tariffCheckbox = $("#tariffCheckbox");
     const checkboxes = tariffCheckbox.add(noPromotionCheckbox);
