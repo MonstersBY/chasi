@@ -52,8 +52,8 @@ $(function () {
 //send code
 $(function () {
     $("#continueRegButton").on("click", function (e) {
-        et.preventDefault();
-
+        e.preventDefault();
+        
         $(".switcher-form--reg").prop("disabled", true);
         const activeForm = $(".switcher-form--reg.switcher-form--active").data("switcher");
 
