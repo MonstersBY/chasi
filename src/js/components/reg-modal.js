@@ -11,112 +11,173 @@ $(".modal-exit, .modal-back").on("click", function () {
     $(".reg-modal").removeClass("active");
 });
 
-//switchers and form val checking
 $(function () {
-    
-    $("#confirmCodeButton").hide();
-    $("#confirmPasswordButton").hide();
-    $("#signUpButton").hide();
-    
-    $(".switcher-content--reg").hide().filter('[data-inputs="emailReg"]').show();
+    let previousContactType;
 
-    $(".switcher-form--reg").on("click", function (e) {
-        e.preventDefault();
-        const $this = $(this);
-        const switcherType = $this.data("switcher");
+    const userData = {};
 
-        if (!$this.hasClass("switcher-form--active")) {
-            $(".switcher-form--reg").removeClass("switcher-form--active");
-            $this.addClass("switcher-form--active");
+    function isInputValid(inputSelector) {
+        const $input = $(inputSelector);
+        const isValid = $input.is(":visible") && $input.val().trim() !== "";
 
-            $(".switcher-content--reg").hide().filter(`[data-inputs='${switcherType}']`).show();
-            $(".switcher-content--reg").not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
-            $(".code-input").css("display", "none");
-            $("#regInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
-            $("#continueRegButton").prop("disabled", true);
+        if (isValid) {
+            switch (inputSelector) {
+                case "#nameInput":
+                    userData.name = $input.val().trim();
+                    break;
+                case "#surnameInput":
+                    userData.surname = $input.val().trim();
+                    break;
+                case "#cityInput":
+                    userData.city = $input.val().trim();
+                    break;
+                case "#newPhoneInput":
+                case "#phoneRegInput":
+                    userData.phone = $input.val().trim();
+                    break;
+                case "#newEmailInput":
+                case "#emailRegInput":
+                    userData.email = $input.val().trim();
+                    break;
+                default:
+                    break;
+            }
         }
-    });
-
-    const $regForms = $("#regByEmailForm, #regByPhoneForm");
-
-    function checkRegForm(form) {
-        const firstInput = form.find(".auth-modal-content__input").first();
-        return firstInput.val().trim() !== "";
+        return isValid;
     }
 
-    $regForms.on("input", function () {
-        $("#continueRegButton").prop("disabled", !checkRegForm($(this)));
-    });
-});
+    //switchers and form val checking
+    $(function () {
+        $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again").hide();
+        $(".switcher-content--reg").hide().filter('[data-inputs="emailReg"]').show();
 
-//send code
-$(function () {
-    $("#continueRegButton").on("click", function (e) {
-        e.preventDefault();
-        
-        $(".switcher-form--reg").prop("disabled", true);
-        const activeForm = $(".switcher-form--reg.switcher-form--active").data("switcher");
+        $(".switcher-form--reg").on("click", function (e) {
+            e.preventDefault();
+            const $this = $(this);
+            const switcherType = $this.data("switcher");
 
-        $(".code-input").css("display", "block");
-        $(".auth-modal-content__registration").css("display", "none");
-        $(".auth-modal-content__send-code-again").css("display", "block");
-        $("#continueRegButton").hide();
-        $("#confirmCodeButton").show();
+            if (!$this.hasClass("switcher-form--active")) {
+                $(".switcher-form--reg").removeClass("switcher-form--active");
+                $this.addClass("switcher-form--active");
 
-        let userContact;
-        if (activeForm === "emailReg") {
-            userContact = $('[data-inputs="emailReg"] .auth-modal-content__input').val().trim();
-        } else if (activeForm === "phoneReg") {
-            userContact = $('[data-inputs="phoneReg"] .auth-modal-content__input').val().trim();
+                $(".switcher-content--reg").hide().filter(`[data-inputs='${switcherType}']`).show();
+                $(".switcher-content--reg").not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
+                $("#regInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
+                $("#continueRegButton").prop("disabled", true);
+            }
+        });
+
+        const $regForms = $("#regByEmailForm, #regByPhoneForm");
+
+        function checkRegForm(form) {
+            const firstInput = form.find(".auth-modal-content__input").first();
+            return firstInput.val().trim() !== "";
         }
 
-        const message = `Для подтверждения регистрации введите код, который мы отправили на ${activeForm === "EmailReg" ? "почту" : "номер"} ${userContact}`;
-        $("#regInfo").text(message);
+        $regForms.on("input", function () {
+            $("#continueRegButton").prop("disabled", !checkRegForm($(this)));
+        });
+    });
 
-        $("#emailRegCode, #phoneRegCode").on("input", function () {
-            if ($("#emailRegCode").val() != "" || $("#phoneRegCode").val() != "") {
-                $("#confirmCodeButton").prop("disabled", false);
-            } else {
-                $("#confirmCodeButton").prop("disabled", true);
+    //send code
+    $(function () {
+        $("#continueRegButton").on("click", function (e) {
+            e.preventDefault();
+
+            $(".switcher-form--reg").prop("disabled", true);
+            const activeForm = $(".switcher-form--reg.switcher-form--active").data("switcher");
+
+            previousContactType = activeForm === "emailReg" ? "email" : "phone";
+
+            $(".code-input, #confirmCodeButton, .auth-modal-content__send-code-again").show();
+            $(".auth-modal-content__registration, #continueRegButton").hide();
+
+            let userContact;
+            let userType;
+
+            if (activeForm === "emailReg") {
+                userContact = $('[data-inputs="emailReg"] .auth-modal-content__input').val().trim();
+                userType = "email";
+            } else if (activeForm === "phoneReg") {
+                userContact = $('[data-inputs="phoneReg"] .auth-modal-content__input').val().trim();
+                userType = "phone";
             }
+
+            $("#regInfo").text(`Для подтверждения регистрации введите код, который мы отправили на ${activeForm === "emailReg" ? "почту" : "номер"} ${userContact}`);
+
+            $("#emailRegCode, #phoneRegCode").on("input", function () {
+                if ($("#emailRegCode").val() != "" || $("#phoneRegCode").val() != "") {
+                    $("#confirmCodeButton").prop("disabled", false);
+                } else {
+                    $("#confirmCodeButton").prop("disabled", true);
+                }
+            });
+
+            userData[userType] = userContact;
+        });
+    });
+
+    //create password
+    $(function () {
+        $("#confirmCodeButton").on("click", function (e) {
+            e.preventDefault();
+
+            $("#regInfo").text("Придумайте пароль");
+            $(".switcher-content--reg, .auth-modal-content__switchers, .auth-modal-content__send-code-again, #confirmCodeButton").hide();
+            $('[data-inputs="createPassword"], #confirmPasswordButton').show();
+
+            $("#passwordInput, #repeatPasswordInput").on("input", function () {
+                if ($("#passwordInput").val() != "" && $("#repeatPasswordInput").val() != "" && $("#passwordInput").val() === $("#repeatPasswordInput").val()) {
+                    $("#confirmPasswordButton").prop("disabled", false);
+                    userData.password = $("#passwordInput").val();
+                } else {
+                    $("#confirmPasswordButton").prop("disabled", true);
+                }
+            });
+        });
+    });
+
+    //fill user data
+    $(function () {
+        $("#confirmPasswordButton").on("click", function (e) {
+            e.preventDefault();
+
+            $("#regInfo").text("Заполните данные для регистрации");
+            $('[data-inputs="createPassword"], #confirmPasswordButton').hide();
+            $('#signUpButton, [data-inputs="fillingUserData"]').show();
+
+            if (previousContactType === "email") {
+                $("#newEmailInputWrapper").hide();
+            } else if (previousContactType === "phone") {
+                $("#newPhoneInputWrapper").hide();
+            }
+
+            $("#newEmailInput, #nameInput, #surnameInput, #cityInput, #newPhoneInput").on("input", function () {
+                const isNameInputValid = isInputValid("#nameInput");
+                const isSurnameInputValid = isInputValid("#surnameInput");
+                const isCityPasswordInputValid = isInputValid("#cityInput");
+                const isNewPhoneInputValid = isInputValid("#newPhoneInput");
+                const isNewEmailInputValid = isInputValid("#newEmailInput");
+
+                if (isNameInputValid && isSurnameInputValid && isCityPasswordInputValid) {
+                    if (isNewPhoneInputValid || isNewEmailInputValid) {
+                        $("#signUpButton").prop("disabled", false);
+                    } else {
+                        $("#signUpButton").prop("disabled", true);
+                    }
+                } else {
+                    $("#signUpButton").prop("disabled", true);
+                }
+            });
+        });
+    });
+
+    //sign up
+    $(function () {
+        $("#signUpButton").on("click", function (e) {
+            e.preventDefault();
+            console.log(userData);
+            $(".reg-modal").removeClass("active");
         });
     });
 });
-
-//create password
-$(function () {
-    $("#confirmCodeButton").on("click", function (e) {
-        e.preventDefault();
-
-        $(".switcher-content--reg").hide();
-        $(".auth-modal-content__switchers").hide();
-        $(".auth-modal-content__send-code-again").hide();
-        $("#regInfo").text('Придумайте пароль');
-        $('[data-inputs="createPassword"]').show();
-        $("#confirmCodeButton").hide();
-        $("#confirmPasswordButton").show().prop("disabled", true);
-
-        $("#passwordInput, #repeatPasswordInput").on("input", function () {
-            if ($("#passwordInput").val() != "" && $("#repeatPasswordInput").val() != "" && $("#passwordInput").val() === $("#repeatPasswordInput").val()) {
-                $("#confirmPasswordButton").prop("disabled", false);
-            } else {
-                $("#confirmPasswordButton").prop("disabled", true);
-            }
-        });        
-
-    });
-});
-
-//fill user data
-$(function () {
-    $("#confirmPasswordButton").on("click", function (e) {
-        e.preventDefault();
-
-        $("#regInfo").text('Заполните данные для регистрации');
-        $('[data-inputs="createPassword"]').hide();
-        $('[data-inputs="fillingUserData"]').show();
-        $("#confirmPasswordButton").hide();
-        $("#signUpButton").show();
-    });
-});
-
