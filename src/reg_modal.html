@@ -70,10 +70,8 @@
                     </form>
                 </div>
 
-
                 <div class="switcher-content switcher-content--reg" data-inputs="fillingUserData">
                     <form class="auth-modal-content__form" id="fillingUserDataForm">
-
                         <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="nameInput" required />
                             <span>Имя</span>
@@ -84,13 +82,15 @@
                             <span>Фамилия</span>
                         </div>
 
-                        <div class="input-wrapper">
+                        <div class="input-wrapper" id="cityInputWrapper">
                             <input type="text" class="auth-modal-content__input" id="cityInput" required />
-                            <span>Город</span>
+                            <span>Город</span> 
+                            <ul class="city-list">
+                            </ul>
                         </div>
 
                         <div class="input-wrapper" id="newPhoneInputWrapper">
-                            <input type="text" class="auth-modal-content__input" id="newPhoneInput" required />
+                            <input type="tel" class="auth-modal-content__input" id="newPhoneInput" required />
                             <span>Телефон</span>
                         </div>
 
@@ -100,12 +100,8 @@
                         </div>
 
                         <div class="auth-modal-content__agr">Авторизуясь на сайте, я принимаю условия пользовательского соглашения...</div>
-
                     </form>
                 </div>
-
-
-
 
             </div>
             <button class="btn btn--continue" disabled type="submit" id="continueRegButton">Продолжить</button>
@@ -117,9 +113,7 @@
                 <span>Уже есть аккаунт? </span>
                 <a href="#!" data-modal="auth-modal">Войдите</a>
             </div>
-
             <div class="auth-modal-content__send-code-again">Отправить код повторно</div>
-           
         </div>
     </div>
 </div>
