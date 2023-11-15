@@ -4,7 +4,7 @@
             width: 100%;
             bottom: 0;
             height: 100%;
-            margin-top: 1.2rem;
+            margin-top: 2.4rem;
             padding: 4.8rem 3.2rem 6.2rem;
             border-radius: 4.8rem 4.8rem 0 0;
         }
@@ -32,6 +32,7 @@
 
         @media (max-width: 48em) {
             max-width: unset;
+            width: 100%;
         }
 
         &__title {

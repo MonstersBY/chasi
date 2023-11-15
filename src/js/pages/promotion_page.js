@@ -9,6 +9,7 @@ $(function () {
     const noPromotionCheckbox = $("#noPromotionCheckbox");
     const tariffCheckbox = $("#tariffCheckbox");
     const checkboxes = tariffCheckbox.add(noPromotionCheckbox);
+    const btnBack = $(".btn--go-back")
 
     //hide all btns except publishBtn
     promotionPayment.hide();
@@ -21,7 +22,6 @@ $(function () {
         if (this.checked) {
             noPromotionCheckbox.prop("checked", false);
         }
-
         
         if (!window.matchMedia("(max-width: 768px)").matches) {
             //desktop
@@ -41,6 +41,13 @@ $(function () {
 
                 const promFirstPage = $(".promotion__header:first, .promotion__top, .promotion__tariff, .promotion__no-promotion");
                 promFirstPage.hide();
+                
+                btnBack.on("click", function () {
+                    continueBtn.show();
+                    confirmPaymentBtn.hide();
+                    promotionPayment.hide();
+                    promFirstPage.show();
+                  });
             });
         }
     });
@@ -51,11 +58,9 @@ $(function () {
         if (this.checked) {
 
             tariffCheckbox.prop("checked", false);
-
             promotionPayment.hide();
             confirmPaymentBtn.hide();
             continueBtn.hide();
-
             publishBtn.show();
         } 
     });
