@@ -1,21 +1,27 @@
 import $ from "jquery";
+import IMask from "imask";
 
-$('[data-modal="auth-modal"]').on('click', () => {
-    $('.auth-modal-placeholder').load('auth_modal.html', function () {
-        $('.auth-modal').addClass('active');
+$('[data-modal="auth-modal"]').on("click", () => {
+    $(".auth-modal-placeholder").load("auth_modal.html", function () {
+        $(".auth-modal").addClass("active");
+        applyIMask();
     });
 });
 
-$('.modal-exit, .modal-back').on('click', function () {
-    $('.modal').removeClass('active');
+$(".modal-exit, .modal-back").on("click", function () {
+    $(".modal").removeClass("active");
 });
 
-
+function applyIMask() {
+    IMask(document.getElementById("phoneLoginInput"), {
+        mask: "+{7}(000)000-00-00",
+    });
+}
 
 $(function () {
     const $switchers = $(".switcher-form--auth");
     const $contents = $(".switcher-content--auth");
-    const $loginBtn = $('#loginButton');
+    const $loginBtn = $("#loginButton");
 
     $contents.hide().filter('[data-inputs="EmailLogin"]').show();
 
@@ -30,33 +36,20 @@ $(function () {
 
             $contents.hide().filter(`[data-inputs='${switcherType}']`).show();
 
-            $contents.not(`[data-inputs='${switcherType}']`).find('.auth-modal-content__input').val('');
+            $contents.not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
 
-            $loginBtn.prop('disabled', true);
+            $loginBtn.prop("disabled", true);
         }
     });
 
-    const $forms = $('#loginByEmailForm, #loginByPhoneForm');
+    const $forms = $("#loginByEmailForm, #loginByPhoneForm");
 
     function checkForm(form) {
-        const inputs = form.find('.auth-modal-content__input');
-        return inputs.toArray().every(input => $(input).val().trim() !== '');
+        const inputs = form.find(".auth-modal-content__input");
+        return inputs.toArray().every((input) => $(input).val().trim() !== "");
     }
 
-    $forms.on('input', function () {
-        $loginBtn.prop('disabled', !checkForm($(this)));
+    $forms.on("input", function () {
+        $loginBtn.prop("disabled", !checkForm($(this)));
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-  
-

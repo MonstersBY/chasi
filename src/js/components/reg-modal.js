@@ -4,11 +4,31 @@ $('[data-modal="reg-modal"]').on("click", () => {
     $(".auth-modal-placeholder").load("reg_modal.html", function () {
         $(".auth-modal").removeClass("active");
         $(".reg-modal").addClass("active");
+        applyIMask();
     });
 });
 
 $(".modal-exit, .modal-back").on("click", function () {
     $(".reg-modal").removeClass("active");
+});
+
+function applyIMask() {
+    IMask(document.getElementById("phoneInput"), {
+        mask: "+{7}(000)000-00-00",
+    });
+
+    IMask(document.getElementById("newPhoneInput"), {
+        mask: "+{7}(000)000-00-00",
+    });
+}
+
+//input city dropdown list
+let cityListArray = ["Анапа", "Ангарск", "Анжеро-Судженск", "Благовещенск", "Владимир", "Геленджик", "Дзержинск", "Жуков", "Зеленогорск", "Липецк", "Магнитогорск", "Москва"];
+const $cityList = $(".city-list");
+
+$.each(cityListArray, function (index, city) {
+    const $liElement = $("<li>").addClass("city-list__item").text(city);
+    $cityList.append($liElement);
 });
 
 $(function () {
@@ -46,9 +66,10 @@ $(function () {
         return isValid;
     }
 
+    $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again,.city-list").hide();
+
     //switchers and form val checking
     $(function () {
-        $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again").hide();
         $(".switcher-content--reg").hide().filter('[data-inputs="emailReg"]').show();
 
         $(".switcher-form--reg").on("click", function (e) {
@@ -169,6 +190,49 @@ $(function () {
                     $("#signUpButton").prop("disabled", true);
                 }
             });
+
+            //show city dropdown
+            $("#cityInput").on("input", function () {
+                const cityInputValue = $(this).val().trim().toLowerCase();
+                const hasInput = cityInputValue.length > 0;
+                $cityList.toggle(hasInput);
+
+                $cityList.children().each(function () {
+                    const $liElement = $(this);
+                    const cityName = $liElement.text().toLowerCase();
+                    const index = cityName.indexOf(cityInputValue);
+
+                    $liElement.toggle(index !== -1);
+                    $liElement.attr("data-index", index);
+                });
+
+                //sort the list by index
+                const listItems = $cityList.children(".city-list__item").get();
+                listItems.sort(function (a, b) {
+                    const indexA = parseInt($(a).attr("data-index")) || 0;
+                    const indexB = parseInt($(b).attr("data-index")) || 0;
+
+                    return indexA - indexB;
+                });
+
+                $cityList.empty().append(listItems);
+            });
+
+            //handle click on city item
+            $cityList.on("click", ".city-list__item", function () {
+                const selectedCity = $(this).text();
+                $("#cityInput").val(selectedCity);
+                $cityList.hide();
+            });
+
+            //hide city list if click outside
+            $(document).on("click", function (e) {
+                const $target = $(e.target);
+
+                if (!$target.closest("#cityInput").length && !$target.closest(".city-list").length) {
+                    $cityList.hide();
+                }
+            });
         });
     });
 
@@ -178,6 +242,7 @@ $(function () {
             e.preventDefault();
             console.log(userData);
             $(".reg-modal").removeClass("active");
+            $('body').removeClass('lock');
         });
     });
 });
