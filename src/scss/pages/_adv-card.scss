@@ -537,18 +537,11 @@
   }
   }
 
-  // &--unactive{
-  //   background-color: #F1F3F3;
-  //   color: #7E8582;
-  // }
-
   &:disabled{
     background-color: #F1F3F3;
      color: #7E8582;
   }
 }
-
-
 
 //Mobile
 
@@ -641,8 +634,7 @@
     &__buttons {
       order: 3;
       justify-content: space-between;
-
-
+      padding-bottom: 4.8rem;
     }
 
     .btn {
