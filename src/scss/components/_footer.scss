@@ -22,7 +22,7 @@
 
             font-size: 1.6rem;
             line-height: 2.4rem;
-            color: #7E8582;
+            color: #7e8582;
             white-space: nowrap;
             text-align: center;
         }
@@ -37,13 +37,56 @@
             width: 12rem;
             height: 3.8rem;
 
-            img{
+            img {
                 object-fit: cover;
+            }
+        }
+    }
+
+    &--mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.6rem 0;
+
+        &__item {
+            width: 12.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+
+            span {
+                font-size: 2rem;
+                line-height: 120%;
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        fill: #031e16;
+                    }
+                }
+            }
+
+            &--adv, &--profile {
+                &:hover {
+                    svg {
+                        path {
+                            stroke: #ffffff;
+                           
+                        }
+                        
+                        path:first-child{
+                            stroke: #031e16;
+                            fill: #031e16;
+                        }
+                    }
+                }
             }
         }
     }
 }
 
-.btn--auth-temporary{
+.btn--auth-temporary {
     color: #d51414;
 }
