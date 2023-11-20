@@ -1,4 +1,4 @@
-<div class="modal reg-modal auth-modal">
+<div class="modal signup-modal auth-modal">
     <div class="modal-back"></div>
     <div class="modal-wrapper">
         <div class="auth-modal-top-mobile">
@@ -16,17 +16,17 @@
         <div class="modal-content auth-modal-content">
             <div class="auth-modal-content__title desktop">Регистрация</div>
 
-            <div class="auth-modal-content__desc" id="regInfo">Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса</div>
+            <div class="auth-modal-content__desc" id="signupInfo">Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса</div>
 
             <div class="auth-modal-content__switchers">
-                <button class="switcher-form switcher-form--reg switcher-form--active" data-switcher="emailReg">Email</button>
-                <button class="switcher-form switcher-form--reg" data-switcher="phoneReg">Телефон</button>
+                <button class="switcher-form switcher-form--signup switcher-form--active" data-switcher="emailReg">Email</button>
+                <button class="switcher-form switcher-form--signup" data-switcher="phoneReg">Телефон</button>
             </div>
 
             <div class="auth-modal-content__switcher-container">
 
-                <div class="switcher-content switcher-content--reg switcher-content--active" data-inputs="emailReg">
-                    <form class="auth-modal-content__form" id="regByEmailForm">
+                <div class="switcher-content switcher-content--signup switcher-content--active" data-inputs="emailReg">
+                    <form class="auth-modal-content__form" id="signupByEmailForm">
                         <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="emailInput" required />
                             <span>Email</span>
@@ -40,8 +40,8 @@
                     </form>
                 </div>
 
-                <div class="switcher-content switcher-content--reg" data-inputs="phoneReg">
-                    <form class="auth-modal-content__form" id="regByPhoneForm">
+                <div class="switcher-content switcher-content--signup" data-inputs="phoneReg">
+                    <form class="auth-modal-content__form" id="signupByPhoneForm">
                         <div class="input-wrapper">
                             <input type="tel" class="auth-modal-content__input" id="phoneInput" required />
                             <span>Телефон</span>
@@ -55,7 +55,7 @@
                     </form>
                 </div>
 
-                <div class="switcher-content switcher-content--reg" data-inputs="createPassword">
+                <div class="switcher-content switcher-content--signup" data-inputs="createPassword">
                     <form class="auth-modal-content__form" id="createPasswordForm">
                         <div class="input-wrapper">
                             <input type="password" class="auth-modal-content__input" id="passwordInput" required />
@@ -70,7 +70,7 @@
                     </form>
                 </div>
 
-                <div class="switcher-content switcher-content--reg" data-inputs="fillingUserData">
+                <div class="switcher-content switcher-content--signup" data-inputs="fillingUserData">
                     <form class="auth-modal-content__form" id="fillingUserDataForm">
                         <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="nameInput" required />
@@ -109,7 +109,7 @@
             <button class="btn btn--continue" disabled type="submit" id="confirmPasswordButton">Продолжить3</button>
             <button class="btn btn--signup" disabled type="submit" id="signUpButton">Зарегистрироваться</button>
 
-            <div class="auth-modal-content__registration">
+            <div class="auth-modal-content__signupistration">
                 <span>Уже есть аккаунт? </span>
                 <a href="#!" data-modal="auth-modal">Войдите</a>
             </div>

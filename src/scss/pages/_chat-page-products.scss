@@ -1,9 +1,7 @@
 .chat--products {
-
-    .dialogs-wrapper{
-
-        .dialogs__item a{
-            @media (max-width: 48em){
+    .dialogs-wrapper {
+        .dialogs__item a {
+            @media (max-width: 48em) {
                 padding: 0;
             }
         }
@@ -18,37 +16,33 @@
                 border-radius: unset;
             }
 
-            @media (max-width: 48em){
+            @media (max-width: 48em) {
                 width: 12.8rem;
                 height: 9.6rem;
                 border-radius: 0.64rem;
             }
-
         }
 
-        .dialogs__name{
-            max-width: 21.8rem; 
+        .dialogs__name {
+            max-width: 21.8rem;
         }
 
-        .dialogs__last-message{
+        .dialogs__last-message {
             max-width: 21.8rem;
 
-            @media (max-width: 48em){
+            @media (max-width: 48em) {
                 max-width: 43.4rem;
             }
         }
-
     }
-
 
     .chat__dialog {
         .user-data {
-
-            @media (max-width: 48em){
+            @media (max-width: 48em) {
                 gap: 2.4rem;
             }
 
-            &__pic{
+            &__pic {
                 width: 6.4rem;
                 height: 4.8rem;
                 border-radius: 0.32rem;
@@ -57,8 +51,8 @@
                 img {
                     border-radius: unset;
                 }
-    
-                @media (max-width: 48em){
+
+                @media (max-width: 48em) {
                     width: 12.8rem;
                     height: 9.6rem;
                     border-radius: 0.64rem;
@@ -71,7 +65,7 @@
                 line-height: 2.4rem;
                 white-space: nowrap;
 
-                @media (max-width: 48em){
+                @media (max-width: 48em) {
                     font-size: 3.2rem;
                     line-height: 4.8rem;
                     max-width: 45.4rem;
@@ -81,12 +75,12 @@
             }
 
             &__seller-name {
-                color: #7E8582;
+                color: #7e8582;
                 line-height: 1.6rem;
                 font-size: 1.3rem;
                 white-space: nowrap;
 
-                @media (max-width: 48em){
+                @media (max-width: 48em) {
                     font-size: 2.6rem;
                     line-height: 3.2rem;
                     max-width: 45.4rem;
