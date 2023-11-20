@@ -1,3 +1,67 @@
+<div class="auth-modal-placeholder">
+  <div class="modal auth-modal">
+    <div class="modal-back"></div>
+    <div class="modal-wrapper">
+        <div class="auth-modal-top-mobile">
+            <div class="auth-modal-content__logo mobile">
+                <img src="./assets/images/logo.svg" alt="Logo" />
+            </div>
+            <div class="modal-exit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="modal-content auth-modal-content">
+            <div class="auth-modal-content__title desktop">Вход</div>
+
+            <div class="auth-modal-content__desc">Войдите, чтобы просматривать информацию в профиле</div>
+
+            <div class="auth-modal-content__switchers">
+                <button class="switcher-form switcher-form--auth switcher-form--active" data-switcher="EmailLogin">Email</button>
+                <button class="switcher-form switcher-form--auth" data-switcher="PhoneLogin">Телефон</button>
+            </div>
+
+            <div class="auth-modal-content__switcher-container">
+                <div class="switcher-content switcher-content--auth switcher-content--active" data-inputs="EmailLogin">
+                    <form class="auth-modal-content__form" id="loginByEmailForm">
+                        <div class="input-wrapper">
+                            <input type="text" class="auth-modal-content__input" id="emailLoginInput" required />
+                            <span>Email</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" class="auth-modal-content__input" required />
+                            <span>Пароль</span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="switcher-content switcher-content--auth" data-inputs="PhoneLogin">
+                    <form class="auth-modal-content__form" id="loginByPhoneForm">
+                        <div class="input-wrapper">
+                            <input type="tel" class="auth-modal-content__input" id="phoneLoginInput" required />
+                            <span>Телефон</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="password" class="auth-modal-content__input" required />
+                            <span>Пароль</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="auth-modal-content__forgot-pwd">Забыли пароль?</div>
+            <button class="btn btn--login" disabled type="submit" id="loginButton">Войти</button>
+            <div class="auth-modal-content__registration">
+                <span>В первый раз здесь? </span>
+                <a href="#!" data-modal="reg-modal">Зарегистрируйтесь</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container">
     <div class="footer--desktop desktop">
@@ -55,7 +119,7 @@
           </svg>
           <span>Сообщения</span>
       </a>
-      <a class="footer--mobile__icon">
+      <a class="footer--mobile__icon" data-modal="auth-modal">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
               <path d="M23.6898 7.81022C27.9367 12.0572 27.9367 18.9428 23.6898 23.1898C19.4428 27.4367 12.5571 27.4367 8.31022 23.1898C4.06326 18.9428 4.06326 12.0571 8.31022 7.81022C12.5572 3.56326 19.4428 3.56326 23.6898 7.81022" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M18.4041 11.0581C19.7315 12.3855 19.7315 14.5376 18.4041 15.865C17.0767 17.1924 14.9245 17.1924 13.5971 15.865C12.2697 14.5376 12.2697 12.3855 13.5971 11.0581C14.9245 9.73065 17.0767 9.73065 18.4041 11.0581" stroke="#031E16" stroke-width="1.35938" stroke-linecap="round" stroke-linejoin="round"/>

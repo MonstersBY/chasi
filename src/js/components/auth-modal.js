@@ -2,10 +2,11 @@ import $ from "jquery";
 import IMask from "imask";
 
 $('[data-modal="auth-modal"]').on("click", () => {
-    $(".auth-modal-placeholder").load("auth_modal.html", function () {
-        $(".auth-modal").addClass("active");
-        applyIMask();
-    });
+    // $(".auth-modal-placeholder").load("auth_modal.html", function () {
+
+    // });
+    $(".auth-modal").addClass("active");
+    applyIMask();
 });
 
 $(".modal-exit, .modal-back").on("click", function () {

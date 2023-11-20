@@ -9,6 +9,7 @@
             width: 15.8rem;
             height: 3.8rem;
             margin-right: 3.2rem;
+            flex: none;
 
             img {
                 object-fit: contain;
@@ -18,7 +19,7 @@
         &__info {
             display: flex;
             gap: 3.2rem;
-            margin-right: 16.9rem;
+            margin-right: auto;
 
             font-size: 1.6rem;
             line-height: 2.4rem;
@@ -43,48 +44,48 @@
         }
     }
 
-    &--mobile {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.6rem 0;
+    // &--mobile {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     padding: 1.6rem 0;
 
-        &__item {
-            width: 12.2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
+    //     &__item {
+    //         width: 12.2rem;
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         gap: 0.4rem;
 
-            span {
-                font-size: 2rem;
-                line-height: 120%;
-            }
+    //         span {
+    //             font-size: 2rem;
+    //             line-height: 120%;
+    //         }
 
-            &:hover {
-                svg {
-                    path {
-                        fill: #031e16;
-                    }
-                }
-            }
+    //         &:hover {
+    //             svg {
+    //                 path {
+    //                     fill: #031e16;
+    //                 }
+    //             }
+    //         }
 
-            &--adv, &--profile {
-                &:hover {
-                    svg {
-                        path {
-                            stroke: #ffffff;
+    //         &--adv, &--profile {
+    //             &:hover {
+    //                 svg {
+    //                     path {
+    //                         stroke: #ffffff;
                            
-                        }
+    //                     }
                         
-                        path:first-child{
-                            stroke: #031e16;
-                            fill: #031e16;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    //                     path:first-child{
+    //                         stroke: #031e16;
+    //                         fill: #031e16;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     &--mobile {
         display: none;
     }
