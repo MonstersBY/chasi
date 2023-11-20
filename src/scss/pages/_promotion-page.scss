@@ -35,12 +35,7 @@
     }
 
     &__tariff {
-        background: linear-gradient(
-            138deg,
-            #298267 -2.56%,
-            #2d7c64 25.71%,
-            #0d5942 115.83%
-        );
+        background: linear-gradient(138deg, #298267 -2.56%, #2d7c64 25.71%, #0d5942 115.83%);
         color: #fff;
         border-radius: 0.8rem;
         padding: 2.4rem 2rem 4rem;
@@ -135,7 +130,9 @@
         }
     }
 
-    .btn--publish, .btn--continue, .btn--confirm-payment {
+    .btn--publish,
+    .btn--continue,
+    .btn--confirm-payment {
         width: 27.1rem;
         text-align: center;
     }
@@ -245,10 +242,7 @@
                 display: block;
             }
         }
-
-
     }
-
 }
 
 @media (max-width: 48em) {
@@ -268,7 +262,7 @@
         &__header {
             margin-bottom: 2.4rem;
 
-            &--payment{
+            &--payment {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -276,14 +270,14 @@
                 line-height: 4.8rem;
 
                 margin-bottom: 4.8rem;
-        
-                &__title{
+
+                &__title {
                     margin-left: 17.4rem;
                     margin-right: 6.4rem;
                     font-weight: 600;
                 }
-        
-                &__edit{
+
+                &__edit {
                     color: #298267;
                 }
             }
@@ -394,7 +388,7 @@
             }
         }
 
-        &__buttons{
+        &__buttons {
             margin-top: auto;
             position: relative;
             width: 100%;
@@ -409,32 +403,32 @@
                 background-color: #f1f3f3;
                 height: 0.2rem;
             }
-
         }
 
-        .btn--publish, .btn--continue, .btn--confirm-payment {
+        .btn--publish,
+        .btn--continue,
+        .btn--confirm-payment {
             width: 100%;
             font-size: 3.2rem;
             line-height: 4.8rem;
             padding: 2.4rem 15.2rem;
         }
 
-        &__payment{
-
-            &__options{
+        &__payment {
+            &__options {
                 display: flex;
                 flex-direction: column;
                 gap: 4rem;
             }
 
-            &__option{
+            &__option {
                 padding: 0;
                 border-bottom: none;
 
                 flex-direction: row-reverse;
                 justify-content: space-between;
 
-                label{
+                label {
                     max-width: 45rem;
                 }
             }
@@ -448,9 +442,7 @@
                     width: 1.6rem;
                     height: 1.6rem;
                 }
-
             }
-
         }
     }
 }

@@ -58,7 +58,3 @@ $(function () {
     sellerPhone.text('+7 (000) 123-45-67')
   })
 })
-
-
-
-

@@ -41,3 +41,18 @@ $(function () {
         $emptyBlock.hide();
     }
 });
+
+//crad--published: hide status if there's status-time
+
+$(function () {
+    const publishedCards = $('.card--published');
+    publishedCards.each(function () {
+        const card = $(this);
+        const statusTime = card.find('.status-time');
+        const status = card.find('.status');
+
+        if (statusTime.length > 0) {
+            status.hide();
+        }
+    });
+});
