@@ -1,7 +1,6 @@
 import $ from "jquery";
 
 $(function () {
-
     const promotionPayment = $(".promotion__payment");
     const confirmPaymentBtn = $("#btnConfitmPayment");
     const publishBtn = $("#btnPublishAdv");
@@ -9,7 +8,7 @@ $(function () {
     const noPromotionCheckbox = $("#noPromotionCheckbox");
     const tariffCheckbox = $("#tariffCheckbox");
     const checkboxes = tariffCheckbox.add(noPromotionCheckbox);
-    const btnBack = $(".btn--go-back")
+    const btnBack = $(".btn--go-back");
 
     //hide all btns except publishBtn
     promotionPayment.hide();
@@ -18,17 +17,15 @@ $(function () {
 
     //tariffCheckbox event listener
     tariffCheckbox.on("change", function () {
-
         if (this.checked) {
             noPromotionCheckbox.prop("checked", false);
         }
-        
+
         if (!window.matchMedia("(max-width: 768px)").matches) {
             //desktop
             promotionPayment.toggle(this.checked);
             confirmPaymentBtn.toggle(this.checked);
             publishBtn.hide();
-
         } else {
             //mobile
             publishBtn.hide(this.checked);
@@ -41,28 +38,26 @@ $(function () {
 
                 const promFirstPage = $(".promotion__header:first, .promotion__top, .promotion__tariff, .promotion__no-promotion");
                 promFirstPage.hide();
-                
+
                 btnBack.on("click", function () {
                     continueBtn.show();
                     confirmPaymentBtn.hide();
                     promotionPayment.hide();
                     promFirstPage.show();
-                  });
+                });
             });
         }
     });
 
     //noPromotionCheckbox event listener
     noPromotionCheckbox.on("change", function () {
-
         if (this.checked) {
-
             tariffCheckbox.prop("checked", false);
             promotionPayment.hide();
             confirmPaymentBtn.hide();
             continueBtn.hide();
             publishBtn.show();
-        } 
+        }
     });
 
     // if no checkboxes checked

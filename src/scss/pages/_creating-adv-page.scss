@@ -190,6 +190,8 @@
             padding: 3.2rem 0;
             flex-direction: row-reverse;
             border-radius: 0;
+
+            align-items: start;
         }
 
         &::after {
@@ -236,7 +238,9 @@
             height: 9.2rem;
 
             @media (max-width: 48em) {
-                display: none;
+                flex-direction: column-reverse;
+                font-size: 3.2rem;
+                height: unset;
             }
         }
 
@@ -248,11 +252,31 @@
             justify-content: space-between;
             gap: 2rem;
             height: 100%;
+
+            @media (max-width: 48em) {
+                margin-right: unset;
+                width: 44.6rem;
+                gap: unset;
+                height: unset;
+
+                order: 2;
+            }
         }
 
         &__title {
             font-size: 2rem;
             font-weight: 600;
+
+            @media (max-width: 48em) {
+                font-size: 3.2rem;
+            }
+        }
+
+        &__price{
+            @media (max-width: 48em) {
+                opacity: 0.4;
+                font-weight: 600;
+            }
         }
 
         &__status {
@@ -265,6 +289,22 @@
                 font-size: 1.3rem;
                 line-height: 123.007%;
                 opacity: 0.4;
+
+                @media (max-width: 48em) {
+                    font-size: 2.6rem;
+                    opacity: 1;
+                    margin-bottom: 0.8rem;
+                }
+            }
+
+            @media (max-width: 48em) {
+                margin-left: unset;
+                width: unset;
+                font-size: 2.6rem;
+                opacity: 0.4;
+                line-height: 123.077%;
+
+                order: 3;
             }
         }
 
@@ -281,11 +321,30 @@
                 gap: 0.4rem;
                 align-items: center;
                 white-space: nowrap;
+
+                @media (max-width: 48em) {
+                    gap: 0.8rem;
+                }
             }
 
             img {
                 width: 2.4rem;
                 height: 2.4rem;
+
+                @media (max-width: 48em) {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+
+            @media (max-width: 48em) {
+                font-size: 2.6rem;
+                line-height: 123.077%;
+                gap: 2.4rem;
+                width: unset;
+                margin-top: 3.2rem;
+
+                order: 1;
             }
         }
 
@@ -295,6 +354,10 @@
 
             display: flex;
             gap: 1.6rem;
+
+            @media (max-width: 48em) {
+                display: none;
+            }
         }
 
         .btn--edit {
@@ -312,8 +375,13 @@
 
         .creating-adv__card__desc {
             margin-right: 24.9rem;
+
+            @media (max-width: 48em) {
+                margin-right: unset;
+            }
         }
 
+    
         &:last-of-type{
             background-color: red;
         }
@@ -327,6 +395,10 @@
 
         .creating-adv__card__status {
             margin-left: 3.8rem;
+
+            @media (max-width: 48em) {
+                margin-left: unset;
+            }
         }
     }
 
