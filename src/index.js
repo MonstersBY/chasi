@@ -16,5 +16,6 @@ import "./js/components/forms";
 import "./js/components/login-modal";
 import "./js/components/signup-modal";
 import "./js/components/options-modal";
+import "./js/components/reset-password-modal";
 import { example } from "./js/utils/constants";
 console.log(example);

@@ -64,7 +64,7 @@ $(function () {
         return isValid;
     }
 
-    $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again,.city-list").hide();
+    $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again, .city-list").hide();
 
     //switchers and form val checking
     $(function () {

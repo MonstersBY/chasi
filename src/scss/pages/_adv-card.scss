@@ -542,6 +542,42 @@
   }
   }
 
+  &--send-code{
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 11.3rem;
+    line-height: 150%;
+
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+      padding: 2.4rem 22.6rem;
+  }
+  }
+
+  &--reset{
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 11.7rem;
+    line-height: 150%;
+
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+      padding: 2.4rem 23.4rem;
+  }
+  }
+
+  &--save{
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 12.9rem;
+    line-height: 150%;
+
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+      padding: 2.4rem 15.8rem;
+  }
+  }
+
   &:disabled{
     background-color: #F1F3F3;
      color: #7E8582;

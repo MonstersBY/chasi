@@ -1,3 +1,5 @@
+<!-- login modal -->
+
 <div class="auth-modal-placeholder">
     <div class="modal login-modal auth-modal">
         <div class="modal-back"></div>
@@ -51,7 +53,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="auth-modal-content__forgot-pwd">Забыли пароль?</div>
+                <a href="#!" data-modal="reset-password-modal" class="auth-modal-content__forgot-pwd">Забыли пароль?</a>
                 <button class="btn btn--login" disabled type="submit" id="loginButton">Войти</button>
                 <div class="auth-modal-content__registration">
                     <span>В первый раз здесь? </span>
@@ -61,6 +63,9 @@
         </div>
     </div>
 </div>
+
+<!-- sign up modal -->
+
 <div class="auth-modal-placeholder">
     <div class="modal signup-modal auth-modal">
         <div class="modal-back"></div>
@@ -176,6 +181,69 @@
         </div>
     </div>
 </div>
+
+<!-- reset password modal -->
+<div class="auth-modal-placeholder">
+    <div class="modal auth-modal reset-password-modal">
+        <div class="modal-back"></div>
+        <div class="modal-wrapper">
+            <div class="auth-modal-top-mobile">
+                <div class="auth-modal-content__logo mobile">
+                    <img src="./assets/images/logo.svg" alt="Logo" />
+                </div>
+                <div class="modal-exit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+    
+            <div class="modal-content auth-modal-content">
+                <div class="auth-modal-content__title desktop">Восстановление пароля</div>
+    
+                <div class="auth-modal-content__desc">Введите свой номер или почту и мы отправим вам код для восстановления пароля</div>
+    
+                <div class="auth-modal-content__switcher-container">
+                    <div class="switcher-content switcher-content--reset-password" data-inputs="resetPassword">
+                        <form class="auth-modal-content__form" id="resetPasswordForm">
+                            <div class="input-wrapper">
+                                <input type="text" class="auth-modal-content__input" id="phoneOrEmail" required />
+                                <span>Номер телефона или email</span>
+                            </div>
+    
+                            <div class="reset-password-hint">Введите код</div>
+    
+                            <div class="input-wrapper code-input">
+                                <input type="password" class="auth-modal-content__input" id="resetPasswordCode" required />
+                                <span>Код</span>
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="switcher-content switcher-content--reset-password" data-inputs="createNewPassword">
+                        <form class="auth-modal-content__form" id="createNewPasswordForm">
+                            <div class="input-wrapper">
+                                <input type="password" class="auth-modal-content__input" id="newPasswordInput" required />
+                                <span>Новый пароль</span>
+                            </div>
+    
+                            <div class="input-wrapper">
+                                <input type="password" class="auth-modal-content__input" id="repeatNewPasswordInput" required />
+                                <span>Повторите новый пароль</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <button class="btn btn--send-code" disabled type="submit" id="sendCodeButton">Отправить код</button>
+                <button class="btn btn--reset" disabled type="submit" id="resetButton">Восстановить</button>
+                <button class="btn btn--save" disabled type="submit" id="saveButton">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer class="footer">
     <div class="container">
         <div class="footer--desktop desktop">
