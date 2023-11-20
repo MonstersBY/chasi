@@ -1,15 +1,13 @@
 import $ from "jquery";
 
-$('[data-modal="reg-modal"]').on("click", () => {
-    $(".auth-modal-placeholder").load("reg_modal.html", function () {
-        $(".auth-modal").removeClass("active");
-        $(".reg-modal").addClass("active");
+$('[data-modal="signup-modal"]').on("click", () => {
+        $(".login-modal").removeClass("active");
+        $(".signup-modal").addClass("active");
         applyIMask();
-    });
 });
 
 $(".modal-exit, .modal-back").on("click", function () {
-    $(".reg-modal").removeClass("active");
+    $(".signup-modal").removeClass("active");
 });
 
 function applyIMask() {
@@ -70,32 +68,32 @@ $(function () {
 
     //switchers and form val checking
     $(function () {
-        $(".switcher-content--reg").hide().filter('[data-inputs="emailReg"]').show();
+        $(".switcher-content--signup").hide().filter('[data-inputs="emailReg"]').show();
 
-        $(".switcher-form--reg").on("click", function (e) {
+        $(".switcher-form--signup").on("click", function (e) {
             e.preventDefault();
             const $this = $(this);
             const switcherType = $this.data("switcher");
 
             if (!$this.hasClass("switcher-form--active")) {
-                $(".switcher-form--reg").removeClass("switcher-form--active");
+                $(".switcher-form--signup").removeClass("switcher-form--active");
                 $this.addClass("switcher-form--active");
 
-                $(".switcher-content--reg").hide().filter(`[data-inputs='${switcherType}']`).show();
-                $(".switcher-content--reg").not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
-                $("#regInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
+                $(".switcher-content--signup").hide().filter(`[data-inputs='${switcherType}']`).show();
+                $(".switcher-content--signup").not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
+                $("#signupInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
                 $("#continueRegButton").prop("disabled", true);
             }
         });
 
-        const $regForms = $("#regByEmailForm, #regByPhoneForm");
+        const $signupForms = $("#signupByEmailForm, #signupByPhoneForm");
 
         function checkRegForm(form) {
             const firstInput = form.find(".auth-modal-content__input").first();
             return firstInput.val().trim() !== "";
         }
 
-        $regForms.on("input", function () {
+        $signupForms.on("input", function () {
             $("#continueRegButton").prop("disabled", !checkRegForm($(this)));
         });
     });
@@ -105,8 +103,8 @@ $(function () {
         $("#continueRegButton").on("click", function (e) {
             e.preventDefault();
 
-            $(".switcher-form--reg").prop("disabled", true);
-            const activeForm = $(".switcher-form--reg.switcher-form--active").data("switcher");
+            $(".switcher-form--signup").prop("disabled", true);
+            const activeForm = $(".switcher-form--signup.switcher-form--active").data("switcher");
 
             previousContactType = activeForm === "emailReg" ? "email" : "phone";
 
@@ -124,7 +122,7 @@ $(function () {
                 userType = "phone";
             }
 
-            $("#regInfo").text(`Для подтверждения регистрации введите код, который мы отправили на ${activeForm === "emailReg" ? "почту" : "номер"} ${userContact}`);
+            $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на ${activeForm === "emailReg" ? "почту" : "номер"} ${userContact}`);
 
             $("#emailRegCode, #phoneRegCode").on("input", function () {
                 if ($("#emailRegCode").val() != "" || $("#phoneRegCode").val() != "") {
@@ -143,8 +141,8 @@ $(function () {
         $("#confirmCodeButton").on("click", function (e) {
             e.preventDefault();
 
-            $("#regInfo").text("Придумайте пароль");
-            $(".switcher-content--reg, .auth-modal-content__switchers, .auth-modal-content__send-code-again, #confirmCodeButton").hide();
+            $("#signupInfo").text("Придумайте пароль");
+            $(".switcher-content--signup, .auth-modal-content__switchers, .auth-modal-content__send-code-again, #confirmCodeButton").hide();
             $('[data-inputs="createPassword"], #confirmPasswordButton').show();
 
             $("#passwordInput, #repeatPasswordInput").on("input", function () {
@@ -163,7 +161,7 @@ $(function () {
         $("#confirmPasswordButton").on("click", function (e) {
             e.preventDefault();
 
-            $("#regInfo").text("Заполните данные для регистрации");
+            $("#signupInfo").text("Заполните данные для регистрации");
             $('[data-inputs="createPassword"], #confirmPasswordButton').hide();
             $('#signUpButton, [data-inputs="fillingUserData"]').show();
 
@@ -241,7 +239,7 @@ $(function () {
         $("#signUpButton").on("click", function (e) {
             e.preventDefault();
             console.log(userData);
-            $(".reg-modal").removeClass("active");
+            $(".signup-modal").removeClass("active");
             $('body').removeClass('lock');
         });
     });

@@ -1,17 +1,15 @@
 import $ from "jquery";
 import IMask from "imask";
 
-$('[data-modal="auth-modal"]').on("click", () => {
-    // $(".auth-modal-placeholder").load("auth_modal.html", function () {
-
-    // });
-    $(".auth-modal").addClass("active");
+$('[data-modal="login-modal"]').on("click", () => {
+    $(".signup-modal").removeClass("active");
+    $(".login-modal").addClass("active");
     applyIMask();
 });
 
-$(".modal-exit, .modal-back").on("click", function () {
-    $(".modal").removeClass("active");
-});
+// $(".modal-exit, .modal-back").on("click", function () {
+//     $(".modal").removeClass("active");
+// });
 
 function applyIMask() {
     IMask(document.getElementById("phoneLoginInput"), {
