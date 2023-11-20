@@ -47,3 +47,38 @@ const main_page__big_swiper = new Swiper(".main-page__big_swiper", {
 $('.like').on('click', function (evt) {
     $(this).toggleClass('like_liked')
 })
+
+if($('.main-page__right').length) {
+    let programs_show
+
+    function programsShow() {
+        const cards = document.querySelectorAll('.main-page__advertisement')
+        if (screen.width < 769) {
+            cards.forEach(card => {
+                card.classList.add('swiper-slide')
+            })
+            programs_show = new Swiper('.main-page__add_swiper', {
+                modules: [Navigation, Pagination],
+                slidesPerView: 1,
+                spaceBetween: `${remToPx(1)}rem`,
+                pagination: {
+                    el: ".main-page__add_pagination",
+                },
+            });
+        } else {
+            cards.forEach(card => {
+                card.classList.remove('swiper-slide')
+              })
+            if(programs_show) {
+                programs_show.destroy()
+                programs_show = undefined
+            }
+        }
+    }
+    
+    programsShow();
+    
+    $(window).resize(function () {
+        programsShow();
+    });
+}
