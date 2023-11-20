@@ -14,6 +14,7 @@ const devtool = devMode ? "source-map" : undefined;
 const entryPoints = {
   index: path.resolve(__dirname, "src", "index.js"),
   home_page: path.resolve(__dirname, "src", "index.js"),
+  home_page_loged: path.resolve(__dirname, "src", "index.js"),
   adv_card_page: path.resolve(__dirname, "src", "index.js"),
   adv_card_preview: path.resolve(__dirname, "src", "index.js"),
   adv_card_seller_adv: path.resolve(__dirname, "src", "index.js"),
