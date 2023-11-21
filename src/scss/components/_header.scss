@@ -10,6 +10,9 @@
         gap: 2.4rem;
         position: relative;
     }
+    &_hidden {
+        display: none;
+    }
     &__top {
         display: flex;
         justify-content: space-between;
