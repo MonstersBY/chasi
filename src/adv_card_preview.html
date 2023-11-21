@@ -18,11 +18,7 @@
                     <div class="adv-card__desc">
                         <div class="adv-card__info">
                             <div class="adv-card__info__top">
-                                <h2 class="adv-card__title">
-                                    Rolex Cosmograph Daytona
-
-                                    <span class="adv-card__status desktop">Статус</span>
-                                </h2>
+                                <h2 class="adv-card__title">Rolex Cosmograph Daytona</h2>
                                 <div class="adv-card__details">
                                     <span class="adv-card__location">Москва</span>
                                     <span class="adv-card__date">Опубликовано 28.08.2023</span>
@@ -72,12 +68,6 @@
                             </div>
                         </div>
 
-                        <div class="adv-card__buttons">
-                            <button class="btn btn--promote desktop">
-                                <span>Поднять просмотры</span>
-                            </button>
-                        </div>
-
                         <div class="adv-card__func">
                             <h3 class="adv-card__func__title">Характеристики</h3>
 
@@ -106,19 +96,36 @@
 
                         <div class="adv-card__contact">
                             <h3 class="adv-card__contact__title">Телефон для связи</h3>
-
                             <div class="adv-card__contact__phone">+7 (900) 123-45-67</div>
-
-                            <div class="adv-card__contact__buttons">
-                                <button class="btn btn--edit desktop">
-                                    <span>Редактировать</span>
-                                </button>
-
-                                <button class="btn btn--unpublish desktop" data-modal="unpublish">
-                                    <span>Снять с публикации</span>
-                                </button>
-                            </div>
                         </div>
+
+                        <div class="adv-card__buttons">
+                            <button class="btn btn__green btn--publish">
+                                <span>Разместить объявление</span>
+                            </button>
+
+                            <button class="btn btn__gray btn--edit desktop" data-modal="unpublish">
+                                <span>Редактировать</span>
+                            </button>
+
+                            <button class="btn btn__green btn--edit mobile">
+                                <div class="btn-ico">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.5428 10.12L13.8828 6.45996" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M6.251 21.0003H3V17.7493C3 17.4843 3.105 17.2293 3.293 17.0423L16.627 3.70731C17.018 3.31631 17.651 3.31631 18.041 3.70731L20.292 5.95831C20.683 6.34931 20.683 6.98231 20.292 7.37231L6.958 20.7073C6.771 20.8953 6.516 21.0003 6.251 21.0003V21.0003Z"
+                                            stroke="#fff"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+
                         <div class="adv-card__number--bottom">
                             Объявление №1245457890
                             <div class="gray-line"></div>
@@ -171,6 +178,8 @@
                 </div>
             </div>
         </section>
+
+        <include src="./components/footer.html"></include>
 
         <!-- modal unpublish -->
         <div class="unpublish-modal modal desktop">
@@ -231,12 +240,9 @@
                             <span>Снять с публикации</span>
                             <input type="radio" name="reason" id="unpublishModal" />
                         </label>
-
                     </div>
                 </div>
             </div>
         </div>
-
-        <include src="./components/footer.html"></include>
     </body>
 </html>

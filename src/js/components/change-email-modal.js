@@ -31,6 +31,18 @@ $(function () {
             $("body").removeClass("lock");
             $('#profileEmail').text($("#changeEmailInput").val())
             $(".profile-modal-content__input").val("");
+
+            $(".pop-up").addClass("showed");
+            $(".pop-up__text").text("Почта успешно обновлена");
+            setTimeout(() => {
+                $(".pop-up").removeClass("showed");
+            }, 5000);
+
+            $(".pop-up")
+                .find("svg")
+                .on("click", () => {
+                    $(".pop-up").removeClass("showed");
+                });
         }
     });
 });

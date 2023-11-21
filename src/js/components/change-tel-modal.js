@@ -39,6 +39,18 @@ $(function () {
             $("body").removeClass("lock");
             $("#profileTel").text($("#changeTelInput").val());
             $(".profile-modal-content__input").val("");
+
+            $(".pop-up").addClass("showed");
+            $(".pop-up__text").text("Номер успешно обновлён");
+            setTimeout(() => {
+                $(".pop-up").removeClass("showed");
+            }, 5000);
+
+            $(".pop-up")
+                .find("svg")
+                .on("click", () => {
+                    $(".pop-up").removeClass("showed");
+                });
         }
     });
 });
