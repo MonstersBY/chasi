@@ -574,8 +574,21 @@
 
     @media (max-width: 48em) {
       font-size: 3.2rem;
-      padding: 2.4rem 15.8rem;
+      padding: 2.4rem 25.8rem;
   }
+  }
+
+  &--change-password{
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 13.3rem;
+    line-height: 150%;
+
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+      padding: 2.4rem 26.6rem;
+  }
+
   }
 
   &:disabled{
