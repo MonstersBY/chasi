@@ -5,8 +5,8 @@ $('[data-modal="reset-password-modal"]').on("click", () => {
     $(".reset-password-modal").addClass("active");
 });
 
-$(".modal-exit, .modal-back").on("click", function () {
-    $(".reset-password-modal").removeClass("active");
+$(".modal-exit, .modal-back, #saveButton").on("click", function () {
+    $(".auth-modal-content__input").val("");
 });
 
 $(function () {
