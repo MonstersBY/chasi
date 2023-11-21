@@ -1,6 +1,37 @@
-.adv-card--draft{
+.adv-card--draft {
+    .adv-card__desc {
+        gap: 4rem;
 
+        @media (max-width: 48em) {
+            gap: 8rem;
+        }
+    }
+
+    .adv-card__info{
+        @media (max-width: 48em) {
+            gap: 8rem;
+        }
+    }
+
+    .adv-card__func {
+        margin-top: 0;
+    }
+
+    .adv-card__func__title {
+        margin-bottom: 0;
+    }
+
+    .swiper-thumbnail {
+        display: none;
+    }
+
+    .adv-card__contact__phone {
+        margin-bottom: 0;
+    }
+
+    .adv-card__buttons{
+        @media (max-width: 48em) {
+            margin-top: -3.2rem;
+        }
+    }
 }
-
-
-
