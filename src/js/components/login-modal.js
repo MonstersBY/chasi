@@ -7,9 +7,9 @@ $('[data-modal="login-modal"]').on("click", () => {
     applyIMask();
 });
 
-// $(".modal-exit, .modal-back").on("click", function () {
-//     $(".modal").removeClass("active");
-// });
+$(".modal-exit, .modal-back, #loginButton").on("click", function () {
+    $(".auth-modal-content__input").val("");
+});
 
 function applyIMask() {
     IMask(document.getElementById("phoneLoginInput"), {
@@ -51,4 +51,9 @@ $(function () {
     $forms.on("input", function () {
         $loginBtn.prop("disabled", !checkForm($(this)));
     });
+
+    $loginBtn.on('click', function (){
+        $(".login-modal").removeClass("active")
+        $('body').removeClass('lock');
+    })
 });

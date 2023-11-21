@@ -6,8 +6,8 @@ $('[data-modal="signup-modal"]').on("click", () => {
         applyIMask();
 });
 
-$(".modal-exit, .modal-back").on("click", function () {
-    $(".signup-modal").removeClass("active");
+$(".modal-exit, .modal-back, #signUpButton").on("click", function () {
+    $(".auth-modal-content__input").val("");
 });
 
 function applyIMask() {
