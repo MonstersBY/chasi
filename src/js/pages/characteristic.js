@@ -26,6 +26,7 @@ if($('.characteristic').length) {
         $(this).siblings('input').closest('.characteristic__dropdown_bottom').find(".characteristic__dropdown_item").filter(function() {
             $(this).toggle($(this).find('span').text().toLowerCase().indexOf('') > -1)
         });
+        $(this).css('opacity', 0)
     })
     $('.characteristic__dropdown_item').on('click', function (evt) {
         var value = $(this).find('span').text()
