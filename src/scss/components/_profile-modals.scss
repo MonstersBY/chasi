@@ -139,6 +139,10 @@
             margin-top: 4.8rem;
         }
     }
+
+    #changePasswordButton, #sendCodeOnEmailButton, #sendCodeOnTelButton{
+        width: 100%;
+    }
 }
 
 .change-tel-hint,

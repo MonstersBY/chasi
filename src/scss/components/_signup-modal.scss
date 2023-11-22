@@ -7,7 +7,7 @@
         }
     }
 
-    .btn--continue {
+    #continueRegButton, #confirmCodeButton, #confirmPasswordButton {
         margin-bottom: 2.4rem;
         width: 100%;
 
@@ -16,10 +16,8 @@
         }
     }
 
-    .btn--signup {
+    #signUpButton {
         width: 100%;
-        text-align: center;
-        line-height: 150%;
 
         @media (max-width: 48em) {
             font-size: 3.2rem;
@@ -27,13 +25,7 @@
         }
     }
 
-    .code-input {
-        display: none;
-    }
-
     .auth-modal-content__send-code-again {
-        display: none;
-
         color: #298267;
         font-size: 1.6rem;
         line-height: 150%;
