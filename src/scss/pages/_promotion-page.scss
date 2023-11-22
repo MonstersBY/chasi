@@ -130,13 +130,6 @@
         }
     }
 
-    .btn--publish,
-    .btn--continue,
-    .btn--confirm-payment {
-        width: 27.1rem;
-        text-align: center;
-    }
-
     &__no-promotion {
         background-color: #f1f3f3;
         color: #031e16;
@@ -405,13 +398,10 @@
             }
         }
 
-        .btn--publish,
-        .btn--continue,
-        .btn--confirm-payment {
+        #btnPublishAdv,
+        #btnContinuePayment,
+        #btnConfitmPayment {
             width: 100%;
-            font-size: 3.2rem;
-            line-height: 4.8rem;
-            padding: 2.4rem 15.2rem;
         }
 
         &__payment {

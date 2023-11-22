@@ -22,9 +22,16 @@
         }
     }
 
-    &__empty {
-        margin: auto auto;
-        text-align: center;
+    &--empty {
+        .container {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 48em) {
+                padding: 0 3.2rem;
+            }
+        }
 
         .creating-adv__title {
             margin-bottom: 3.2rem;
@@ -38,14 +45,13 @@
         .creating-adv__desc {
             margin-bottom: 4rem;
             font-size: 1.6rem;
-            line-height: 2.4rem;
-            max-width: 50rem;
+            line-height: 150%;
+            max-width: 41.6rem;
             color: #414141;
 
             @media (max-width: 48em) {
-                max-width: 62rem;
+                max-width: 50rem;
                 font-size: 3.2rem;
-                line-height: 4.8rem;
             }
         }
     }
@@ -105,19 +111,19 @@
         position: relative;
         white-space: nowrap;
 
-        &:first-child{
+        &:first-child {
             @media (max-width: 48em) {
                 width: 30rem;
             }
         }
 
-        &:nth-child(2){
+        &:nth-child(2) {
             @media (max-width: 48em) {
                 width: 19.3rem;
             }
         }
 
-        &:last-child{
+        &:last-child {
             @media (max-width: 48em) {
                 width: 19.3rem;
             }
@@ -170,7 +176,6 @@
             gap: 0;
             padding: 0 3.2rem 10rem;
         }
-
     }
 
     //card
@@ -272,7 +277,7 @@
             }
         }
 
-        &__price{
+        &__price {
             @media (max-width: 48em) {
                 opacity: 0.4;
                 font-weight: 600;
@@ -372,7 +377,6 @@
     }
 
     .card--awaiting {
-
         .creating-adv__card__desc {
             margin-right: 24.9rem;
 
@@ -381,8 +385,7 @@
             }
         }
 
-    
-        &:last-of-type{
+        &:last-of-type {
             background-color: red;
         }
     }
@@ -392,7 +395,6 @@
     }
 
     .card--published {
-
         .creating-adv__card__status {
             margin-left: 3.8rem;
 
@@ -409,26 +411,15 @@
     }
 
     .btn--post-ad {
-        background-color: #298267;
-        border-radius: 200rem;
-        color: #fff;
-        text-align: center;
-        padding: 1.4rem 4rem;
-        font-size: 1.6rem;
-        line-height: 150%;
-        width: 27.1rem;
-
         @media (max-width: 48em) {
             width: 100%;
-            font-size: 3.2rem;
-            padding: 2.4rem 15.2rem;
-            border-radius: 400rem;
+            line-height: 150%;
         }
     }
 }
 
-.no-border{
-    &::after{
+.no-border {
+    &::after {
         content: none;
     }
 }

@@ -24,7 +24,6 @@
             </div>
 
             <div class="auth-modal-content__switcher-container">
-
                 <div class="switcher-content switcher-content--signup switcher-content--active" data-inputs="emailReg">
                     <form class="auth-modal-content__form" id="signupByEmailForm">
                         <div class="input-wrapper">
@@ -36,7 +35,6 @@
                             <input type="password" class="auth-modal-content__input" id="emailRegCode" required />
                             <span>Код</span>
                         </div>
-
                     </form>
                 </div>
 
@@ -51,7 +49,6 @@
                             <input type="password" class="auth-modal-content__input" id="phoneRegCode" required />
                             <span>Код</span>
                         </div>
-
                     </form>
                 </div>
 
@@ -66,7 +63,6 @@
                             <input type="password" class="auth-modal-content__input" id="repeatPasswordInput" required />
                             <span>Повторите пароль</span>
                         </div>
-
                     </form>
                 </div>
 
@@ -84,9 +80,8 @@
 
                         <div class="input-wrapper" id="cityInputWrapper">
                             <input type="text" class="auth-modal-content__input" id="cityInput" required />
-                            <span>Город</span> 
-                            <ul class="city-list">
-                            </ul>
+                            <span>Город</span>
+                            <ul class="city-list"></ul>
                         </div>
 
                         <div class="input-wrapper" id="newPhoneInputWrapper">
@@ -102,17 +97,15 @@
                         <div class="auth-modal-content__agr">Авторизуясь на сайте, я принимаю условия пользовательского соглашения...</div>
                     </form>
                 </div>
-
             </div>
-
-            <button class="btn btn--continue" disabled type="submit" id="continueRegButton">Продолжить</button>
-            <button class="btn btn--continue" disabled type="submit" id="confirmCodeButton">Продолжить2</button>
-            <button class="btn btn--continue" disabled type="submit" id="confirmPasswordButton">Продолжить3</button>
-            <button class="btn btn--signup" disabled type="submit" id="signUpButton">Зарегистрироваться</button>
+            <button class="btn btn__green" disabled type="submit" id="continueRegButton">Продолжить</button>
+            <button class="btn btn__green" disabled type="submit" id="confirmCodeButton">Продолжить2</button>
+            <button class="btn btn__green" disabled type="submit" id="confirmPasswordButton">Продолжить3</button>
+            <button class="btn btn__green" disabled type="submit" id="signUpButton">Зарегистрироваться</button>
 
             <div class="auth-modal-content__registration">
                 <span>Уже есть аккаунт? </span>
-                <a href="#!" data-modal="auth-modal">Войдите</a>
+                <a href="#!" data-modal="login-modal">Войдите</a>
             </div>
             <div class="auth-modal-content__send-code-again">Отправить код повторно</div>
         </div>
