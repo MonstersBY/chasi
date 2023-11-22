@@ -11,6 +11,7 @@ import "./js/pages/adv-card-preview";
 import "./js/pages/seller-card";
 import "./js/pages/promotion_page";
 import "./js/pages/characteristic";
+import "./js/pages/filter";
 import "./js/components/header";
 import "./js/components/modal";
 import "./js/components/forms";
