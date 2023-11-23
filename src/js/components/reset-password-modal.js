@@ -46,6 +46,7 @@ $(function () {
     function showThirdResPwdStage() {
         $(".reset-password-third-stage").show();
         $(".reset-password-first-stage, .reset-password-second-stage").hide();
+        $("#resetPasswordInfo").text("Придумайте новый пароль");
 
         $("#newPasswordInput, #repeatNewPasswordInput").on("input", function () {
             if ($("#newPasswordInput").val() != "" && $("#repeatNewPasswordInput").val() != "" && $("#newPasswordInput").val() === $("#repeatNewPasswordInput").val()) {

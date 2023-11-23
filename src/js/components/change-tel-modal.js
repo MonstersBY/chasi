@@ -1,15 +1,6 @@
 import $ from "jquery";
 import IMask from "imask";
 
-$('[data-modal="change-tel"]').on("click", () => {
-    $(".change-tel-modal").addClass("active");
-    applyIMask();
-});
-
-$(".modal-exit, .modal-back").on("click", function () {
-    $(".profile-modal-content__input").val("");
-});
-
 function applyIMask() {
     IMask(document.getElementById("changeTelInput"), {
         mask: "+{7}(000)000-00-00",
@@ -17,28 +8,44 @@ function applyIMask() {
 }
 
 $(function () {
-    $(".change-tel-hint, .profile-modal__send-code-again, .tel-code-input").hide();
+    function resetChangeTelFormFields() {
+        $("#changeTelInput, #changeTelInputDisabled, #codeTelInput").val("");
+        $(".change-tel-modal .btn").prop("disabled", true);
+    }
 
-    $("#changeTelInput").on("input", function () {
-        if ($("#changeTelInput").val() != "") {
-            $("#sendCodeOnTelButton").prop("disabled", false);
-        } else {
-            $("#sendCodeOnTelButton").prop("disabled", true);
-        }
+    $('[data-modal="change-tel"]').on("click", () => {
+        $(".change-tel-modal").addClass("active");
+        applyIMask();
+        resetChangeTelFormFields();
+        showFirstChangeTelStage();
     });
 
-    $("#sendCodeOnTelButton").on("click", function () {
-        $(".tel-code-input, .change-tel-hint, .profile-modal__send-code-again").show();
-        $("#sendCodeOnTelButton").hide();
-    });
+    function showFirstChangeTelStage (){
+        $(".change-tel-first-stage").show();
+        $(".change-tel-second-stage").hide();
 
-    //close modal on 4 symbols in #codeTelInput
+        $("#changeTelInput").on("input", function () {
+            $("#sendCodeOnTelButton").prop("disabled", !($("#changeTelInput").val().trim() !== ""));
+        });
+
+        //handle click on sendCodeOnTelButton
+        $("#sendCodeOnTelButton").on("click", function () {
+            $("#changeTelInputDisabled").val($("#changeTelInput").val());
+            showSecondChangeTelStage();
+        });
+    }
+
+    function showSecondChangeTelStage (){
+        $(".change-tel-second-stage").show();
+        $(".change-tel-first-stage").hide();
+
+        //close modal on 4 symbols in #codeTelInput
     $("#codeTelInput").on("input", function () {
         if ($(this).val().trim().length === 4) {
             $(".change-tel-modal").removeClass("active");
             $("body").removeClass("lock");
             $("#profileTel").text($("#changeTelInput").val());
-            $(".profile-modal-content__input").val("");
+            resetChangeTelFormFields()
 
             $(".pop-up").addClass("showed");
             $(".pop-up__text").text("Номер успешно обновлён");
@@ -53,4 +60,5 @@ $(function () {
                 });
         }
     });
-});
+    }
+})
