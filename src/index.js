@@ -22,5 +22,6 @@ import "./js/components/reset-password-modal";
 import "./js/components/change-tel-modal";
 import "./js/components/change-email-modal";
 import "./js/components/change-password-modal";
+import "./js/components/recomendation-modal";
 import { example } from "./js/utils/constants";
 console.log(example);
