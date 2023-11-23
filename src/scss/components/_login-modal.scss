@@ -81,7 +81,7 @@
                 margin-bottom: 3.2rem;
             }
 
-            .switcher-form {
+            .switcher {
                 padding: 1.2rem 1rem 1rem;
                 width: 50%;
                 height: 4rem;
@@ -130,9 +130,11 @@
             display: flex;
             flex-direction: column;
             gap: 1.6rem;
+            margin-bottom: 2.4rem;
 
             @media (max-width: 48em) {
                 gap: 3.2rem;
+                margin-bottom: 4.8rem;
             }
 
             .input-wrapper {
@@ -170,6 +172,18 @@
                             font-size: 2.6rem;
                         }
                     }
+
+                    &[readonly]{
+                        & ~ span{
+                        top: 0.8rem;
+                        font-size: 1.3rem;
+
+                        @media (max-width: 48em) {
+                            top: 1.6rem;
+                            font-size: 2.6rem;
+                        }
+                    }
+                    }
                 }
             }
         }
@@ -202,7 +216,7 @@
             }
         }
 
-        &__registration {
+        &__registration, &__authorization {
             font-size: 1.6rem;
             line-height: 150%;
 

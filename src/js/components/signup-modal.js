@@ -1,14 +1,5 @@
 import $ from "jquery";
-
-$('[data-modal="signup-modal"]').on("click", () => {
-        $(".login-modal").removeClass("active");
-        $(".signup-modal").addClass("active");
-        applyIMask();
-});
-
-$(".modal-exit, .modal-back, #signUpButton").on("click", function () {
-    $(".auth-modal-content__input").val("");
-});
+import IMask from "imask";
 
 function applyIMask() {
     IMask(document.getElementById("phoneInput"), {
@@ -20,227 +11,197 @@ function applyIMask() {
     });
 }
 
-//input city dropdown list
+//input city dropdown list start
 let cityListArray = ["Анапа", "Ангарск", "Анжеро-Судженск", "Благовещенск", "Владимир", "Геленджик", "Дзержинск", "Жуков", "Зеленогорск", "Липецк", "Магнитогорск", "Москва"];
 const $cityList = $(".city-list");
-
 $.each(cityListArray, function (index, city) {
     const $liElement = $("<li>").addClass("city-list__item").text(city);
     $cityList.append($liElement);
 });
 
+//show city dropdown
+$("#cityInput").on("input", function () {
+    const cityInputValue = $(this).val().trim().toLowerCase();
+    const hasInput = cityInputValue.length > 0;
+    $cityList.toggle(hasInput);
+
+    $cityList.children().each(function () {
+        const $liElement = $(this);
+        const cityName = $liElement.text().toLowerCase();
+        const index = cityName.indexOf(cityInputValue);
+
+        $liElement.toggle(index !== -1);
+        $liElement.attr("data-index", index);
+    });
+
+    //sort the list by index
+    const listItems = $cityList.children(".city-list__item").get();
+    listItems.sort(function (a, b) {
+        const indexA = parseInt($(a).attr("data-index")) || 0;
+        const indexB = parseInt($(b).attr("data-index")) || 0;
+        return indexA - indexB;
+    });
+
+    $cityList.empty().append(listItems);
+});
+
+//handle click on city item
+$cityList.on("click", ".city-list__item", function () {
+    const selectedCity = $(this).text();
+    $("#cityInput").val(selectedCity);
+    $cityList.hide();
+});
+
+//hide city list if click outside
+$(document).on("click", function (e) {
+    const $target = $(e.target);
+
+    if (!$target.closest("#cityInput").length && !$target.closest(".city-list").length) {
+        $cityList.hide();
+    }
+});
+
+//check input and make btn active function
+function isInputValid(input, btn) {
+    const isInputValid = input.val().trim() !== "";
+    btn.prop("disabled", !isInputValid);
+}
+
+//stages function
 $(function () {
-    let previousContactType;
+    let contactType = "email";
 
-    const userData = {};
-
-    function isInputValid(inputSelector) {
-        const $input = $(inputSelector);
-        const isValid = $input.is(":visible") && $input.val().trim() !== "";
-
-        if (isValid) {
-            switch (inputSelector) {
-                case "#nameInput":
-                    userData.name = $input.val().trim();
-                    break;
-                case "#surnameInput":
-                    userData.surname = $input.val().trim();
-                    break;
-                case "#cityInput":
-                    userData.city = $input.val().trim();
-                    break;
-                case "#newPhoneInput":
-                case "#phoneRegInput":
-                    userData.phone = $input.val().trim();
-                    break;
-                case "#newEmailInput":
-                case "#emailRegInput":
-                    userData.email = $input.val().trim();
-                    break;
-                default:
-                    break;
-            }
-        }
-        return isValid;
+    function resetSignupFormFields() {
+        $("#emailInput, #phoneInput, #regCode, #passwordInput, #repeatPasswordInput, #nameInput, #surnameInput, #cityInput, #newPhoneInput, #newEmailInput").val("");
+        $(".signup-modal .btn").prop("disabled", true);
+        contactType = "email";
     }
 
-    $("#confirmCodeButton, #confirmPasswordButton, #signUpButton, .code-input, .auth-modal-content__send-code-again, .city-list").hide();
+    $('[data-modal="signup-modal"]').on("click", () => {
+        $(".login-modal").removeClass("active");
+        $(".signup-modal").addClass("active");
+        applyIMask();
+        resetSignupFormFields();
+        showFirstStage();
+    });
 
-    //switchers and form val checking
-    $(function () {
-        $(".switcher-content--signup").hide().filter('[data-inputs="emailReg"]').show();
+    // Make btn active on input
+    $(document).on("input", ".auth-modal-content__input", function () {
+        isInputValid($(this), $("#continueRegButton"));
+    });
 
-        $(".switcher-form--signup").on("click", function (e) {
-            e.preventDefault();
+    //first stage
+    function showFirstStage() {
+        $(".signup-first-stage").show();
+        $(".signup-second-stage, .signup-third-stage, .signup-fourth-stage").hide();
+        $("#signupInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
+
+        //reg by email is active
+        $(".switcher-content").hide().filter('[data-input="emailReg"]').show();
+        $(".switcher--signup").removeClass("switcher--active").filter('[data-switcher="emailReg"]').addClass("switcher--active");
+
+        //click on switchers
+        $(".switcher--signup").on("click", function () {
             const $this = $(this);
             const switcherType = $this.data("switcher");
 
-            if (!$this.hasClass("switcher-form--active")) {
-                $(".switcher-form--signup").removeClass("switcher-form--active");
-                $this.addClass("switcher-form--active");
-
-                $(".switcher-content--signup").hide().filter(`[data-inputs='${switcherType}']`).show();
-                $(".switcher-content--signup").not(`[data-inputs='${switcherType}']`).find(".auth-modal-content__input").val("");
-                $("#signupInfo").text("Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса");
-                $("#continueRegButton").prop("disabled", true);
+            if (!$this.hasClass("switcher--active")) {
+                $(".switcher--signup").removeClass("switcher--active");
+                $this.addClass("switcher--active");
+                $(".switcher-content").hide().filter(`[data-input='${switcherType}']`).show();
+                $(".switcher-content").not(`[data-input='${switcherType}']`).find(".auth-modal-content__input").val("");
             }
+
+            //make btn active
+            isInputValid($(`[data-input='${switcherType}']`).find(".auth-modal-content__input"), $("#continueRegButton"));
         });
 
-        const $signupForms = $("#signupByEmailForm, #signupByPhoneForm");
+        //handle click on continueRegButton
+        $("#continueRegButton").on("click", function () {
+            $("#emailInputDisabled").val($("#emailInput").val());
+            $("#phoneInputDisabled").val($("#phoneInput").val());
+            showSecondStage();
+        });
+    }
 
-        function checkRegForm(form) {
-            const firstInput = form.find(".auth-modal-content__input").first();
-            return firstInput.val().trim() !== "";
+    //second stage
+    function showSecondStage() {
+        $(".signup-second-stage").show();
+        $(".signup-first-stage, .signup-third-stage, .signup-fourth-stage").hide();
+
+        if ($("#emailInputDisabled").val() && !$("#phoneInputDisabled").val()) {
+            //show email input
+            contactType = "email";
+            $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на почту ${$("#emailInputDisabled").val()}`);
+            $("#emailInputDisabled").parent().show();
+            $("#phoneInputDisabled").parent().hide();
+        } else if (!$("#emailInputDisabled").val() && $("#phoneInputDisabled").val()) {
+            //show phone input
+            contactType = "phone";
+            $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на номер ${$("#phoneInputDisabled").val()}`);
+            $("#emailInputDisabled").parent().hide();
+            $("#phoneInputDisabled").parent().show();
         }
 
-        $signupForms.on("input", function () {
-            $("#continueRegButton").prop("disabled", !checkRegForm($(this)));
+        $("#regCode").on("input", function () {
+            $("#confirmCodeButton").prop("disabled", !($("#regCode").val().trim() !== ""));
         });
-    });
 
-    //send code
-    $(function () {
-        $("#continueRegButton").on("click", function (e) {
-            e.preventDefault();
+        //handle click on confirmCodeButton
+        $("#confirmCodeButton").on("click", function () {
+            showThirdStage();
+        });
+    }
 
-            $(".switcher-form--signup").prop("disabled", true);
-            const activeForm = $(".switcher-form--signup.switcher-form--active").data("switcher");
+    //third stage
+    function showThirdStage() {
+        $(".signup-third-stage").show();
+        $(".signup-first-stage, .signup-second-stage, .signup-fourth-stage").hide();
+        $("#signupInfo").text("Придумайте пароль");
 
-            previousContactType = activeForm === "emailReg" ? "email" : "phone";
-
-            $(".code-input, #confirmCodeButton, .auth-modal-content__send-code-again").show();
-            $(".auth-modal-content__registration, #continueRegButton").hide();
-
-            let userContact;
-            let userType;
-
-            if (activeForm === "emailReg") {
-                userContact = $('[data-inputs="emailReg"] .auth-modal-content__input').val().trim();
-                userType = "email";
-            } else if (activeForm === "phoneReg") {
-                userContact = $('[data-inputs="phoneReg"] .auth-modal-content__input').val().trim();
-                userType = "phone";
+        $("#passwordInput, #repeatPasswordInput").on("input", function () {
+            if ($("#passwordInput").val() != "" && $("#repeatPasswordInput").val() != "" && $("#passwordInput").val() === $("#repeatPasswordInput").val()) {
+                $("#confirmPasswordButton").prop("disabled", false);
+            } else {
+                $("#confirmPasswordButton").prop("disabled", true);
             }
-
-            $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на ${activeForm === "emailReg" ? "почту" : "номер"} ${userContact}`);
-
-            $("#emailRegCode, #phoneRegCode").on("input", function () {
-                if ($("#emailRegCode").val() != "" || $("#phoneRegCode").val() != "") {
-                    $("#confirmCodeButton").prop("disabled", false);
-                } else {
-                    $("#confirmCodeButton").prop("disabled", true);
-                }
-            });
-
-            userData[userType] = userContact;
         });
-    });
 
-    //create password
-    $(function () {
-        $("#confirmCodeButton").on("click", function (e) {
-            e.preventDefault();
-
-            $("#signupInfo").text("Придумайте пароль");
-            $(".switcher-content--signup, .auth-modal-content__switchers, .auth-modal-content__send-code-again, #confirmCodeButton").hide();
-            $('[data-inputs="createPassword"], #confirmPasswordButton').show();
-
-            $("#passwordInput, #repeatPasswordInput").on("input", function () {
-                if ($("#passwordInput").val() != "" && $("#repeatPasswordInput").val() != "" && $("#passwordInput").val() === $("#repeatPasswordInput").val()) {
-                    $("#confirmPasswordButton").prop("disabled", false);
-                    userData.password = $("#passwordInput").val();
-                } else {
-                    $("#confirmPasswordButton").prop("disabled", true);
-                }
-            });
+        //handle click on confirmPasswordButton
+        $("#confirmPasswordButton").on("click", function () {
+            showFourthStage();
         });
-    });
+    }
 
-    //fill user data
-    $(function () {
-        $("#confirmPasswordButton").on("click", function (e) {
-            e.preventDefault();
+    //fourth stage
+    function showFourthStage() {
+        $(".signup-fourth-stage").show();
+        $(".signup-first-stage, .signup-second-stage, .signup-third-stage").hide();
+        $("#signupInfo").text("Заполните данные для регистрации");
 
-            $("#signupInfo").text("Заполните данные для регистрации");
-            $('[data-inputs="createPassword"], #confirmPasswordButton').hide();
-            $('#signUpButton, [data-inputs="fillingUserData"]').show();
+        //hide one of inputs according to contact type from first stage
+        if (contactType === "email") {
+            $("#newEmailInput").parent().hide();
+            $("#newPhoneInput").parent().show();
+        } else if (contactType === "phone") {
+            $("#newPhoneInput").parent().hide();
+            $("#newEmailInput").parent().show();
+        }
 
-            if (previousContactType === "email") {
-                $("#newEmailInputWrapper").hide();
-            } else if (previousContactType === "phone") {
-                $("#newPhoneInputWrapper").hide();
-            }
+        //check inputs and make signUpButton active
+        const $userDataInputs = $("#nameInput, #surnameInput, #cityInput, #newEmailInput, #newPhoneInput");
+        $userDataInputs.on("input", function () {
+            const isPersonalInfoValid = $("#nameInput").val().trim() !== "" && $("#surnameInput").val().trim() !== "" && $("#cityInput").val().trim() !== "";
+            const isNewContactProvided = $("#newEmailInput").val().trim() !== "" || $("#newPhoneInput").val().trim() !== "";
 
-            $("#newEmailInput, #nameInput, #surnameInput, #cityInput, #newPhoneInput").on("input", function () {
-                const isNameInputValid = isInputValid("#nameInput");
-                const isSurnameInputValid = isInputValid("#surnameInput");
-                const isCityPasswordInputValid = isInputValid("#cityInput");
-                const isNewPhoneInputValid = isInputValid("#newPhoneInput");
-                const isNewEmailInputValid = isInputValid("#newEmailInput");
-
-                if (isNameInputValid && isSurnameInputValid && isCityPasswordInputValid) {
-                    if (isNewPhoneInputValid || isNewEmailInputValid) {
-                        $("#signUpButton").prop("disabled", false);
-                    } else {
-                        $("#signUpButton").prop("disabled", true);
-                    }
-                } else {
-                    $("#signUpButton").prop("disabled", true);
-                }
-            });
-
-            //show city dropdown
-            $("#cityInput").on("input", function () {
-                const cityInputValue = $(this).val().trim().toLowerCase();
-                const hasInput = cityInputValue.length > 0;
-                $cityList.toggle(hasInput);
-
-                $cityList.children().each(function () {
-                    const $liElement = $(this);
-                    const cityName = $liElement.text().toLowerCase();
-                    const index = cityName.indexOf(cityInputValue);
-
-                    $liElement.toggle(index !== -1);
-                    $liElement.attr("data-index", index);
-                });
-
-                //sort the list by index
-                const listItems = $cityList.children(".city-list__item").get();
-                listItems.sort(function (a, b) {
-                    const indexA = parseInt($(a).attr("data-index")) || 0;
-                    const indexB = parseInt($(b).attr("data-index")) || 0;
-
-                    return indexA - indexB;
-                });
-
-                $cityList.empty().append(listItems);
-            });
-
-            //handle click on city item
-            $cityList.on("click", ".city-list__item", function () {
-                const selectedCity = $(this).text();
-                $("#cityInput").val(selectedCity);
-                $cityList.hide();
-            });
-
-            //hide city list if click outside
-            $(document).on("click", function (e) {
-                const $target = $(e.target);
-
-                if (!$target.closest("#cityInput").length && !$target.closest(".city-list").length) {
-                    $cityList.hide();
-                }
-            });
+            $("#signUpButton").prop("disabled", !(isPersonalInfoValid && isNewContactProvided));
         });
-    });
 
-    //sign up
-    $(function () {
-        $("#signUpButton").on("click", function (e) {
-            e.preventDefault();
-            console.log(userData);
+        //handle click on signUpButton
+        $("#signUpButton").on("click", function () {
             $(".signup-modal").removeClass("active");
-            $('body').removeClass('lock');
+            $("body").removeClass("lock");
+            resetSignupFormFields();
         });
-    });
+    }
 });

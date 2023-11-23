@@ -1,62 +1,65 @@
 import $ from "jquery";
 
-$('[data-modal="reset-password-modal"]').on("click", () => {
-    $(".login-modal").removeClass("active");
-    $(".reset-password-modal").addClass("active");
-});
-
-$(".modal-exit, .modal-back, #saveButton").on("click", function () {
-    $(".auth-modal-content__input").val("");
-});
-
 $(function () {
-    $("#resetButton, #saveButton, .code-input, .reset-password-hint").hide();
-    $(".switcher-content--reset-password").hide().filter('[data-inputs="resetPassword"]').show();
-
-    function checkForm(form) {
-        const firstInput = form.find(".auth-modal-content__input").first();
-        return firstInput.val().trim() !== "";
+    function resetResPwdFormFields() {
+        $("#phoneOrEmailInput, #phoneOrEmailInputDisabled, #resetPasswordCode, #newPasswordInput, #repeatNewPasswordInput").val("");
+        $(".reset-password-modal .btn").prop("disabled", true);
     }
 
-    $("#resetPasswordForm").on("input", function () {
-        $("#sendCodeButton").prop("disabled", !checkForm($(this)));
+    $('[data-modal="reset-password-modal"]').on("click", () => {
+        $(".login-modal").removeClass("active");
+        $(".reset-password-modal").addClass("active");
+        resetResPwdFormFields();
+        showFirstResPwdStage();
     });
 
-    //send code
-    $(function () {
-        $("#sendCodeButton").on("click", function () {
-            $("#sendCodeButton").hide();
-            $("#resetButton, .code-input, .reset-password-hint").show();
+    function showFirstResPwdStage() {
+        $(".reset-password-first-stage").show();
+        $(".reset-password-second-stage, .reset-password-third-stage").hide();
+        $("#resetPasswordInfo").text("Введите свой номер или почту и мы отправим вам код для восстановления пароля");
 
-            $("#phoneOrEmail, #resetPasswordCode").on("input", function () {
-                if ($("#phoneOrEmail").val() != "" && $("#resetPasswordCode").val() != "") {
-                    $("#resetButton").prop("disabled", false);
-                }
+        $("#phoneOrEmailInput").on("input", function () {
+            $("#sendCodeButton").prop("disabled", !($("#phoneOrEmailInput").val().trim() !== ""));
         });
-    })
-    });
 
-    //create new password
-    $(function(){
-        $("#resetButton").on('click', function () {
-            $("#resetButton, .reset-password-hint").hide()
-            $("#saveButton").show()
-            $(".switcher-content--reset-password").hide().filter('[data-inputs="createNewPassword"]').show();
-            $(".auth-modal-content__desc").text('Придумайте новый пароль')
+        //handle click on sendCodeButton
+        $("#sendCodeButton").on("click", function () {
+            $("#phoneOrEmailInputDisabled").val($("#phoneOrEmailInput").val());
+            showSecondResPwdStage();
+        });
+    }
 
-            $("#newPasswordInput, #repeatNewPasswordInput").on("input", function () {
-                if ($("#newPasswordInput").val() != "" && $("#repeatNewPasswordInput").val() != "" && $("#newPasswordInput").val() === $("#repeatNewPasswordInput").val()) {
-                    $("#saveButton").prop("disabled", false);
-                } else {
-                    $("#saveButton").prop("disabled", true);
-                }
-            });
-        })
-    })
-    $("#saveButton").on('click', function (e) {
-        e.preventDefault();
-        $(".reset-password-modal").removeClass("active");
-        $('body').removeClass('lock');
-    })
+    function showSecondResPwdStage() {
+        $(".reset-password-second-stage").show();
+        $(".reset-password-first-stage, .reset-password-third-stage").hide();
 
+        $("#resetPasswordCode").on("input", function () {
+            $("#resetButton").prop("disabled", !($("#resetPasswordCode").val().trim() !== ""));
+        });
+
+        //handle click on resetButton
+        $("#resetButton").on("click", function () {
+            showThirdResPwdStage();
+        });
+    }
+
+    function showThirdResPwdStage() {
+        $(".reset-password-third-stage").show();
+        $(".reset-password-first-stage, .reset-password-second-stage").hide();
+
+        $("#newPasswordInput, #repeatNewPasswordInput").on("input", function () {
+            if ($("#newPasswordInput").val() != "" && $("#repeatNewPasswordInput").val() != "" && $("#newPasswordInput").val() === $("#repeatNewPasswordInput").val()) {
+                $("#saveButton").prop("disabled", false);
+            } else {
+                $("#saveButton").prop("disabled", true);
+            }
+        });
+
+        //handle click on resetButton
+        $("#saveButton").on("click", function () {
+            $(".reset-password-modal").removeClass("active");
+            $("body").removeClass("lock");
+            resetResPwdFormFields();
+        });
+    }
 });
