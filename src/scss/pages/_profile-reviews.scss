@@ -1,0 +1,157 @@
+.profile--reviews {
+    .profile__reviews__switchers{
+        display: flex;
+        gap: 2.4rem;
+        font-size: 1.6rem;
+        line-height: 150%;
+        border-bottom: 0.1rem solid #F1F3F3;
+        margin-bottom: 3.2rem;
+    }
+    .switcher-rev {
+        padding: 1.2rem 0;
+        cursor: pointer;
+
+        &--active{
+            font-weight: 600;
+            position: relative;
+
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                border-radius: 0.2rem 0.2rem 0 0;
+                background-color: #298267;
+                height: 0.2rem;
+            }
+        }
+    }
+    .switcher-content {
+    }
+
+    .my-rating {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        font-size: 2rem;
+        line-height: 150%;
+        margin-bottom: 1.6rem;
+
+        &__title {
+        }
+
+        &__number {
+            display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        }
+    }
+    .tags {
+        display: flex;
+        gap: 0.8rem;
+        padding-bottom: 3.2rem;
+        border-bottom: 0.1rem solid #F1F3F3;
+    }
+    .tag {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 1.6rem;
+        line-height: 150%;
+        color: #7E8582;
+
+        padding: 0.4rem 0.8rem;
+        background-color: #F1F3F3;
+        border-radius: 0.4rem;
+
+        &__name {
+        }
+
+        &__count {
+        }
+    }
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    padding: 3.2rem 0;
+
+    border-bottom: 0.1rem solid #F1F3F3;
+
+    &:last-child{
+        border-bottom: none;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        .user-info {
+            display: flex;
+            gap: 1.2rem;
+
+            &__photo {
+                width: 4.8rem;
+                height: 4.8rem;
+                border-radius: 100%;
+                overflow: hidden;
+                border: 0.2rem solid  rgba(40, 130, 103, 0.20);
+
+                img{
+                    object-fit: contain;
+                }
+            }
+
+            &__data {
+                display: flex;
+                flex-direction: column;
+                line-height: 150%;
+                font-size: 1.6rem;
+
+                &__top{
+                    font-weight: 600;
+                }
+
+                &__bottom{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                }
+
+                &__rating{
+                    font-weight: 600;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+
+                    svg{
+                        width: 1.6rem;
+                        height: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        .user-tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__appeal {
+        color: #298267;
+        line-height: 150%;
+        font-size: 1.6rem;
+    }
+}
+
+
+.review--from-me {
+}
