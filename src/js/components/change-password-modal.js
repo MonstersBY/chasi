@@ -1,14 +1,16 @@
 import $ from "jquery";
 
-$('[data-modal="change-password"]').on("click", () => {
-    $(".change-password-modal").addClass("active");
-});
-
-$(".modal-exit, .modal-back").on("click", function () {
-    $(".profile-modal-content__input").val("");
-});
-
 $(function () {
+    function resetChangePwdFormFields() {
+        $("#changePasswordCurrentInput, #changePasswordNewInput, #changePasswordRepeatNewInput").val("");
+        $(".change-password-modal .btn").prop("disabled", true);
+    }
+
+    $('[data-modal="change-password"]').on("click", () => {
+        $(".change-password-modal").addClass("active");
+        resetChangePwdFormFields();
+    });
+
     $("#changePasswordNewInput, #changePasswordRepeatNewInput, #changePasswordCurrentInput").on("input", function () {
         if (
             $("#changePasswordCurrentInput").val() != "" &&
@@ -26,18 +28,18 @@ $(function () {
         $(".change-password-modal").removeClass("active");
         $("body").removeClass("lock");
         $("#profilePassword").text($("#changePasswordNewInput").val());
-        $(".profile-modal-content__input").val("");
+        resetChangePwdFormFields();
 
         $(".pop-up").addClass("showed");
-            $(".pop-up__text").text("Пароль успешно обновлён");
-            setTimeout(() => {
-                $(".pop-up").removeClass("showed");
-            }, 5000);
+        $(".pop-up__text").text("Пароль успешно обновлён");
+        setTimeout(() => {
+            $(".pop-up").removeClass("showed");
+        }, 5000);
 
-            $(".pop-up")
-                .find("svg")
-                .on("click", () => {
-                    $(".pop-up").removeClass("showed");
-                });
+        $(".pop-up")
+            .find("svg")
+            .on("click", () => {
+                $(".pop-up").removeClass("showed");
+            });
     });
 });
