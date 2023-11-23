@@ -17,34 +17,37 @@
             <div class="auth-modal-content__title desktop">Вход</div>
 
             <div class="auth-modal-content__desc">Войдите, чтобы просматривать информацию в профиле</div>
-
+            <!-- switchers -->
             <div class="auth-modal-content__switchers">
-                <button class="switcher-form switcher-form--auth switcher-form--active" data-switcher="EmailLogin">Email</button>
-                <button class="switcher-form switcher-form--auth" data-switcher="PhoneLogin">Телефон</button>
+                <button class="switcher switcher--auth switcher--active" data-switcher="EmailLogin">Email</button>
+                <button class="switcher switcher--auth" data-switcher="PhoneLogin">Телефон</button>
             </div>
 
+            <!-- switcher-container -->
             <div class="auth-modal-content__switcher-container">
-                <div class="switcher-content switcher-content--auth switcher-content--active" data-inputs="EmailLogin">
+                <!-- log in by email -->
+                <div class="switcher-content switcher-content--active" data-inputs="EmailLogin">
                     <form class="auth-modal-content__form" id="loginByEmailForm">
                         <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="emailLoginInput" required />
                             <span>Email</span>
                         </div>
                         <div class="input-wrapper">
-                            <input type="password" class="auth-modal-content__input" required />
+                            <input type="password" class="auth-modal-content__input" id="emailLoginPasswordInput" required />
                             <span>Пароль</span>
                         </div>
                     </form>
                 </div>
 
-                <div class="switcher-content switcher-content--auth" data-inputs="PhoneLogin">
+                <!-- log in by tel -->
+                <div class="switcher-content" data-inputs="PhoneLogin">
                     <form class="auth-modal-content__form" id="loginByPhoneForm">
                         <div class="input-wrapper">
                             <input type="tel" class="auth-modal-content__input" id="phoneLoginInput" required />
                             <span>Телефон</span>
                         </div>
                         <div class="input-wrapper">
-                            <input type="password" class="auth-modal-content__input" required />
+                            <input type="password" class="auth-modal-content__input" id="phoneLoginPasswordInput" required />
                             <span>Пароль</span>
                         </div>
                     </form>

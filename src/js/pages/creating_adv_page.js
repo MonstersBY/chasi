@@ -3,7 +3,7 @@ import $ from "jquery";
 //sections switcher
 
 $(function () {
-    const $switchers = $(".switcher");
+    const $switchers = $(".switcher-adv");
     const $cards = $(".creating-adv__card");
     let lastCards = $(".card--awaiting:visible:last, .card--published:visible:last, .card--archive:visible:last");
     lastCards.addClass("no-border");

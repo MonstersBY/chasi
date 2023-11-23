@@ -12,47 +12,84 @@
                 </svg>
             </div>
         </div>
-
         <div class="modal-content auth-modal-content">
             <div class="auth-modal-content__title desktop">Регистрация</div>
-
             <div class="auth-modal-content__desc" id="signupInfo">Создайте аккаунт, чтобы пользоваться всеми возможностями сервиса</div>
+            <!-- stages -->
+            <div class="auth-modal-content__signup-stages">
+                <!-- FIRST STAGE: switchers, tel/email -->
+                <div class="signup-first-stage">
+                    <!-- switchers -->
+                    <div class="auth-modal-content__switchers">
+                        <button class="switcher switcher--signup" data-switcher="emailReg">Email</button>
+                        <button class="switcher switcher--signup" data-switcher="phoneReg">Телефон</button>
+                    </div>
 
-            <div class="auth-modal-content__switchers">
-                <button class="switcher-form switcher-form--signup switcher-form--active" data-switcher="emailReg">Email</button>
-                <button class="switcher-form switcher-form--signup" data-switcher="phoneReg">Телефон</button>
-            </div>
+                    <!-- input: tel or email -->
+                    <div class="auth-modal-content__switcher-container">
+                        <!-- input email -->
+                        <div class="switcher-content" data-input="emailReg">
+                            <form class="auth-modal-content__form" id="signupByEmailForm">
+                                <div class="input-wrapper">
+                                    <input type="text" class="auth-modal-content__input" id="emailInput" required />
+                                    <span>Email</span>
+                                </div>
+                            </form>
+                        </div>
 
-            <div class="auth-modal-content__switcher-container">
-                <div class="switcher-content switcher-content--signup switcher-content--active" data-inputs="emailReg">
-                    <form class="auth-modal-content__form" id="signupByEmailForm">
+                        <!-- input tel -->
+                        <div class="switcher-content" data-input="phoneReg">
+                            <form class="auth-modal-content__form" id="signupByPhoneForm">
+                                <div class="input-wrapper">
+                                    <input type="text" class="auth-modal-content__input" id="phoneInput" required />
+                                    <span>Телефон</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- button continue - go to 2d stage -->
+                    <button class="btn btn__green" disabled type="submit" id="continueRegButton">Продолжить</button>
+
+                    <!-- already have account -->
+                    <div class="auth-modal-content__authorization">
+                        <span>Уже есть аккаунт? </span>
+                        <a href="#!" data-modal="login-modal">Войдите</a>
+                    </div>
+                </div>
+
+                <!-- SECOND STAGE: tel/email, code -->
+                <div class="signup-second-stage">
+                    <!-- form with tel/email input and code input -->
+                    <form class="auth-modal-content__form" id="enterCodeForm">
+                        <!-- input tel/email: depends on prev stage -->
                         <div class="input-wrapper">
-                            <input type="text" class="auth-modal-content__input" id="emailInput" required />
+                            <input type="text" class="auth-modal-content__input" id="emailInputDisabled" readonly required />
                             <span>Email</span>
                         </div>
 
-                        <div class="input-wrapper code-input">
-                            <input type="password" class="auth-modal-content__input" id="emailRegCode" required />
-                            <span>Код</span>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="switcher-content switcher-content--signup" data-inputs="phoneReg">
-                    <form class="auth-modal-content__form" id="signupByPhoneForm">
                         <div class="input-wrapper">
-                            <input type="tel" class="auth-modal-content__input" id="phoneInput" required />
+                            <input type="tel" class="auth-modal-content__input" id="phoneInputDisabled" readonly required />
                             <span>Телефон</span>
                         </div>
 
-                        <div class="input-wrapper code-input">
-                            <input type="password" class="auth-modal-content__input" id="phoneRegCode" required />
+                        <!-- input code -->
+                        <div class="input-wrapper">
+                            <input type="password" class="auth-modal-content__input" id="regCode" required />
                             <span>Код</span>
                         </div>
                     </form>
+
+                    <!-- button confirm code - go to 3d stage -->
+                    <button class="btn btn__green" disabled type="submit" id="confirmCodeButton">Продолжить2</button>
+
+                    <!-- send code again -->
+                    <div class="auth-modal-content__send-code-again">Отправить код повторно</div>
                 </div>
 
-                <div class="switcher-content switcher-content--signup" data-inputs="createPassword">
+                <!-- THIRD STAGE: create password -->
+                <div class="signup-third-stage">
+                    <!-- inputs: pwd -->
                     <form class="auth-modal-content__form" id="createPasswordForm">
                         <div class="input-wrapper">
                             <input type="password" class="auth-modal-content__input" id="passwordInput" required />
@@ -64,9 +101,14 @@
                             <span>Повторите пароль</span>
                         </div>
                     </form>
+
+                    <!-- button confirm pwd - go to 4d stage -->
+                    <button class="btn btn__green" disabled type="submit" id="confirmPasswordButton">Продолжить3</button>
                 </div>
 
-                <div class="switcher-content switcher-content--signup" data-inputs="fillingUserData">
+                <!-- fFOURTH STAGE: fill user data -->
+                <div class="signup-fourth-stage">
+                    <!-- user data form with inputs -->
                     <form class="auth-modal-content__form" id="fillingUserDataForm">
                         <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="nameInput" required />
@@ -84,30 +126,24 @@
                             <ul class="city-list"></ul>
                         </div>
 
-                        <div class="input-wrapper" id="newPhoneInputWrapper">
+                        <div class="input-wrapper">
                             <input type="tel" class="auth-modal-content__input" id="newPhoneInput" required />
                             <span>Телефон</span>
                         </div>
 
-                        <div class="input-wrapper" id="newEmailInputWrapper">
+                        <div class="input-wrapper">
                             <input type="text" class="auth-modal-content__input" id="newEmailInput" required />
                             <span>Email</span>
                         </div>
-
-                        <div class="auth-modal-content__agr">Авторизуясь на сайте, я принимаю условия пользовательского соглашения...</div>
                     </form>
+
+                    <!-- agreement -->
+                    <div class="auth-modal-content__agr">Авторизуясь на сайте, я принимаю условия пользовательского соглашения...</div>
+
+                    <!-- button sign up - close and reset signup-modal -->
+                    <button class="btn btn__green" disabled type="submit" id="signUpButton">Зарегистрироваться</button>
                 </div>
             </div>
-            <button class="btn btn__green" disabled type="submit" id="continueRegButton">Продолжить</button>
-            <button class="btn btn__green" disabled type="submit" id="confirmCodeButton">Продолжить2</button>
-            <button class="btn btn__green" disabled type="submit" id="confirmPasswordButton">Продолжить3</button>
-            <button class="btn btn__green" disabled type="submit" id="signUpButton">Зарегистрироваться</button>
-
-            <div class="auth-modal-content__registration">
-                <span>Уже есть аккаунт? </span>
-                <a href="#!" data-modal="login-modal">Войдите</a>
-            </div>
-            <div class="auth-modal-content__send-code-again">Отправить код повторно</div>
         </div>
     </div>
 </div>
