@@ -15,7 +15,6 @@ const entryPoints = {
   index: path.resolve(__dirname, "src", "index.js"),
   home_page: path.resolve(__dirname, "src", "index.js"),
   home_page_loged: path.resolve(__dirname, "src", "index.js"),
-  adv_card_page: path.resolve(__dirname, "src", "index.js"),
   adv_card_preview: path.resolve(__dirname, "src", "index.js"),
   adv_card_seller_adv: path.resolve(__dirname, "src", "index.js"),
   adv_card_draft: path.resolve(__dirname, "src", "index.js"),
@@ -32,6 +31,7 @@ const entryPoints = {
   characteristic: path.resolve(__dirname, "src", "index.js"),
   promotion_page: path.resolve(__dirname, "src", "index.js"),
   profile_reviews: path.resolve(__dirname, "src", "index.js"),
+  adv_card_consumer: path.resolve(__dirname, "src", "index.js"),
   // auth_modal: path.resolve(__dirname, "src", "index.js"),
   // reg_modal: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
