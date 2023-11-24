@@ -1,44 +1,26 @@
 import $ from "jquery";
 
-//sections switcher
-
 $(function () {
-    const $switchers = $(".switcher-adv");
-    const $cards = $(".creating-adv__card");
-    let lastCards = $(".card--awaiting:visible:last, .card--published:visible:last, .card--archive:visible:last");
-    lastCards.addClass("no-border");
+    $('.creating-adv__switcher-content').hide();
+    $('.creating-adv__switcher-content[data-content="cardsAwaiting"]').show();
 
-    $cards.hide();
-    let $cardsAwaiting = $cards.filter(".card--awaiting");
-    $cardsAwaiting.show();
+    $('.switcher-cards').on('click', function () {
+        $('.switcher-cards').removeClass('switcher-cards--active');
+        $(this).addClass('switcher-cards--active');
+        $('.creating-adv__switcher-content').hide();
+        let switcherValue = $(this).data('switcher');
+        $('.creating-adv__switcher-content[data-content="' + switcherValue + '"]').show();
+    })
+})
 
-    $switchers.on("click", function (e) {
-        e.preventDefault();
-        const $this = $(this);
-        const classToFilter = $this.attr("class").split("--")[1];
-        const $parent = $this.parent();
-
-        if (!$parent.hasClass("creating-adv__section--active")) {
-            $switchers.parent().removeClass("creating-adv__section--active");
-            $parent.addClass("creating-adv__section--active");
-
-            $cards.hide();
-            $cards.filter(".card--" + classToFilter).show();
-        }
-    });
+$(document).on('click', function(e) {
+    if (!$(e.target).closest('.creating-adv__card__options').length) {
+        $('.creating-adv__card__options').hide();
+    }
 });
 
-//crad--published: hide status if there's status-time
-
-$(function () {
-    const publishedCards = $('.card--published');
-    publishedCards.each(function () {
-        const card = $(this);
-        const statusTime = card.find('.status-time');
-        const status = card.find('.status');
-
-        if (statusTime.length > 0) {
-            status.hide();
-        }
-    });
+$(".btn--edit").on('click', function(e){
+    e.stopPropagation();
+    $('.creating-adv__card__options').not($(this).siblings('.creating-adv__card__options')).hide();
+    $(this).siblings('.creating-adv__card__options').toggle();
 });
