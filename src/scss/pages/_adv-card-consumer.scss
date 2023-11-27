@@ -593,4 +593,15 @@
         }
 
     }
+
+    .btn--show-number.open{
+        background-color: #F5FBF6;
+        color: #031E16;
+
+        svg{
+            path{
+                stroke: #031E16;
+            }
+        }
+    }
 }
