@@ -58,3 +58,12 @@ $(function () {
     sellerPhone.text('+7 (000) 123-45-67')
   })
 })
+
+//If no .adv-card__buttons--mobile reduce margin bottom 
+$(function() {
+  if ($('.adv-card__buttons--mobile').length === 0) {
+      $('.adv-card').css('margin-bottom', '17rem');
+  } else {
+      $('.adv-card').css('margin-bottom', '35rem');
+  }
+});
