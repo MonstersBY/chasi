@@ -9,5 +9,6 @@ $(function () {
     $(".options-modal__item").on("click", () => {
       $(".options-modal").removeClass("active");
       $(".options-modal-wrapper").removeClass("active");
+      $('body').removeClass('lock');
     });
 });

@@ -1,37 +1,27 @@
-.adv-card--draft {
-    .adv-card__desc {
-        gap: 4rem;
+.adv-card__draft {
 
+    .adv-card__details{
         @media (max-width: 48em) {
-            gap: 8rem;
-        }
+            margin-bottom: 8rem;
+        } 
     }
 
-    .adv-card__info{
+    .adv-card__content{
         @media (max-width: 48em) {
             gap: 8rem;
-        }
+        } 
     }
 
-    .adv-card__func {
+    .adv-card__number--mobile{
         margin-top: 0;
     }
 
-    .adv-card__func__title {
-        margin-bottom: 0;
+    .adv-card__slider{
+        height: unset;
     }
 
     .swiper-thumbnail {
         display: none;
     }
 
-    .adv-card__contact__phone {
-        margin-bottom: 0;
-    }
-
-    .adv-card__buttons{
-        @media (max-width: 48em) {
-            margin-top: -3.2rem;
-        }
-    }
 }
