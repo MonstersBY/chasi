@@ -61,9 +61,17 @@ $(function () {
 
 //If no .adv-card__buttons--mobile reduce margin bottom 
 $(function() {
-  if ($('.adv-card__buttons--mobile').length === 0) {
-      $('.adv-card').css('margin-bottom', '17rem');
-  } else {
-      $('.adv-card').css('margin-bottom', '35rem');
-  }
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    function checkWindowSize() {
+        if (mediaQuery.matches) {
+            if ($('.adv-card__buttons--mobile').length === 0) {
+                $('.adv-card').css('margin-bottom', '4.8rem');
+            } else {
+                $('.adv-card').css('margin-bottom', '35rem');
+            }
+        } else {
+            $('.adv-card').css('margin-bottom', '');
+        }
+    }
+    checkWindowSize();
 });
