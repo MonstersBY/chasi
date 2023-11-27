@@ -34,25 +34,10 @@ const swiper = new Swiper(".adv-card__swiper", {
   
 });
 
-//Show currency on click
-
-$(function () {
-  const priceButton = $(".btn--price");
-  const currencyList = $(".currency-list");
-  const priceIcon = $(".btn--price img");
-
-  priceButton.on("click", function () {
-    currencyList.toggle();
-    priceIcon.toggleClass("open");
-  });
-});
-
 //Show seller's phone
-
 $(function () {
   const btnShowNumer = $('.btn--show-number');
   const sellerPhone = $('#sellerPhone')
-
   btnShowNumer.on('click', function () {
     btnShowNumer.addClass('open')
     sellerPhone.text('+7 (000) 123-45-67')
