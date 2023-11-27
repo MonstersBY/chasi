@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-if($(".adv-card--on-check").length > 0) {
+if($(".adv-card__on-check").length > 0) {
     $(".pop-up").addClass("showed");
     setTimeout(() => {
         $(".pop-up").removeClass("showed");
