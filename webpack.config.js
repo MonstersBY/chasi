@@ -21,6 +21,7 @@ const entryPoints = {
   favorites_page: path.resolve(__dirname, "src", "index.js"),
   seller_card: path.resolve(__dirname, "src", "index.js"),
   chat_page: path.resolve(__dirname, "src", "index.js"),
+  chat_page_new: path.resolve(__dirname, "src", "index.js"),
   chat_page_products: path.resolve(__dirname, "src", "index.js"),
   creating_adv_page: path.resolve(__dirname, "src", "index.js"),
   creating_adv_page_empty: path.resolve(__dirname, "src", "index.js"),
