@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <title>Чат</title>
+    </head>
+    <body>
+        <section class="chat">
+            <div class="container">
+            <div class="chat__content">
+
+            <!-- dialogS -->
+            <div class="chat__dialogs">
+                    <div class="chat__dialogs__title">Сообщения</div>
+
+                    <!-- support -->
+                    <div class="chat__dialogs__support">
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+                                    <path d="M1.66797 34.9985V34.9985C1.66797 31.6668 4.36797 28.9668 7.69964 28.9668H13.7313C17.063 28.9668 19.763 31.6668 19.763 34.9985V34.9985" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.4482 15.4327C16.5095 17.494 16.5095 20.8361 14.4482 22.8974C12.3869 24.9587 9.0448 24.9587 6.98349 22.8974C4.92217 20.8361 4.92217 17.494 6.98349 15.4327C9.0448 13.3714 12.3869 13.3714 14.4482 15.4327" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M30.1616 23.0127C34.6749 23.0127 38.3349 19.3527 38.3349 14.8393C38.3349 10.326 34.6766 6.66602 30.1616 6.66602C25.6466 6.66602 21.9883 10.326 21.9883 14.8393" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M30.1709 23.0215C28.9409 23.0215 27.7759 22.7498 26.7292 22.2648L21.6992 23.3332L22.7509 18.2932C22.2626 17.2432 21.9892 16.0732 21.9892 14.8398" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M26.3571 14.9404C26.3896 14.973 26.3896 15.0257 26.3571 15.0583C26.3246 15.0908 26.2718 15.0908 26.2393 15.0583C26.2067 15.0257 26.2067 14.973 26.2393 14.9404C26.2718 14.9079 26.3246 14.9079 26.3571 14.9404" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M30.1071 14.9404C30.1396 14.973 30.1396 15.0257 30.1071 15.0583C30.0746 15.0908 30.0218 15.0908 29.9893 15.0583C29.9567 15.0257 29.9567 14.973 29.9893 14.9404C30.0218 14.9079 30.0746 14.9079 30.1071 14.9404" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M33.8571 14.9404C33.8896 14.973 33.8896 15.0257 33.8571 15.0583C33.8246 15.0908 33.7718 15.0908 33.7393 15.0583C33.7067 15.0257 33.7067 14.973 33.7393 14.9404C33.7718 14.9079 33.8246 14.9079 33.8571 14.9404" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Поддержка</div>
+                                <div class="chat__dialogs__last-message">Будем рады помочь</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <button class="btn--go-to">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18L15 12L9 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- dialogs list -->
+                    <ul class="chat__dialogs__list">
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Cosmograph Daytona</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">23.09</div>
+                            </div>
+                        </div>
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex-2.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Air-King</div>
+                                <div class="chat__dialogs__message">Здравствуйте! Нет, часы ещё не продали</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">17:27</div>
+                                <div class="chat__dialogs__unread-messages">12</div>
+                            </div>
+                        </div>
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex-3.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Datejust 36</div>
+                                <div class="chat__dialogs__message">Скиньте фотографии часов, желательно</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">17:27</div>
+                            </div>
+                        </div>
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Cosmograph Daytona</div>
+                                <div class="chat__dialogs__message">Добрый день!</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">17:27</div>
+                            </div>
+                        </div>
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex-2.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Air-King</div>
+                                <div class="chat__dialogs__message">Здравствуйте! Нет, часы ещё не продали</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">17:27</div>
+                            </div>
+                        </div>
+
+                        <!-- dialogs item -->
+                        <div class="chat__dialogs__item">
+                            <div class="chat__dialogs__photo">
+                                <img src="./assets/images/rolex-2.webp" alt="Product">
+                            </div>
+                            <div class="chat__dialogs__data">
+                                <div class="chat__dialogs__product">Rolex Air-King</div>
+                                <div class="chat__dialogs__message">Здравствуйте! Нет, часы ещё не продали</div>
+                            </div>
+                            <div class="chat__dialogs__details">
+                                <div class="chat__dialogs__time">17:27</div>
+                            </div>
+                        </div>
+                    </ul>
+            </div>
+
+            <!-- dialog -->
+            <div class="chat__dialog">
+
+                <!-- dialog header -->
+                    <div class="chat__dialog__header">
+                        <div class="chat__dialog__photo">
+                            <img src="./assets/images/rolex.webp" alt="User">
+                        </div>
+                        <div class="chat__dialog__data">
+                            <div class="chat__dialog__product">Rolex Cosmograph Daytona</div>
+                            <div class="chat__dialog__name">Константин Константинопольский</div>
+                        </div>
+                    </div>
+
+                    <!-- dialog messages -->
+                    <div class="chat__dialog__messages">
+                        
+                        <!-- date -->
+                        <div class="chat__dialog__date">1 октября 2023</div>
+
+                        <div class="chat__dialog__message message--outgoing">
+                            <div class="message-text">Привет!</div>
+                            <div class="message-time">23:47</div>
+                        </div>
+                        <div class="chat__dialog__message message--incoming">
+                            <div class="message-text">Здесь какой-то текст про часы и про то, как их хочется купить, потому что они очень классные...........</div>
+                            <div class="message-time">23:47</div>
+                        </div>
+                        <div class="chat__dialog__message message--outgoing">
+                            <div class="message-text">Здесь какой-то текст про часы и про то, как их </div>
+                            <div class="message-time">23:47</div>
+                        </div>
+                        <div class="chat__dialog__message message--incoming">
+                            <div class="message-text">Супер!</div>
+                            <div class="message-time">23:47</div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="chat__dialog__footer">
+                        footer
+                    </div>
+            </div>
+        </div>
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- <section class="chat chat--products">
+            <div class="container">
+                <div class="chat__dialogs">
+                    <h2 class="chat__dialogs__title">
+                        <button class="btn--go-back mobile">
+                            <img src="./assets/images/arrow-left.svg" alt="Go Back" />
+                        </button>
+                        Сообщения
+                    </h2>
+
+                    <div class="chat__dialogs__support">
+                        <div class="dialogs__item">
+                            <a href="#!">
+                                <div class="dialogs__item__col">
+                                    <div class="dialogs__pic">
+                                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.66797 29.9985V29.9985C1.66797 26.6668 4.36797 23.9668 7.69964 23.9668H13.7313C17.063 23.9668 19.763 26.6668 19.763 29.9985V29.9985"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M14.4482 10.4327C16.5095 12.494 16.5095 15.8361 14.4482 17.8974C12.3869 19.9587 9.0448 19.9587 6.98349 17.8974C4.92217 15.8361 4.92217 12.494 6.98349 10.4327C9.0448 8.37139 12.3869 8.37139 14.4482 10.4327"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M30.1616 18.0127C34.6749 18.0127 38.3349 14.3527 38.3349 9.83935C38.3349 5.32602 34.6766 1.66602 30.1616 1.66602C25.6466 1.66602 21.9883 5.32602 21.9883 9.83935"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M30.1709 18.0215C28.9409 18.0215 27.7759 17.7498 26.7292 17.2648L21.6992 18.3332L22.7509 13.2932C22.2626 12.2432 21.9892 11.0732 21.9892 9.83984"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M26.3571 9.94042C26.3896 9.97297 26.3896 10.0257 26.3571 10.0583C26.3246 10.0908 26.2718 10.0908 26.2393 10.0583C26.2067 10.0257 26.2067 9.97297 26.2393 9.94042C26.2718 9.90788 26.3246 9.90788 26.3571 9.94042"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M30.1071 9.94042C30.1396 9.97297 30.1396 10.0257 30.1071 10.0583C30.0746 10.0908 30.0218 10.0908 29.9893 10.0583C29.9567 10.0257 29.9567 9.97297 29.9893 9.94042C30.0218 9.90788 30.0746 9.90788 30.1071 9.94042"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M33.8571 9.94042C33.8896 9.97297 33.8896 10.0257 33.8571 10.0583C33.8246 10.0908 33.7718 10.0908 33.7393 10.0583C33.7067 10.0257 33.7067 9.97297 33.7393 9.94042C33.7718 9.90788 33.8246 9.90788 33.8571 9.94042"
+                                                stroke="#031E16"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <div class="dialogs__item__col">
+                                    <div class="dialogs__name">Поддержка</div>
+                                    <div class="dialogs__last-message">Будем рады помочь</div>
+                                </div>
+
+                                <div class="dialogs__item__col">
+                                    <button class="btn--go-to">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 18L15 12L9 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dialogs-wrapper">
+                        <ul class="chat__dialogs__list dialogs">
+                            <li class="dialogs__item">
+                                <a href="#!">
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__pic">
+                                            <img src="./assets/images/rolex.webp" alt="User" />
+                                        </div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__name">Rolex Cosmograph Daytona</div>
+                                        <div class="dialogs__last-message"></div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__time">23.09</div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="dialogs__item">
+                                <a href="#!">
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__pic">
+                                            <img src="./assets/images/rolex-2.webp" alt="User" />
+                                        </div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__name">Rolex Air-King</div>
+                                        <div class="dialogs__last-message">Здравствуйте! Нет, часы ещё не продали</div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__time">17:27</div>
+                                        <div class="dialogs__unread">12</div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="dialogs__item">
+                                <a href="#!">
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__pic">
+                                            <img src="./assets/images/rolex-3.webp" alt="User" />
+                                        </div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__name">Rolex Datejust 36</div>
+                                        <div class="dialogs__last-message">Скиньте фотографии часов, желательно uwhwu fwufb</div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__time">21:02</div>
+                                         <div class="dialogs__unread"></div> 
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="dialogs__item">
+                                <a href="#!">
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__pic">
+                                            <img src="./assets/images/rolex.webp" alt="User" />
+                                        </div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__name">Rolex Cosmograph Daytona</div>
+                                        <div class="dialogs__last-message">Здравствуйте! Нет, часы ещё не продали</div>
+                                    </div>
+
+                                    <div class="dialogs__item__col">
+                                        <div class="dialogs__time">03.10</div>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="chat__dialog">
+                    <div class="chat__dialog__header">
+                        <button class="btn--go-back mobile" id="btnBackToDialogs">
+                            <img src="./assets/images/arrow-left.svg" alt="Go Back" />
+                        </button>
+
+                        <div class="user-data">
+                            <div class="user-data__pic dialogs__pic">
+                                <img src="./assets/images/rolex.webp" alt="User" />
+                            </div>
+                            <div class="user-data__info">
+                                <div class="user-data__product-name">Rolex Cosmograph Daytona</div>
+                                <div class="user-data__seller-name">Константин Константинопольский</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog">
+                        <div class="dialog__empty">
+              Здесь будет ваша переписка. Чат предназначен для неформального общения. 
+            </div>
+
+                        <div class="dialog-wrapper">
+                            <div class="dialog__date">1 октября 2023</div>
+
+                            <div class="dialog__messages">
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Привет!</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их хочется купить, потому что они очень классные...........</span><span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message"><span class="text">Супер!</span><span class="time">23:47</span></div>
+
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Привет!</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их хочется купить, потому что они очень классные...........</span><span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message"><span class="text">Супер!</span><span class="time">23:47</span></div>
+
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Привет!</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их хочется купить, потому что они очень классные...........</span><span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message"><span class="text">Супер!</span><span class="time">23:47</span></div>
+
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Привет!</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их хочется купить, потому что они очень классные...........</span><span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--outgoing dialog__message">
+                                    <span class="text">Здесь какой-то текст про часы и про то, как их</span>
+                                    <span class="time">23:47</span>
+                                </div>
+                                <div class="dialog__message--incoming dialog__message"><span class="text">Супер!</span><span class="time">23:47</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat__dialog__footer">
+                        <div class="message-input">
+                            <textarea id="messageTextarea" placeholder="Напишите сообщение"></textarea>
+                            <div class="message-input__icons">
+                                <label for="addFile" class="btn--add-photo">
+                                    <input type="file" id="addFile" />
+                                    <img src="./assets/images/photo-ico.svg" alt="Photo" />
+                                </label>
+
+                                <button class="btn--send" id="sendButton">
+                                    <img src="./assets/images/send-message-ico.svg" alt="Send" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <include src="./components/footer.html"></include>
+    </body>
+</html>
