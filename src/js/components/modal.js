@@ -8,6 +8,9 @@ $(document).ready(function () {
 	$('[data-modal="seller-card"]').on('click', () => {
 		$('.seller-card-modal').addClass('active');
 	});
+	$('[data-modal="photo"]').on('click', () => {
+		$('.photo-modal').addClass('active');
+	});
 
 	$('[data-modal]').on('click', () => {
 		$('body').addClass('lock');
