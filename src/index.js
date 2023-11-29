@@ -12,6 +12,7 @@ import "./js/pages/promotion_page";
 import "./js/pages/characteristic";
 import "./js/pages/filter";
 import "./js/pages/profile-reviews";
+import "./js/pages/profile";
 import "./js/components/header";
 import "./js/components/modal";
 import "./js/components/forms";

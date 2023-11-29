@@ -15,7 +15,28 @@
         <section class="profile">
             <div class="container">
                 <div class="profile__left">
-                    <div class="profile__img"></div>
+                    <div class="profile__img">
+                        <div class="profile__img_set">
+                            <img src="./assets/images/app-store.webp" alt="">
+                        </div>
+                        <div class="profile__img_menu">
+                            <div class="profile__img_header mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Фото в профиле</span>
+                            </div>
+                            <label class="profile__img_item" data-modal="photo">
+                                <input type="file" accept="image/*" capture="user">
+                                <span>Сделать фото</span>
+                            </label>
+                            <label class="profile__img_item" data-modal="photo">
+                                <input type="file"/>
+                                <span>Загрузить</span>
+                            </label>
+                            <div class="profile__img_item profile__img_delete hidden" >Удалить</div>
+                        </div>
+                    </div>
                     <div class="profile__name">
                         Константин <br />
                         Константинопольский
@@ -281,6 +302,36 @@
                         </form>
                         <button class="btn btn__green" disabled type="submit" id="changePasswordButton">Изменить</button>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="photo-modal modal">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit desktop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="modal-return mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="photo-modal__content modal-content">
+                    <div class="photo-modal__img">
+                        <div class="photo-modal__info">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.3187 13.2521C22.6543 15.5877 22.6543 19.3743 20.3187 21.7098C17.9832 24.0454 14.1966 24.0454 11.861 21.7098C9.52549 19.3743 9.52549 15.5877 11.861 13.2521C14.1966 10.9166 17.9832 10.9166 20.3187 13.2521" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M29.5 11.5V25C29.5 26.6575 28.1575 28 26.5 28H5.5C3.8425 28 2.5 26.6575 2.5 25V11.5C2.5 9.8425 3.8425 8.5 5.5 8.5H8.5L10.693 4.744C10.9615 4.2835 11.455 4 11.989 4H19.945C20.4715 4 20.959 4.276 21.2305 4.726L23.5 8.5H26.5C28.1575 8.5 29.5 9.8425 29.5 11.5Z" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Загрузка фотографии</span>
+                        </div>
+                        <!-- <img id="photoCreating" src="" alt=""> -->
+                    </div>
+                    <button id="cropImg" class="btn btn__green">Сделать фото</button>
                 </div>
             </div>
         </div>
