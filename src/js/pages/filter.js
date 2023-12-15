@@ -120,4 +120,9 @@ if($('.filter').length) {
     $('.filter__title svg').on('click', function (evt) {
         $('.filter__left').removeClass('open')
     })
+    $('.filter__hidden_bottom').on('click', function (evt) {
+        $(this).closest('.filter__hidden').find('.filter__hidden_top').slideToggle()
+        $(this).css('display', 'none')
+    })
+
 }
