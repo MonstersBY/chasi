@@ -1,7 +1,7 @@
 import Swiper from "swiper";
 import "swiper/css";
 import 'swiper/css/pagination';
-import { Thumbs, Pagination } from "swiper/modules";
+import { Thumbs, Pagination, Navigation } from "swiper/modules";
 import $ from "jquery";
 
 function remToPx(remValue) {
@@ -13,15 +13,21 @@ function remToPx(remValue) {
 }
 
 const swiperThumbnail = new Swiper(".swiper-thumbnail", {
-  loop: true,
-  slidesPerView: 5,
-  freeMode: true,
-  watchSlidesProgress: true,
+  direction: 'vertical',
+  slidesPerView: 6,
+  freeMode: false,
   spaceBetween: `${remToPx(1.2)}rem`,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  watchOverflow: true,
+  modules: [Navigation],
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
 });
 
 const swiper = new Swiper(".adv-card__swiper", {
-  loop: true,
   modules: [Thumbs, Pagination],
   spaceBetween: `${remToPx(1.2)}rem`,
   thumbs: {
