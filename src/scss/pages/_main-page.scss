@@ -377,6 +377,25 @@
             width: 40.8rem;
         }
     }
+
+    &__fullpage {
+        padding: 4rem 3.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        border-radius: 1.6rem;
+        background: #FFF;
+
+        .main-page {
+            &__item {
+                width: 30.5rem;
+
+                &-img {
+                    height: 20rem;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 48em) {

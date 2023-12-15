@@ -154,7 +154,9 @@
             gap: 1.2rem;
 
             .btn__grey {
-                display: none;
+                // display: none;
+                background: #F1F3F3;
+                color: #298267;
             }
         }
     }
@@ -169,6 +171,23 @@
             font-style: normal;
             font-weight: 600;
             line-height: 116.667%;
+
+            &_info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                & > span:nth-child(1) {
+                    margin-bottom: 0.8rem;
+                }
+
+            }
+            &_small {
+                color: #7E8582;
+                font-size: 1.3rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.077%;
+            }
         }
     }
     &__photo {
@@ -594,6 +613,19 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 150%;
+
+                &_info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    & > span:nth-child(1) {
+                        margin-bottom: 0.8rem;
+                    }
+    
+                }
+                &_small {
+                    font-size: 2.6rem;
+                }
             }
         }
         &__photo {

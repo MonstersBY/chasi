@@ -35,7 +35,7 @@ if($('.characteristic').length) {
     })
     $('.characteristic__form_down_top').on('click', function (evt) {
         $(this).toggleClass('active')
-        $('.characteristic__form_down_addit_closed').toggle()
+        $('.characteristic__form_down_addit_closed').slideToggle()
     })
     $(document).on('click', function (e) {
         if ($(e.target).closest(".characteristic__form_item").length === 0) {
