@@ -28,8 +28,8 @@ const entryPoints = {
   characteristic: path.resolve(__dirname, "src", "index.js"),
   promotion_page: path.resolve(__dirname, "src", "index.js"),
   profile_reviews: path.resolve(__dirname, "src", "index.js"),
-  adv_card_consumer: path.resolve(__dirname, "src", "index.js"),
-  adv_card_seller: path.resolve(__dirname, "src", "index.js"),
+  adv_card_consumer_new: path.resolve(__dirname, "src", "index.js"),
+  adv_card_seller_new: path.resolve(__dirname, "src", "index.js"),
   // auth_modal: path.resolve(__dirname, "src", "index.js"),
   // reg_modal: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
