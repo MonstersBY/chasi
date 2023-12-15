@@ -1,6 +1,5 @@
 import $ from "jquery";
 $('.profile__form_item input').on('input', function(evt) {
-    console.log(123);
 	let $this = $(this);
 	let $parent = $this.parent();
 	let $placeholder = $parent.find('.profile__form_name');
@@ -12,4 +11,9 @@ $('.profile__form_item input').on('input', function(evt) {
 	} else {
 		$placeholder.removeClass('active');
 	}
+});
+
+$('.dropdown_top').on('click', function(evt) {
+	console.log($(this));
+	$(this).closest('.dropdown').toggleClass('open')
 });
