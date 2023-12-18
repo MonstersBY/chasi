@@ -6,9 +6,9 @@ function applyIMask() {
         mask: "+{7}(000)000-00-00",
     });
 
-    IMask(document.getElementById("newPhoneInput"), {
-        mask: "+{7}(000)000-00-00",
-    });
+    // IMask(document.getElementById("newPhoneInput"), {
+    //     mask: "+{7}(000)000-00-00",
+    // });
 }
 
 //input city dropdown list start
@@ -72,7 +72,7 @@ $(function () {
     let contactType = "email";
 
     function resetSignupFormFields() {
-        $("#emailInput, #phoneInput, #regCode, #passwordInput, #repeatPasswordInput, #nameInput, #surnameInput, #cityInput, #newPhoneInput, #newEmailInput").val("");
+        $("#emailInput, #phoneInput, #regCode, #passwordInput, #repeatPasswordInput, #nameInput, #surnameInput, #cityInput").val("");
         $(".signup-modal .btn").prop("disabled", true);
         contactType = "email";
     }
@@ -128,16 +128,19 @@ $(function () {
     function showSecondStage() {
         $(".signup-second-stage").show();
         $(".signup-first-stage, .signup-third-stage, .signup-fourth-stage").hide();
+        $('[data-switcher]').off()
 
         if ($("#emailInputDisabled").val() && !$("#phoneInputDisabled").val()) {
             //show email input
             contactType = "email";
+            $('[data-switcher="emailReg"]').addClass("switcher--active");
             $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на почту ${$("#emailInputDisabled").val()}`);
             $("#emailInputDisabled").parent().show();
             $("#phoneInputDisabled").parent().hide();
         } else if (!$("#emailInputDisabled").val() && $("#phoneInputDisabled").val()) {
             //show phone input
             contactType = "phone";
+            $('[data-switcher="phoneReg"]').addClass("switcher--active");
             $("#signupInfo").text(`Для подтверждения регистрации введите код, который мы отправили на номер ${$("#phoneInputDisabled").val()}`);
             $("#emailInputDisabled").parent().hide();
             $("#phoneInputDisabled").parent().show();
@@ -180,21 +183,21 @@ $(function () {
         $("#signupInfo").text("Заполните данные для регистрации");
 
         //hide one of inputs according to contact type from first stage
-        if (contactType === "email") {
-            $("#newEmailInput").parent().hide();
-            $("#newPhoneInput").parent().show();
-        } else if (contactType === "phone") {
-            $("#newPhoneInput").parent().hide();
-            $("#newEmailInput").parent().show();
-        }
+        // if (contactType === "email") {
+        //     $("#newEmailInput").parent().hide();
+        //     $("#newPhoneInput").parent().show();
+        // } else if (contactType === "phone") {
+        //     $("#newPhoneInput").parent().hide();
+        //     $("#newEmailInput").parent().show();
+        // }
 
         //check inputs and make signUpButton active
-        const $userDataInputs = $("#nameInput, #surnameInput, #cityInput, #newEmailInput, #newPhoneInput");
+        const $userDataInputs = $("#nameInput, #surnameInput, #cityInput");
         $userDataInputs.on("input", function () {
             const isPersonalInfoValid = $("#nameInput").val().trim() !== "" && $("#surnameInput").val().trim() !== "" && $("#cityInput").val().trim() !== "";
-            const isNewContactProvided = $("#newEmailInput").val().trim() !== "" || $("#newPhoneInput").val().trim() !== "";
+            // const isNewContactProvided = $("#newEmailInput").val().trim() !== "" || $("#newPhoneInput").val().trim() !== "";
 
-            $("#signUpButton").prop("disabled", !(isPersonalInfoValid && isNewContactProvided));
+            $("#signUpButton").prop("disabled", !(isPersonalInfoValid));
         });
 
         //handle click on signUpButton

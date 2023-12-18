@@ -54,4 +54,13 @@ $(function () {
         $("body").removeClass("lock");
         resetLoginFormFields();
     });
+
+    //password eye
+    $('.input-eye input').on('change', function(evt){
+        if($(this).is(':checked')) {
+            $(this).closest('.input-wrapper').find('input[type=password]')[0].type = 'text';
+        } else {
+            $(this).closest('.input-wrapper').find('input[type=text]')[0].type = 'password';
+        }
+    })
 });
