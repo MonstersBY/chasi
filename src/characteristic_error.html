@@ -215,7 +215,7 @@
             <div class="characteristic__text">Пункты обязательны к заполнению</div>
             <form class="characteristic__form">
                 <div class="characteristic__form_list">
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Бренд часов</div>
                         <div class="characteristic__dropdown">
                             <div class="characteristic__dropdown_top">
@@ -353,16 +353,18 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </div>
                         <div class="characteristic__dropdown_text desktop">Если бренд не указан, выберите «Без бренда». Если в списке бренд отсутствует, выберите «Другой».</div>
                     </div>
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Модель часов</div>
                         <label class="characteristic__form_input">
                             <input type="text" placeholder="Введите модель часов">
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </label>
                     </div>
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Состояние</div>
                         <div class="characteristic__dropdown">
                             <div class="characteristic__dropdown_top">
@@ -404,9 +406,10 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </div>
                     </div>
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Для кого</div>
                         <div class="characteristic__dropdown">
                             <div class="characteristic__dropdown_top">
@@ -441,15 +444,17 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </div>
                     </div>
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Год выпуска</div>
                         <label class="characteristic__form_input">
                             <input type="number" placeholder="Введите год выпуска">
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </label>
                     </div>
-                    <div class="characteristic__form_item">
+                    <div class="characteristic__form_item characteristic__form_item_error">
                         <div class="characteristic__form_title">Механизм</div>
                         <div class="characteristic__dropdown">
                             <div class="characteristic__dropdown_top">
@@ -498,6 +503,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                         </div>
                     </div>
                     <div class="characteristic__form_item">
@@ -1135,13 +1141,14 @@
                     <div class="characteristic__form_title">Опишите часы</div>
                     <textarea maxlength="200" placeholder="Введите текст (макс. 200 символов)"></textarea>
                 </div>
-                <div class="characteristic__form_item characteristic__form_item--big">
+                <div class="characteristic__form_item characteristic__form_item_error characteristic__form_item--big">
                     <div class="characteristic__form_title">Укажите цену</div>
                     <label class="characteristic__form_input">
                         <input id="add_price" type="numbe" placeholder="Введите цену ₽">
+                        <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                     </label>
                 </div>
-                <div class="characteristic__form_photos">
+                <div class="characteristic__form_photos characteristic__form_photos_error">
                     <div class="characteristic__photos_title characteristic__photos_title_info">
                         <span>Загрузите <br> фото часов</span>
                         <span class="characteristic__photos_title_small">Ограничение по размеру фото: не более 3 Мб</span>
@@ -1157,6 +1164,7 @@
                             <input class="characteristic__photo_input" type="file" multiple>
                         </div>
                     </div>
+                    <div class="characteristic__dropdown_error-text">Поле не заполнено</div>
                     <div class="characteristic__recomendation">
                         <div class="characteristic__recomendation_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1179,7 +1187,7 @@
                 </div>
                 <div class="characteristic__form_btns">
                     <button class="btn btn__green">Продолжить</button>
-                    <button class="btn btn__grey">Сохранить и выйти</button>
+                    <button class="btn btn__grey desktop">Сохранить и выйти</button>
                 </div>
             </form>
         </div>
