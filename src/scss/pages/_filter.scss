@@ -15,6 +15,7 @@
         padding: 4rem 3.2rem;
         background: #FFF;
         border-radius: 1.6rem;
+        height: fit-content;
     }
     &__right {
         width: 90rem;
@@ -24,6 +25,7 @@
         gap: 4rem;
         border-radius: 1.6rem;
         background: #FFF;
+        height: fit-content;
     }
     &__title {
 
@@ -245,6 +247,26 @@
         input:checked ~ span {
             color: #FFF;
             background: #031E16;
+        }
+    }
+    &__hidden {
+        &_top {
+            display: none;
+        }
+        &_bottom {
+            cursor: pointer;
+            border-radius: 4rem;
+            height: 4.8rem;
+            background: #F1F3F3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: #298267;
         }
     }
 }
@@ -486,6 +508,14 @@
 
             &.active {
                 display: block;
+            }
+        }
+        &__hidden {
+            &_top {
+                display: block;
+            }
+            &_bottom {
+                display: none;
             }
         }
     }

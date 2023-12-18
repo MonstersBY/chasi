@@ -15,7 +15,7 @@
         <section class="profile">
             <div class="container">
                 <div class="profile__left">
-                    <div class="profile__img">
+                    <div class="profile__img empty">
                         <div class="profile__img_set">
                             <img src="./assets/images/app-store.webp" alt="">
                         </div>
@@ -26,7 +26,7 @@
                                 </svg>
                                 <span>Фото в профиле</span>
                             </div>
-                            <label class="profile__img_item" data-modal="photo">
+                            <label class="profile__img_item mobile" data-modal="photo">
                                 <input type="file" accept="image/*" capture="user">
                                 <span>Сделать фото</span>
                             </label>
@@ -53,34 +53,73 @@
                     <div class="profile__container_title desktop">Персональные данные</div>
                     <form class="profile__form">
                         <div class="profile__form_top">
-                            <label class="profile__form_item">
-                                <input type="text" value="Константин" />
-                                <div class="profile__form_name active">Имя</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="text" value="Константинопольский" />
-                                <div class="profile__form_name active">Фамилия</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="text" value="Кременчуг-Константиновское" />
-                                <div class="profile__form_name active">Город</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="text" value="" />
-                                <div class="profile__form_name">Улица</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="text" value="33, корпус 4" />
-                                <div class="profile__form_name active">Дом</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="date" value="1995-03-16" />
-                                <div class="profile__form_name active">Дата рождения</div>
-                            </label>
-                            <label class="profile__form_item">
-                                <input type="text" value="Мужской" />
-                                <div class="profile__form_name active">Пол</div>
-                            </label>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="text" value="Константин" />
+                                    <div class="profile__form_name active">Имя</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="text" value="Константинопольский" />
+                                    <div class="profile__form_name active">Фамилия</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="text" value="Кременчуг-Константиновское" />
+                                    <div class="profile__form_name active">Город</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="text" value="" />
+                                    <div class="profile__form_name">Улица</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="text" value="33, корпус 4" />
+                                    <div class="profile__form_name active">Дом</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item">
+                                <label class="profile__form_item_top">
+                                    <input type="date" value="1995-03-16" />
+                                    <div class="profile__form_name active">Дата рождения</div>
+                                </label>
+                            </div>
+                            <div class="profile__form_item dropdown">
+                                <div class="profile__form_item_top dropdown_top">
+                                    <span class="profile__form_choosed"></span>
+                                    <div class="profile__form_name">Пол</div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M6 9L12 15L18 9" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="profile__form_item_bottom dropdown_bottom">
+                                    <div class="profile__form_item_bottom_head mobile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span>Пол</span>
+                                    </div>
+                                    <label class="profile__form_item_bottom_item">
+                                        <span>Мужской</span>
+                                        <input class="profile__form_choose" type="radio" name="gender">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6.5L9 17.5L4 12.5" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </label>
+                                    <label class="profile__form_item_bottom_item">
+                                        <span>Женский</span>
+                                        <input class="profile__form_choose" type="radio" name="gender">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 6.5L9 17.5L4 12.5" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="profile__form_bottom">
                             <div class="profile__unit">
@@ -165,9 +204,7 @@
                 <div class="profile__exit mobile">Выйти</div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="container"></div>
-        </footer>
+        <include src="./components/footer.html"></include>
 
         <!-- modals -->
 

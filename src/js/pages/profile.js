@@ -15,6 +15,23 @@ if($('.profile').length) {
     let photoCreating = document.querySelector('#photoCreating');
     let imagesExtentions = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
 
+    function getRoundedCanvas(sourceCanvas) {
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        var width = sourceCanvas.width;
+        var height = sourceCanvas.height;
+        
+        canvas.width = width;
+        canvas.height = height;
+        context.imageSmoothingEnabled = true;
+        context.drawImage(sourceCanvas, 0, 0, width, height);
+        context.globalCompositeOperation = 'destination-in';
+        context.beginPath();
+        context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true);
+        context.fill();
+        return canvas;
+    }
+
     $('.profile__img_item input').on('change', function (e) {
         if (e.target.files.length) {
             if (imagesExtentions.includes(e.target.files[0].type)) {
@@ -26,9 +43,7 @@ if($('.profile').length) {
                 let cropperAvatar = new Cropper(img, {
                     dragMode: 'move',
                     aspectRatio: 1,
-                    autoCrop: true,
 
-                    autoCropArea: 0.68,
                     center: false,
                     cropBoxMovable: false,
                     cropBoxResizable: false,
@@ -40,16 +55,22 @@ if($('.profile').length) {
                     },
                 });
                 $('#cropImg').on('click',function(){
-                    let croppedImage = cropperAvatar.getCroppedCanvas().toDataURL("image/png")
+                    let croppedImage = getRoundedCanvas(cropperAvatar.getCroppedCanvas()).toDataURL()
 
                     $('.profile__img_set img')[0].src = croppedImage
                     $('.photo-modal').removeClass('active')
                     $('.photo-modal__img').find('.cropper-container').remove()
                     $('.photo-modal__img').find('#photoCreating').remove()
+                    $('.profile__img_delete').removeClass('hidden')
+                    $('.profile__img').removeClass('empty')
                 })
             }
         }
     })
 
-
+    $('.profile__form_choose').on('change', function (e) {
+        $(this).closest('.profile__form_item').find('.profile__form_choosed').text($(this).siblings('span').text())
+        $(this).closest('.profile__form_item').find('.profile__form_name').addClass('active')
+        $(this).closest('.profile__form_item').removeClass('open')
+    })
 }
