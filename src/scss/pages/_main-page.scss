@@ -18,6 +18,12 @@
         font-weight: 600;
         line-height: 112.5%;
     }
+    &__subtitle {
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
     &__list {
         display: flex;
         gap: 2rem;
@@ -126,9 +132,45 @@
         position: relative;
         width: 40.8rem;
 
+        &_add {
+            position: relative;
+            width: 40.8rem;
+
+            .main-page__swiper-small-item {
+                margin-bottom: 3.4rem;
+            }
+            .main-page__swiper-small-item_contain {
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                margin-bottom: 0.4rem;
+            }
+            .main-page__swiper-small-item_description {
+                font-size: 1.536rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.077%;
+                margin-bottom: 2.4rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #7E8582;
+            }
+        }
+
+        .swiper-wrapper {
+            height: fit-content;
+            margin-bottom: 1.2rem;
+        }
+
         &.swiper-horizontal > .swiper-pagination-bullets.main-page__swiper-small_pagination {
-            position: absolute;
-            top: 32.4rem;
+            // position: absolute;
+            // top: 32.4rem;
+            height: fit-content;
+            margin-bottom: 2rem;
         }
 
         &-item {
@@ -138,7 +180,7 @@
             &_img {
                 width: 100%;
                 height: 30.2rem;
-                margin-bottom: 3.4rem;
+                // margin-bottom: 3.4rem;
 
                 img {
                     border-radius: 1.2rem;
@@ -302,6 +344,47 @@
         &_swiper {
             overflow: hidden;
             margin-bottom: 1.2rem;
+
+            &_add {
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+                position: relative;
+
+                .main-page__big {
+                    &_img {
+                        flex: none;
+                        width: 40.8rem;
+                        height: 30.2rem;
+            
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 1.2rem;
+                        }
+                    }
+                    &_right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.4rem;
+                    }
+                    &_name {
+                        font-size: 1.6rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        margin-bottom: 2.4rem;
+                    }
+                    &_description {
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        margin-bottom: 2.4rem;
+                    }
+                }
+            }
         }
         &_slide {
             display: flex;
@@ -417,6 +500,9 @@
             font-size: 4.8rem;
             line-height: 116.667%;
         }
+        &__subtitle {
+            font-size: 3.2rem;
+        }
         &__list {
             display: flex;
             gap: 3rem;
@@ -498,9 +584,37 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+
+            &_add {
+                width: 100%;
+    
+                .main-page__swiper-small-item {
+                    width: 100%;
+                    height: 51.2rem;
+                    margin-bottom: 2.4rem;
+                }
+                .main-page__swiper-small-item_contain {
+                    font-size: 3.2rem;
+                    margin-bottom: 0.9rem;
+                }
+                .main-page__swiper-small-item_description {
+                    font-size: 2.6rem;
+                    line-height: 123.077%;
+                    margin-bottom: 2.4rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color: #7E8582;
+                }
+            }
     
             &.swiper-horizontal > .swiper-pagination-bullets.main-page__swiper-small_pagination {
                 top: 52.8rem;
+            }
+            .swiper-wrapper {
+                margin-bottom: 1.6rem;
             }
     
             &-item {
@@ -510,7 +624,7 @@
                 &_img {
                     width: 100%;
                     height: 51.2rem;
-                    margin-bottom: 4.4rem;
+                    // margin-bottom: 4.4rem;
     
                     img {
                         border-radius: 1.2rem;

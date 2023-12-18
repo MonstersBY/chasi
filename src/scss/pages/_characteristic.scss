@@ -51,6 +51,30 @@
             grid-template-columns: 19.8rem 1fr;
             row-gap: 1.2rem;
 
+            &_error {
+                .characteristic__form_title {
+                    margin-bottom: 2.6rem;
+
+                    & ~ .characteristic__form_input {
+                        margin-bottom: 2.6rem;
+                        position: relative;
+
+                        .characteristic__dropdown_error-text {
+                            position: absolute;
+                            bottom: -2.6rem;
+                            margin: 0;
+                            left: 0;
+                        }
+                    }
+                }
+                .characteristic__dropdown_top {
+                    border: 0.1rem solid #ED3241;
+                }
+                .characteristic__form_input {
+                    border: 0.1rem solid #ED3241;
+                }
+            }
+
             &--big {
                 align-items: flex-start;
                 margin-bottom: 4rem;
@@ -91,6 +115,15 @@
             grid-template-columns: 19.8rem 1fr;
             row-gap: 2rem;
             margin-bottom: 4rem;
+
+            &_error {
+                .characteristic__photos {
+                    margin-bottom: -2.6rem;
+                }
+                .characteristic__photo_add {
+                    border: 0.1rem solid #ED3241;
+                }
+            }
         }
         &_title {
             font-size: 1.6rem;
@@ -406,6 +439,18 @@
             border-radius: 50%;
             margin-right: 1.6rem;
         }
+        &_error {
+            &-text {
+                margin-top: 0.8rem;
+                color: #ED3241;
+                font-size: 1.3rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 123.077%;
+                height: 1.6rem;
+                grid-column: 2;
+            }
+        }
     }
     &__recomendation {
         grid-column: 2;
@@ -504,7 +549,6 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-    
             
             &_list {
                 gap: 3.2rem;
@@ -516,6 +560,27 @@
                 align-items: center;
                 grid-template-columns: 19.8rem 1fr;
                 row-gap: 1.2rem;
+
+                &_error {
+                    .characteristic__form_title {
+                        margin-bottom: 2.6rem;
+    
+                        & ~ .characteristic__form_input {
+                            margin-bottom: 4.8rem;
+                            position: relative;
+    
+                            .characteristic__dropdown_error-text {
+                                bottom: -4.8rem;
+                            }
+                        }
+                    }
+                    .characteristic__dropdown_top {
+                        border: 0.2rem solid #ED3241;
+                    }
+                    .characteristic__form_input {
+                        border: 0.2rem solid #ED3241;
+                    }
+                }
     
                 &--big {
                     align-items: unset;
@@ -801,6 +866,13 @@
                 width: 8rem;
                 height: 8rem;
                 margin-right: 3.2rem;
+            }
+            &_error {
+                &-text {
+                    margin-top: 1.6rem;
+                    font-size: 2.6rem;
+                    height: 3.2rem;
+                }
             }
         }
         &__recomendation {
