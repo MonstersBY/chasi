@@ -26,5 +26,6 @@ import "./js/components/change-password-modal";
 import "./js/components/recomendation-modal";
 import "./js/components/unpublish-modal";
 import "./js/components/currency-modal";
+import "./js/components/fancybox-gallery";
 import { example } from "./js/utils/constants";
 console.log(example);
