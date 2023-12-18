@@ -13,13 +13,14 @@ $(function () {
         },
         Toolbar: {
             display: {
+                middle: ['infobar'],
+                left: [],
                 right: ["close"],
             },
         },
         // infobar: {
         //     tpl: '<div class="custom-infobar" tabindex="-1"><span data-fancybox-current-index></span> of <span data-fancybox-count></span></div>',
         // },
-       
         on: {
             init: function () {
                 $(".fancybox-bg").fadeIn();
@@ -30,7 +31,7 @@ $(function () {
         },
     });
 
-    $('.fancybox-bg').on('click', function () {
+    $(".fancybox-bg").on("click", function () {
         Fancybox.close();
     });
 });
