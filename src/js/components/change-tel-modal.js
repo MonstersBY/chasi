@@ -1,5 +1,6 @@
 import $ from "jquery";
 import IMask from "imask";
+import { startTimer, destroyTimer, resetTimer } from "./send-code-timer";
 
 function applyIMask() {
     IMask(document.getElementById("changeTelInput"), {
@@ -11,6 +12,7 @@ $(function () {
     function resetChangeTelFormFields() {
         $("#changeTelInput, #changeTelInputDisabled, #codeTelInput").val("");
         $(".change-tel-modal .btn").prop("disabled", true);
+        destroyTimer();
     }
 
     $('[data-modal="change-tel"]').on("click", () => {
@@ -20,7 +22,7 @@ $(function () {
         showFirstChangeTelStage();
     });
 
-    function showFirstChangeTelStage (){
+    function showFirstChangeTelStage() {
         $(".change-tel-first-stage").show();
         $(".change-tel-second-stage").hide();
 
@@ -35,30 +37,32 @@ $(function () {
         });
     }
 
-    function showSecondChangeTelStage (){
+    function showSecondChangeTelStage() {
         $(".change-tel-second-stage").show();
         $(".change-tel-first-stage").hide();
+        resetTimer();
 
         //close modal on 4 symbols in #codeTelInput
-    $("#codeTelInput").on("input", function () {
-        if ($(this).val().trim().length === 4) {
-            $(".change-tel-modal").removeClass("active");
-            $("body").removeClass("lock");
-            $("#profileTel").text($("#changeTelInput").val());
-            resetChangeTelFormFields()
+        $("#codeTelInput").on("input", function () {
+            if ($(this).val().trim().length === 4) {
+                $(".change-tel-modal").removeClass("active");
+                $("body").removeClass("lock");
+                $("#profileTel").text($("#changeTelInput").val());
+                resetChangeTelFormFields();
+                destroyTimer();
 
-            $(".pop-up").addClass("showed");
-            $(".pop-up__text").text("Номер успешно обновлён");
-            setTimeout(() => {
-                $(".pop-up").removeClass("showed");
-            }, 5000);
-
-            $(".pop-up")
-                .find("svg")
-                .on("click", () => {
+                $(".pop-up").addClass("showed");
+                $(".pop-up__text").text("Номер успешно обновлён");
+                setTimeout(() => {
                     $(".pop-up").removeClass("showed");
-                });
-        }
-    });
+                }, 5000);
+
+                $(".pop-up")
+                    .find("svg")
+                    .on("click", () => {
+                        $(".pop-up").removeClass("showed");
+                    });
+            }
+        });
     }
-})
+});

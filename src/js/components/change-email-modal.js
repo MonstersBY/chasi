@@ -1,9 +1,11 @@
 import $ from "jquery";
+import { startTimer, destroyTimer, resetTimer } from "./send-code-timer";
 
 $(function () {
     function resetChangeEmailFormFields() {
         $("#changeEmailInput, #changeEmailInputDisabled, #codeEmailInput").val("");
         $(".change-email-modal .btn").prop("disabled", true);
+        destroyTimer()
     }
 
     $('[data-modal="change-email"]').on("click", () => {
@@ -30,6 +32,8 @@ $(function () {
     function showSecondChangeEmailStage() {
         $(".change-email-second-stage").show();
         $(".change-email-first-stage").hide();
+
+        resetTimer();
 
         //close modal on 4 symbols in #codeEmailInput
         $("#codeEmailInput").on("input", function () {
