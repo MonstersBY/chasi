@@ -1,11 +1,10 @@
 import $ from "jquery";
 
 //Show chat on dialog click
-
 $(function () {
     if (window.innerWidth < 769) {
         $(".chat__switcher-content").hide();
-        $('.chat__switcher-content[data-content="dialogSupport"]').show();
+        $('.chat__switcher-content[data-content="dialogFirstVisit"]').show();
         handleMessageBtn();
 
         $(".chat__dialogs__item").on("click", function () {
@@ -21,7 +20,7 @@ $(function () {
         });
     } else {
         $(".chat__switcher-content").hide();
-        $('.chat__switcher-content[data-content="dialogSupport"]').show();
+        $('.chat__switcher-content[data-content="dialogFirstVisit"]').show();
         handleMessageBtn();
 
         $(".chat__dialogs__item").on("click", function () {
@@ -58,7 +57,7 @@ $(function () {
 //Dialogs switcher
 $(function () {
     $(".chat__switcher-content").hide();
-    $('.chat__switcher-content[data-content="dialogSupport"]').show();
+    $('.chat__switcher-content[data-content="dialogFirstVisit"]').show();
     handleMessageBtn();
 
     $(".chat__dialogs__item").on("click", function () {

@@ -43,7 +43,7 @@
             flex-direction: column;
         }
 
-        &__header{
+        &__header {
             display: flex;
             gap: 20rem;
             align-items: center;
@@ -277,6 +277,20 @@
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        &--first-visit {
+            align-items: center;
+            justify-content: center;
+            margin-top: -2rem;
+
+            span {
+                color: #7e8582;
+                line-height: 150%;
+                font-size: 1.6rem;
+                max-width: 25.1rem;
+                text-align: center;
+            }
+        }
     }
 
     &__dialog {
@@ -373,9 +387,9 @@
 
         &__messages {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
             max-height: 44.9rem;
             overflow: auto;
             margin-top: auto;
@@ -396,8 +410,6 @@
                 border-radius: 1.2rem;
                 background: #7e8582;
             }
-
-
 
             @media (max-width: 48em) {
                 max-height: 118.4rem;
@@ -464,6 +476,44 @@
 
                 @media (max-width: 48em) {
                     font-size: 2rem;
+                }
+            }
+
+            //photos
+            &--photo {
+                padding: 0;
+                border-radius: 2rem;
+                overflow: hidden;
+                max-width: 50.4rem;
+                max-height: 48.4rem;
+
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(12.45rem, 1fr));
+                grid-column-gap: 0.2rem;
+                grid-row-gap: 0.2rem;
+
+                // grid-template-areas: "a a a" "b c c" "b c c";
+
+                @media (max-width: 48em) {
+                    border-radius: 3.6rem;
+                    max-width: 60rem;
+                    max-height: 64rem;
+                    // grid-template-columns: repeat(auto-fit, minmax(14.85rem, 1fr));
+                    // grid-template-rows: repeat(auto-fit, minmax(14.85rem, 1fr));
+                }
+
+                img {
+                    object-fit: cover;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+
+                &.message--outgoing {
+                    border: 0.2rem solid #298267;
+                }
+
+                &.message--incoming {
+                    border: 0.2rem solid #f1f3f3;
                 }
             }
         }

@@ -21,6 +21,7 @@ const entryPoints = {
   favorites_page: path.resolve(__dirname, "src", "index.js"),
   seller_card: path.resolve(__dirname, "src", "index.js"),
   chat_page: path.resolve(__dirname, "src", "index.js"),
+  chat_page_pics: path.resolve(__dirname, "src", "index.js"),
   creating_adv_page: path.resolve(__dirname, "src", "index.js"),
   creating_adv_page_empty: path.resolve(__dirname, "src", "index.js"),
   filter: path.resolve(__dirname, "src", "index.js"),
@@ -33,9 +34,6 @@ const entryPoints = {
   adv_card_consumer_new: path.resolve(__dirname, "src", "index.js"),
   adv_card_seller_new: path.resolve(__dirname, "src", "index.js"),
   error_page: path.resolve(__dirname, "src", "index.js"),
-  
-  // auth_modal: path.resolve(__dirname, "src", "index.js"),
-  // reg_modal: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
