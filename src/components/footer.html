@@ -58,6 +58,7 @@
                                         />
                                     </svg>
                                 </label>
+                                
                             </div>
                         </form>
                     </div>
@@ -70,7 +71,7 @@
                                 <span>Телефон</span>
                             </div>
                             <div class="input-wrapper">
-                                <input type="password" class="auth-modal-content__input" id="phoneLoginPasswordInput" required />
+                                <input type="password" class="auth-modal-content__input auth-modal-content__input--error" id="phoneLoginPasswordInput" required />
                                 <label class="input-eye">
                                     <input type="checkbox" />
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
@@ -93,6 +94,7 @@
                                     </svg>
                                 </label>
                                 <span>Пароль</span>
+                                <div class="error-text">Текст ошибки</div>
                             </div>
                         </form>
                     </div>
@@ -203,7 +205,7 @@
                         <button class="btn btn__green" disabled type="submit" id="confirmCodeButton">Продолжить2</button>
 
                         <!-- send code again -->
-                        <div class="auth-modal-content__send-code-again">Отправить код повторно</div>
+                        <a href="#!" class="send-code-again">Отправить код повторно через <span class="time">01:00</span></a>
                     </div>
 
                     <!-- THIRD STAGE: create password -->
@@ -396,6 +398,9 @@
                             </div>
                         </form>
                         <button class="btn btn__green" disabled type="submit" id="resetButton">Восстановить</button>
+
+                        <a href="#!" class="send-code-again">Отправить код повторно через <span class="time">01:00</span></a>
+
                     </div>
                     <!-- third stage -->
                     <div class="reset-password-third-stage">

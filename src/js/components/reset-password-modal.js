@@ -1,5 +1,6 @@
 import $ from "jquery";
 import IMask from "imask";
+import { startTimer, destroyTimer, resetTimer } from "./send-code-timer";
 
 function applyIMask() {
     IMask(document.getElementById("resetPwdPhoneInput"), {
@@ -17,10 +18,12 @@ $(function () {
     function resetResPwdFormFields() {
         $("#resetPwdEmailInput, #resetPwdPhoneInput, #phoneOrEmailInputDisabled, #resetPasswordCode, #newPasswordInput, #repeatNewPasswordInput").val("");
         $(".reset-password-modal .btn").prop("disabled", true);
+        destroyTimer();
     }
 
     $('[data-modal="reset-password-modal"]').on("click", () => {
         $(".login-modal").removeClass("active");
+        $(".change-password-modal").removeClass("active");
         $(".reset-password-modal").addClass("active");
         applyIMask();
         resetResPwdFormFields();
@@ -60,7 +63,6 @@ $(function () {
         //handle click on sendCodeButton
         $("#sendCodeButton").on("click", function () {
             $("#emailPwdInputDisabled").val($("#resetPwdEmailInput").val());
-            console.log($("#resetPwdEmailInput").val());
             $("#phonePwdInputDisabled").val($("#resetPwdPhoneInput").val());
             showSecondResPwdStage();
         });
@@ -91,8 +93,11 @@ $(function () {
 
         //handle click on resetButton
         $("#resetButton").on("click", function () {
+            destroyTimer()
             showThirdResPwdStage();
         });
+
+        resetTimer();
     }
 
     function showThirdResPwdStage() {
