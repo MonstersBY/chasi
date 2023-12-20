@@ -94,6 +94,9 @@
     }
 
     .fancybox__toolbar__column.is-right {
+        @media (max-width: 48em) {
+            opacity: 0;
+        }
         .f-button {
             border-radius: 100%;
             overflow: hidden;
@@ -110,12 +113,28 @@
             }
         }
     }
+    .fancybox__toolbar__column.is-left {
+        opacity: 0;
+        @media (max-width: 48em) {
+            opacity: 1;
+        }
+        .f-button {
+            background-color: unset;
+            width: 4.8rem;
+            height: 4.8rem;
+
+            svg {
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+        }
+    }
 
     .fancybox__slide {
         padding: 4rem;
 
         @media (max-width: 48em) {
-            padding: 24.8rem 3.2rem 24rem;
+            padding: 24.8rem 3.2rem 20rem;
         }
 
         .fancybox__content {
