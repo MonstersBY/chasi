@@ -19,6 +19,7 @@ const entryPoints = {
   adv_card_on_check: path.resolve(__dirname, "src", "index.js"),
   adv_card_archive: path.resolve(__dirname, "src", "index.js"),
   favorites_page: path.resolve(__dirname, "src", "index.js"),
+  favorites_page_empty: path.resolve(__dirname, "src", "index.js"),
   seller_card: path.resolve(__dirname, "src", "index.js"),
   chat_page: path.resolve(__dirname, "src", "index.js"),
   chat_page_pics: path.resolve(__dirname, "src", "index.js"),

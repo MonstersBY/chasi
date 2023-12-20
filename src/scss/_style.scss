@@ -147,6 +147,14 @@ body {
     }
 }
 
+.switcher__content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
 @media (max-width: 48em) {
     .swiper-horizontal > .swiper-pagination-bullets.pagination__slides {
         display: flex;
