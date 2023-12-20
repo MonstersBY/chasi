@@ -2,7 +2,7 @@ import $ from "jquery";
 
 $(function () {
     $(".chat__dialog__message--photo").each(function () {
-        let numPhotos = $(this).find("img").length;
+        let numPhotos = $(this).find(".chat__dialog__message__image-wrapper").length;
         let windowWidth = $(window).width();
 
         if (numPhotos === 1) {
@@ -56,22 +56,22 @@ $(function () {
                 "grid-template-columns": "repeat(3, 1fr)",
                 "grid-template-rows": "auto auto",
             });
-            $(this).find("img:eq(3)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                 "grid-column": "auto / span 3",
             });
 
             if (windowWidth < 769) {
-                $(this).find("img:lt(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(3)").css({
                     height: "21.2rem",
                 });
-                $(this).find("img:eq(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                     height: "34.2rem",
                 });
             } else {
-                $(this).find("img:lt(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(3)").css({
                     height: "16rem",
                 });
-                $(this).find("img:eq(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                     height: "22.4rem",
                 });
             }
@@ -81,34 +81,34 @@ $(function () {
                 "grid-template-rows": "auto auto",
             });
 
-            $(this).find("img:lt(3)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:lt(3)").css({
                 "grid-column": "auto / span 2",
             });
-            $(this).find("img:eq(3)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                 "grid-column": "auto / span 3",
             });
-            $(this).find("img:eq(4)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                 "grid-column": "auto / span 3",
             });
 
             if (windowWidth < 769) {
-                $(this).find("img:lt(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(3)").css({
                     height: "21.2rem",
                 });
-                $(this).find("img:eq(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                     height: "22.4rem",
                 });
-                $(this).find("img:eq(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                     height: "22.4rem",
                 });
             } else {
-                $(this).find("img:lt(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(3)").css({
                     height: "16rem",
                 });
-                $(this).find("img:eq(3)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(3)").css({
                     height: "22.4rem",
                 });
-                $(this).find("img:eq(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                     height: "22.4rem",
                 });
             }
@@ -130,50 +130,50 @@ $(function () {
                 "grid-template-columns": "repeat(12, 1fr)",
                 "grid-template-rows": "auto auto",
             });
-            $(this).find("img:lt(4)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                 "grid-column": "auto / span 3",
             });
-            $(this).find("img:eq(4)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                 "grid-column": "auto / span 4",
             });
-            $(this).find("img:eq(5)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(5)").css({
                 "grid-column": "auto / span 4",
             });
-            $(this).find("img:eq(6)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(6)").css({
                 "grid-column": "auto / span 4",
             });
 
             if (windowWidth < 769) {
-                $(this).find("img:lt(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                     width: "14.85rem",
                     height: "21.2rem",
                 });
-                $(this).find("img:eq(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                     width: "19.86rem",
                     height: "21.2rem",
                 });
-                $(this).find("img:eq(5)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(5)").css({
                     width: "19.86rem",
                     height: "21.2rem",
                 });
-                $(this).find("img:eq(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(6)").css({
                     width: "19.86rem",
                     height: "21.2rem",
                 });
             } else {
-                $(this).find("img:lt(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                     width: "12.45rem",
                     height: "16rem",
                 });
-                $(this).find("img:eq(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(4)").css({
                     width: "16.6rem",
                     height: "16rem",
                 });
-                $(this).find("img:eq(5)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(5)").css({
                     width: "16.6rem",
                     height: "16rem",
                 });
-                $(this).find("img:eq(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:eq(6)").css({
                     width: "16.6rem",
                     height: "16rem",
                 });
@@ -182,13 +182,13 @@ $(function () {
             $(this).css({
                 "grid-template-columns": "repeat(6, 1fr)",
             });
-            $(this).find("img:lt(6)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                 "grid-column": "auto / span 2",
             });
-            $(this).find("img:eq(6)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(6)").css({
                 "grid-column": "auto / span 3",
             });
-            $(this).find("img:eq(7)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(7)").css({
                 "grid-column": "auto / span 3",
             });
 
@@ -196,14 +196,14 @@ $(function () {
                 $(this).css({
                     "grid-template-rows": "21.2rem 21.2rem 21.2rem",
                 });
-                $(this).find("img:lt(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                     width: "19.86rem",
                 });
             } else {
                 $(this).css({
                     "grid-template-rows": "16rem 16rem 16rem",
                 });
-                $(this).find("img:lt(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                     width: "16.6rem",
                 });
             }
@@ -211,16 +211,16 @@ $(function () {
             $(this).css({
                 "grid-template-columns": "repeat(12, 1fr)",
             });
-            $(this).find("img:lt(4)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                 "grid-column": "auto / span 3",
             });
-            $(this).find("img:gt(3):lt(7)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:gt(3):lt(7)").css({
                 "grid-column": "auto / span 4",
             });
-            $(this).find("img:eq(7)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(7)").css({
                 "grid-column": "auto / span 6",
             });
-            $(this).find("img:eq(8)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:eq(8)").css({
                 "grid-column": "auto / span 6",
             });
 
@@ -228,14 +228,14 @@ $(function () {
                 $(this).css({
                     "grid-template-rows": "21.2rem 21.2rem 21.2rem",
                 });
-                $(this).find("img:lt(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                     width: "14.85rem",
                 });
             } else {
                 $(this).css({
                     "grid-template-rows": "16rem 16rem 16rem",
                 });
-                $(this).find("img:lt(4)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(4)").css({
                     width: "12.45rem",
                 });
             }
@@ -243,10 +243,10 @@ $(function () {
             $(this).css({
                 "grid-template-columns": "repeat(12, 1fr)",
             });
-            $(this).find("img:lt(6)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                 "grid-column": "auto / span 4",
             });
-            $(this).find("img:gt(5):lt(9)").css({
+            $(this).find(".chat__dialog__message__image-wrapper:gt(5):lt(9)").css({
                 "grid-column": "auto / span 3",
             });
 
@@ -254,20 +254,20 @@ $(function () {
                 $(this).css({
                     "grid-template-rows": "21.2rem 21.2rem 21.2rem",
                 });
-                $(this).find("img:lt(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                     width: "19.86rem",
                 });
-                $(this).find("img:gt(5):lt(9)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:gt(5):lt(9)").css({
                     width: "14.85rem",
                 });
             } else {
                 $(this).css({
                     "grid-template-rows": "16rem 16rem 16rem",
                 });
-                $(this).find("img:lt(6)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:lt(6)").css({
                     width: "16.6rem",
                 });
-                $(this).find("img:gt(5):lt(9)").css({
+                $(this).find(".chat__dialog__message__image-wrapper:gt(5):lt(9)").css({
                     width: "12.45rem",
                 });
             }

@@ -29,5 +29,6 @@ import "./js/components/currency-modal";
 import "./js/components/fancybox-gallery";
 import "./js/components/send-code-timer";
 import "./js/components/chat-pics-grid";
+import "./js/components/provide-tel-modal";
 import { example } from "./js/utils/constants";
 console.log(example);
