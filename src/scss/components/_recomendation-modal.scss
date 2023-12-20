@@ -53,7 +53,7 @@
         padding-bottom: 2.4rem;
 
         @media (max-width: 48em) {
-            padding-bottom: 4.8rem;
+            padding-bottom: 0;
         }
     }
 
@@ -69,10 +69,10 @@
     }
 
     &__step {
-        margin-bottom: 1.6rem;
+        margin-bottom: 4rem;
 
         @media (max-width: 48em) {
-            margin-bottom: 3.2rem;
+            margin-bottom: 4.8rem;
         }
 
         &__title {

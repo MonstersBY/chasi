@@ -233,7 +233,7 @@
                         <a href="" class="profile__link">Отзывы <span class="profile__messages_count">13</span></a>
                         <a href="" class="profile__link">Служба поддержки <span class="profile__messages_count"></span></a>
                     </div>
-                    <div class="profile__exit desktop">Выйти</div>
+                    <div class="profile__exit desktop" data-modal="exit">Выйти</div>
                 </div>
                 <div class="profile__container">
                     <div class="profile__container_title desktop">Персональные данные</div>
@@ -619,6 +619,30 @@
                         <!-- <img id="photoCreating" src="" alt=""> -->
                     </div>
                     <button id="cropImg" class="btn btn__green">Сделать фото</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="exit-modal modal">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit desktop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-return mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="modal-content">
+                    <div class="exit-modal__title">Вы действительно хотите выйти?</div>
+                    <div class="exit-modal__btns">
+                        <button class="btn btn__green btn--exit">Выйти</button>
+                        <a href="#!" data-modal="close-modal">Отменить действие</a>
+                    </div>
                 </div>
             </div>
         </div>
