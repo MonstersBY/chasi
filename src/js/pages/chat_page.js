@@ -33,7 +33,6 @@ $(function () {
             let activeMessagesContainer = $('.chat__switcher-content[data-content="' + switcherValue + '"]').find(".chat__dialog__messages");
             activeMessagesContainer.addClass("active");
             activeMessagesContainer.scrollTop(activeMessagesContainer.prop("scrollHeight"));
-
         });
     }
 });
@@ -43,55 +42,29 @@ const handleMessageBtn = function () {
     const $dialog = $(".chat__switcher-content:visible");
     const $messageTextarea = $dialog.find(".chat__dialog__textarea");
     const $sendButton = $dialog.find(".btn--send");
-    $sendButton.hide();
-    $messageTextarea.on("input", function () {
-        if ($messageTextarea.val().trim() !== "") {
+
+    if ($messageTextarea.length === 0) {
+        return;
+    }
+
+    function toggleSendButton(text) {
+        if (text !== "") {
             $sendButton.show();
         } else {
             $sendButton.hide();
         }
+    }
+
+    toggleSendButton($messageTextarea.val().trim());
+    $messageTextarea.off("input").on("input", function () {
+        toggleSendButton($(this).val().trim());
     });
 };
 
 //add photo
-// let input = document.getElementById("addFile");
-// let thumbnailsContainer = $("#thumbnailsContainer");
-
-// $("#addFile").on("change", function () {
-//     if (input.files && input.files.length > 0) {
-//         for (let i = 0; i < input.files.length; i++) {
-//             let file = input.files[i];
-//             let reader = new FileReader();
-//             let thumb = $('<div class="chat__dialog__thumbnail"></div>');
-
-//             reader.onload = function (e) {
-//                 thumb.append(
-//                     '<img class="chat__dialog__thumbnail__img" src="' +
-//                         e.target.result +
-//                         '" alt="Thumbnail" /><button class="chat__dialog__thumbnail__btn-delete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M8 8L16 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L8 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
-//                 );
-//                 input.value = "";
-//             };
-
-//             reader.readAsDataURL(file);
-//             thumbnailsContainer.append(thumb);
-//             $(".chat__dialog__messages.active").scrollTop( $(".chat__dialog__messages.active").prop("scrollHeight"));
-//         }
-//     }
-// });
-
-// thumbnailsContainer.on("click", ".chat__dialog__thumbnail__btn-delete", function (e) {
-//     e.preventDefault();
-//     console.log("click");
-//     $(this).closest(".chat__dialog__thumbnail").remove();
-// });
-
-
-//FIX!!
 $(".input--add-photo").on("change", function () {
     let input = this;
     let thumbnailsContainer = $(this).closest(".chat__dialog__footer").find(".chat__dialog__thumbnails-container");
-    console.log($(this));
 
     if (input.files && input.files.length > 0) {
         for (let i = 0; i < input.files.length; i++) {
@@ -102,8 +75,8 @@ $(".input--add-photo").on("change", function () {
             reader.onload = function (e) {
                 thumb.append(
                     '<img class="chat__dialog__thumbnail__img" src="' +
-                    e.target.result +
-                    '" alt="Thumbnail" /><button class="chat__dialog__thumbnail__btn-delete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M8 8L16 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L8 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+                        e.target.result +
+                        '" alt="Thumbnail" /><button class="chat__dialog__thumbnail__btn-delete"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M8 8L16 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L8 16" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
                 );
                 input.value = "";
             };
@@ -111,6 +84,16 @@ $(".input--add-photo").on("change", function () {
             reader.readAsDataURL(file);
             thumbnailsContainer.append(thumb);
             thumbnailsContainer.closest(".chat__dialog__messages.active").scrollTop(thumbnailsContainer.closest(".chat__dialog__messages.active").prop("scrollHeight"));
+
+            const $dialog = $(".chat__switcher-content:visible");
+            const $sendButton = $dialog.find(".btn--send");
+            $sendButton.show();
+
+            if (thumb.length === 0) {
+                $sendButton.hide();
+            } else {
+                $sendButton.show();
+            }
         }
     }
 });
@@ -118,4 +101,12 @@ $(".input--add-photo").on("change", function () {
 $(document).on("click", ".chat__dialog__thumbnail__btn-delete", function (e) {
     e.preventDefault();
     $(this).closest(".chat__dialog__thumbnail").remove();
+    const $dialog = $(".chat__switcher-content:visible");
+    const $sendButton = $dialog.find(".btn--send");
+
+    if ($(".chat__dialog__thumbnail").length === 0) {
+        $sendButton.hide();
+    } else {
+        $sendButton.show();
+    }
 });
