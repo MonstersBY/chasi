@@ -53,7 +53,7 @@
         }
     }
 
-    .profile__reviews__switchers-container{
+    .profile__reviews__switchers-container {
         height: 100%;
     }
     .switcher-rev {
@@ -91,7 +91,7 @@
         }
     }
 
-    .switcher-content{
+    .switcher-content {
         height: 100%;
     }
     .my-rating {
@@ -177,13 +177,18 @@
     }
 
     .reviews {
-        
-        height: 32.9rem;
+        height: fit-content;
 
         &--empty {
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 32.9rem;
+
+            @media (max-width: 48em) {
+                height: 100%;
+                margin-top: 54.4rem;
+            }
 
             @media (max-width: 48em) {
                 height: 100%;
@@ -215,7 +220,6 @@
         @media (max-width: 48em) {
             padding: 4.8rem 0 1.6rem;
             border-bottom: none;
-        }
 
         &:last-child {
             border-bottom: none;
@@ -344,4 +348,5 @@
             }
         }
     }
+}
 }
