@@ -28,7 +28,7 @@
         margin-bottom: 2.4rem;
     }
 
-    .profile__reviews {
+    .profile__reviews{
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -190,6 +190,11 @@
                 margin-top: 54.4rem;
             }
 
+            @media (max-width: 48em) {
+                height: 100%;
+                margin-top: 54.4rem;
+            }
+            
             span {
                 text-align: center;
                 font-size: 1.6rem;
@@ -215,7 +220,6 @@
         @media (max-width: 48em) {
             padding: 4.8rem 0 1.6rem;
             border-bottom: none;
-        }
 
         &:last-child {
             border-bottom: none;
