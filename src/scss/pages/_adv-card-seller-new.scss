@@ -18,6 +18,17 @@
 }
 
 .adv-card__seller {
+
+    .container--flex{
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &__top{
+        display: flex;
+        gap: 2rem;
+    }
+
     .adv-card__sticky {
         .adv-card__title {
             display: flex;
@@ -70,6 +81,7 @@
 
     &__buttons {
         display: flex;
+        flex-wrap: wrap;
         gap: 1.2rem;
         align-items: center;
     }
