@@ -125,4 +125,22 @@ if($('.filter').length) {
         $(this).css('display', 'none')
     })
 
+    
+    $('.main-page__sorting_top').on('click', function (evt) {
+        $('.filter__blur').toggleClass('active')
+        $(this).closest('.main-page__sorting').toggleClass('active')
+    })
+    $('.main-page__sorting_bottom_head svg').on('click', function (evt) {
+        $('.filter__blur').removeClass('active')
+        $('.main-page__sorting').removeClass('active')
+    })
+    $('.main-page__sorting_bottom_item input').on('change', function (evt) {
+        $(this).closest('.main-page__sorting_bottom_item').find('span').text()
+        $(this).closest('.main-page__sorting').find('.main-page__sorting_top').find('span').text($(this).closest('.main-page__sorting_bottom_item').find('span').text())
+    })
+    $(document).on('click', function (e) {
+        if ($(e.target).closest(".main-page__sorting").length === 0) {
+            $('.main-page__sorting').removeClass('active')
+        }
+    });
 }

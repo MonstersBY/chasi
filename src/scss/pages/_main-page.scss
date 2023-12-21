@@ -122,6 +122,14 @@
                 height: 2.4rem;
             }
         }
+        &_delete {
+            position: absolute;
+            top: 0.4rem;
+            right: 0.4rem;
+            width: 3.2rem;
+            height: 3.2rem;
+            cursor: pointer;
+        }
     }
     &__swipers {
         display: flex;
@@ -340,7 +348,11 @@
         }
     }
     &__big {
-
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 1.2rem;
         &_swiper {
             overflow: hidden;
             margin-bottom: 1.2rem;
@@ -407,11 +419,11 @@
             display: flex;
             flex-direction: column;
             gap: 2.4rem;
+            justify-content: center;
         }
         &_top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
 
             &_container {
                 display: flex;
@@ -459,6 +471,37 @@
             gap: 1.1rem;
             width: 40.8rem;
         }
+
+        &_info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            &-item {
+                display: flex;
+                gap: 1.2rem;
+            }
+            &-name {
+                width: 15.8rem;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                flex: none;
+                color: #7E8582;
+            }
+            &-res {
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
     }
 
     &__fullpage {
@@ -476,6 +519,91 @@
 
                 &-img {
                     height: 20rem;
+                }
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__sorting {
+        position: relative;
+
+        &.active {
+            .main-page__sorting {
+                &_top {
+                    span {
+                        color: #298267;
+                    }
+                    svg {
+                        path {
+                            stroke: #298267;
+                        }
+                    }
+                }
+                &_bottom {
+                    display: flex;
+                }
+            }
+        }
+
+        &_top {
+            cursor: pointer;
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+
+            span {
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; 
+            }
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+        &_bottom {
+            position: absolute;
+            border-radius: 0.8rem;
+            width: 37.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 1.6rem;
+            box-shadow: 0px 0.4rem 1rem 0px rgba(0, 0, 0, 0.10);
+            background: #FFF;
+            z-index: 1;
+            right: 0;
+
+            &_item {
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                gap: 1.2rem;
+                cursor: pointer;
+
+                span {
+                    flex: 1;
+                }
+                svg {
+                    opacity: 0;
+                    flex: none;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+                input {
+                    display: none;
+                }
+                input:checked ~ svg {
+                    opacity: 1;
                 }
             }
         }
@@ -602,6 +730,15 @@
                     width: 4.8rem;
                     height: 4.8rem;
                 }
+            }
+            
+            &_delete {
+                position: absolute;
+                top: 0.8rem;
+                right: 0.8rem;
+                width: 5.6rem;
+                height: 5.6rem;
+                cursor: pointer;
             }
         }
         &__swipers {
@@ -769,6 +906,71 @@
     
                     &-img {
                         height: 24.8rem;
+                    }
+                }
+            }
+        }
+
+        &__top {
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+        &__sorting {
+    
+            &_top {
+                flex-direction: row-reverse;
+                width: fit-content;
+                gap: 0.8rem;
+    
+                span {
+                    font-size: 3.2rem;
+                }
+    
+                svg {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+            &_bottom {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                box-shadow: none;
+                border-radius: 4.8rem 4.8rem 0 0;
+                width: 100%;
+                right: auto;
+                padding: 4.8rem 3.2rem 3.2rem;
+                z-index: 3;
+
+                &_head {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        margin-right: 20rem;
+                        width: 4.8rem;
+                        height: 4.8rem;
+                    }
+
+                    span {
+                        font-size: 3.2rem;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 150%;
+                    }
+                }
+    
+                &_item {
+                    font-size: 3.2rem;
+                    gap: 2.4rem;
+    
+                    span {
+                        flex: 1;
+                    }
+                    svg {
+                        width: 4.8rem;
+                        height: 4.8rem;
                     }
                 }
             }

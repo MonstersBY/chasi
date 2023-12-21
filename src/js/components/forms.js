@@ -14,6 +14,13 @@ $('.profile__form_item input').on('input', function(evt) {
 });
 
 $('.dropdown_top').on('click', function(evt) {
-	console.log($(this));
 	$(this).closest('.dropdown').toggleClass('open')
+	$('.dropdown__blur').toggleClass('open')
+});
+
+$(document).on('click', function (e) {
+	if ($(e.target).closest(".dropdown").length === 0) {
+		$(".dropdown").removeClass('open')
+		$('.dropdown__blur').removeClass('open')
+	}
 });
