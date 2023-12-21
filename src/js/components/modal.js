@@ -18,6 +18,14 @@ $(document).ready(function () {
 		e.preventDefault()
 		$('.exit-modal').addClass('active');
 	});
+	$('[data-modal="delete-adv"]').on('click', (e) => {
+		e.preventDefault()
+		$('.delete-adv-modal').addClass('active');
+	});
+	$('[data-modal="exit-char"]').on('click', (e) => {
+		e.preventDefault()
+		$('.exit-char-modal').addClass('active');
+	});
 
 	$('[data-modal]').on('click', () => {
 		$('body').addClass('lock');
@@ -55,6 +63,10 @@ $(document).ready(function () {
 	})
 
 	$(".btn--exit").on('click', function(){
+		closeModal()
+	})
+
+	$(".btn--delete-adv").on('click', function(){
 		closeModal()
 	})
 })
