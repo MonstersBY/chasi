@@ -91,6 +91,7 @@ const handleMessageBtn = function () {
 $(".input--add-photo").on("change", function () {
     let input = this;
     let thumbnailsContainer = $(this).closest(".chat__dialog__footer").find(".chat__dialog__thumbnails-container");
+    console.log($(this));
 
     if (input.files && input.files.length > 0) {
         for (let i = 0; i < input.files.length; i++) {
