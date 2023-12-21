@@ -205,6 +205,8 @@
             </div>
 
             <div class="container container--flex">
+
+                <div class="adv-card__seller__top">
                 <!-- content: slider + info -->
                 <div class="adv-card__content">
                     <!-- slider -->
@@ -248,25 +250,25 @@
                         </div>
                         <div class="adv-card__swiper swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex-2.webp">
                                     <img src="./assets/images/rolex-2.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex.webp">
                                     <img src="./assets/images/rolex.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex-3.webp">
                                     <img src="./assets/images/rolex-3.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex.webp">
                                     <img src="./assets/images/rolex.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex-2.webp">
                                     <img src="./assets/images/rolex-2.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex-3.webp">
                                     <img src="./assets/images/rolex-3.webp" alt="rolex" />
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" data-fancybox="swiper-gallery" data-src="./assets/images/rolex.webp">
                                     <img src="./assets/images/rolex.webp" alt="rolex" />
                                 </div>
                             </div>
@@ -379,16 +381,6 @@
                         <div class="seller-phone">+7 (900) 123-45-67</div>
                     </div>
 
-                    <!-- buttons -->
-                    <div class="adv-card__seller__buttons desktop">
-                        <button class="btn btn__green btn--publish-again">
-                            <span>Опубликовать снова</span>
-                        </button>
-                        <button class="btn btn__gray btn--delete" data-modal="delete-adv">
-                            <span>Удалить</span>
-                        </button>
-                    </div>
-
                     <!-- adv number mobile -->
                     <div class="adv-card__number--mobile mobile">Объявление №1245457890</div>
                 </div>
@@ -454,6 +446,20 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+            <div class="adv-card__seller__bottom">
+                <!-- buttons -->
+                <div class="adv-card__seller__buttons desktop">
+                    <button class="btn btn__green btn--publish-again">
+                        <span>Опубликовать снова</span>
+                    </button>
+                    <button class="btn btn__gray btn--delete" data-modal="delete-adv">
+                        <span>Удалить</span>
+                    </button>
+                </div>
+            </div>
             </div>
         </section>
 
@@ -511,9 +517,9 @@
             </div>
         </div>
 
-
-
-
+        <!-- fancybox bg-->
+        <div class="fancybox-bg">
+        </div>
 
         <include src="./components/footer.html"></include>
     </body>
