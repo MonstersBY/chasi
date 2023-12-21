@@ -468,6 +468,7 @@
         gap: 4rem;
         border-radius: 1.6rem;
         background: #FFF;
+        width: 100%;
 
         .main-page {
             &__item {
@@ -477,6 +478,33 @@
                     height: 20rem;
                 }
             }
+        }
+    }
+}
+.favorites {
+    &__empty {
+        height: 54.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3.6rem;
+        text-align: center;
+
+        &-title {
+            font-size: 3.2rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 112.5%;
+        }
+        &-text {
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+        }
+        .btn {
+            width: fit-content;
+            margin: 0 auto;
         }
     }
 }
@@ -693,44 +721,76 @@
             height: 38.4rem;
         }
         &__tubs {
-            width: 100%;
-            height: 8rem;
-            background: #F1F3F3;
-
-            border-bottom: 0;
-            margin: 0;
-            padding: 0.2rem;
+            border-bottom: 0.1rem solid #F1F3F3;
+            margin: 0 -3.2rem;
+            padding: 0 3.2rem;
             display: flex;
+            justify-content: space-between;
             gap: 0;
-            border-radius: 1.6rem;
         }
         &__tub {
-            flex: 1;
-            color: #298267;
-            font-size: 2.6rem;
+            color: #000;
+            font-size: 3.2rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 123.077%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-bottom: 0;
-
-            &:nth-child(1) {
-                border-radius: 1.6rem 0 0 1.6rem;
-            }
-            &:nth-child(2) {
-                border-radius: 0 1.6rem 1.6rem 0;
-            }
-            
+            line-height: 150%;
+            padding-bottom: 2.4rem;
+            width: 32.8rem;
+            text-align: center;
     
             &.active {
-                font-weight: 400;
-                background: #FFF;
     
                 &::after {
-                    content: unset;
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 0.4rem;
+                    bottom: -0.4rem;
+                    left: 0;
+                    border-radius: 0.4rem 0.4rem 0 0;
+                    background: #298267;
                 }
+            }
+        }
+
+        &__fullpage {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            border-radius: 1.6rem;
+            background: #FFF;
+            width: 100%;
+    
+            .main-page {
+                &__item {
+                    width: 32.8rem;
+    
+                    &-img {
+                        height: 24.8rem;
+                    }
+                }
+            }
+        }
+    }
+    .favorites {
+        &__empty {
+            height: auto;
+            padding: 37rem 0;
+            gap: 1.6rem;
+    
+            &-title {
+                font-size: 4.8rem;
+                line-height: 116.667%;
+            }
+            &-text {
+                font-size: 3.2rem;
+                margin-bottom: 4.8rem;
+            }
+            .btn {
+                width: 100%;
+                margin: 0 auto;
             }
         }
     }
