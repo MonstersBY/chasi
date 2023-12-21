@@ -82,3 +82,6 @@ if($('.main-page__right').length) {
         programsShow();
     });
 }
+$('.main-page__item_delete').on('click', function (evt) {
+    $(this).closest('.main-page__item').remove()
+})

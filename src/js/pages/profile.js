@@ -72,5 +72,17 @@ if($('.profile').length) {
         $(this).closest('.profile__form_item').find('.profile__form_choosed').text($(this).siblings('span').text())
         $(this).closest('.profile__form_item').find('.profile__form_name').addClass('active')
         $(this).closest('.profile__form_item').removeClass('open')
+        $('.dropdown__blur').removeClass('open')
     })
+    $('.profile__form_item_bottom_head svg').on('click', function (e) {
+        $(this).closest('.profile__form_item').removeClass('open')
+        $('.dropdown__blur').removeClass('open')
+    })
+
+    $(".profile__form_item_bottom_search-input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(this).closest('.profile__form_item_bottom').find(".profile__form_item_bottom_item").filter(function() {
+          $(this).toggle($(this).find('span').text().toLowerCase().indexOf(value) > -1)
+        });
+    });
 }
