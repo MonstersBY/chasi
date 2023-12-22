@@ -294,7 +294,7 @@
                         </div>
                         <div class="adv-card__price">
                             26 960 ₽
-                            <button class="btn--price">
+                            <button class="btn--price" data-modal="currency">
                                 <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M6 9L12 15L18 9" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
@@ -402,7 +402,7 @@
                     </div>
                     <div class="adv-card__price desktop">
                         26 960 ₽
-                        <button class="btn--price">
+                        <button class="btn--price" data-modal="currency">
                             <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M6 9L12 15L18 9" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -481,6 +481,38 @@
                             <span>Переместить в архив</span>
                             <input type="radio" name="reason" id="usendToArchiveModal" />
                         </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- currency modal -->
+        <div class="modal options-modal currency-modal mobile">
+            <div class="modal-back"></div>
+            <div class="options-modal-wrapper">
+                <div class="options-modal-content">
+                    <div class="options-modal__header">
+                        <button class="btn--go-back">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="options-modal__header__title">Цена</div>
+                    </div>
+
+                    <div class="options-modal__items">
+                        <div class="options-modal__item">
+                            <span class="currency">Рубль</span>
+                            <span class="price-converted">18 567 000 ₽</span>
+                        </div>
+                        <div class="options-modal__item">
+                            <span class="currency">Евро</span>
+                            <span class="price-converted">~ 12 000 €</span>
+                        </div>
+                        <div class="options-modal__item">
+                            <span class="currency">Рубль</span>
+                            <span class="price-converted">~ 12 100 $</span>
+                        </div>
                     </div>
                 </div>
             </div>
