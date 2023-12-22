@@ -168,10 +168,6 @@
             }
         }
 
-        #noPromotionCheckbox {
-
-        }
-
         .checkmark {
             position: absolute;
             cursor: pointer;
@@ -319,7 +315,6 @@
             gap: 0;
             font-size: 3.2rem;
             line-height: 4.8rem;
-
             height: 100vh;
             overflow-x: hidden;
         }
@@ -360,6 +355,10 @@
             margin-bottom: 4.8rem;
         }
 
+        &__container{
+            margin-bottom: 33rem;
+        }
+
         &__title {
             font-size: 4.8rem;
             line-height: 5.6rem;
@@ -372,7 +371,6 @@
 
         &__tariff {
             padding: 3.2rem 3.2rem 4.8rem;
-
             grid-template-columns: auto;
             grid-template-rows: auto;
             grid-column-gap: 0rem;
@@ -433,7 +431,6 @@
         &__no-promotion {
             padding: 2.4rem;
             border-radius: 1.6rem;
-            margin-bottom: 15.2rem;
 
             .checkmark {
                 width: 3.6rem;
@@ -456,20 +453,14 @@
         }
 
         &__buttons {
-            margin-top: auto;
-            position: relative;
+            position: fixed;
+            bottom: 12rem;
             width: 100%;
-
-            &::after {
-                content: "";
-                position: absolute;
-                width: 112%;
-                left: -3rem;
-                right: 0;
-                bottom: calc(100% + 4.8rem);
-                background-color: #f1f3f3;
-                height: 0.2rem;
-            }
+            background-color: #fff;
+            border-top: 0.2rem solid #f1f3f3;
+            padding: 4.8rem 3.2rem;
+            margin-left: -3.2rem;
+            margin-right: -3.2rem;
         }
 
         #btnPublishAdv,
@@ -488,12 +479,11 @@
             &__option {
                 padding: 0;
                 border-bottom: none;
-
                 flex-direction: row-reverse;
                 justify-content: space-between;
 
                 label {
-                    max-width: 45rem;
+                    max-width: 47rem;
                 }
             }
 
