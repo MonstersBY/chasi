@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <title>Карточка товара продавец</title>
-    <script defer src="main689236e3e28edb362ae9.js"></script></head>
+    <script defer src="main1f018638dc3167c4611b.js"></script></head>
 
     <body>
         <header class="header desktop">
@@ -251,7 +251,7 @@
             <div class="adv-card__header mobile">
                 <button class="btn--go-back"><img src="assets/images/arrow-left.svg" alt="Go Back" /></button>
                 <button class="btn--share"><img src="assets/images/share-ico.svg" alt="Share" /></button>
-                <button class="btn--options" data-modal="options-modal"><img src="assets/images/dots-black-ico.svg" alt="Options" /></button>
+                <button class="btn--options" data-modal="options"><img src="assets/images/dots-black-ico.svg" alt="Options" /></button>
             </div>
 
             <div class="container container--flex">
@@ -563,31 +563,30 @@
             </div>
         </div>
 
-        <!-- modal options menu -->
-        <div class="modal options-modal mobile">
+        <!-- modal options menu mobile -->
+        <div class="modal bottom-sheet options-modal mobile">
             <div class="modal-back"></div>
-            <div class="options-modal-wrapper">
-                <div class="options-modal-content">
-                    <div class="options-modal__header">
+            <div class="bottom-sheet-wrapper">
+                <div class="bottom-sheet-content">
+                    <div class="bottom-sheet__header">
                         <button class="btn--go-back">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                                 <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                     </div>
-
-                    <div class="options-modal__items">
-                        <label for="soldByExtModal" class="options-modal__item">
+                    <div class="bottom-sheet__items">
+                        <label for="soldByExtModal" class="bottom-sheet__item">
                             <span>Продал где-то ещё</span>
                             <input type="radio" name="reason" id="soldByExtModal" />
                         </label>
 
-                        <label for="editModal" class="options-modal__item">
+                        <label for="editModal" class="bottom-sheet__item">
                             <span>Редактировать</span>
                             <input type="radio" name="reason" id="editModal" />
                         </label>
 
-                        <label for="unpublishModal" class="options-modal__item btn--unpublish--modal">
+                        <label for="unpublishModal" class="bottom-sheet__item btn--unpublish--modal">
                             <span>Снять с публикации</span>
                             <input type="radio" name="reason" id="unpublishModal" />
                         </label>
@@ -606,29 +605,29 @@
         </div>
 
         <!-- currency modal -->
-        <div class="modal currency-modal mobile">
+        <div class="modal bottom-sheet currency-modal mobile">
             <div class="modal-back"></div>
-            <div class="options-modal-wrapper">
-                <div class="options-modal-content">
-                    <div class="options-modal__header">
+            <div class="bottom-sheet-wrapper">
+                <div class="bottom-sheet-content">
+                    <div class="bottom-sheet__header">
                         <button class="btn--go-back">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                                 <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <div class="options-modal__header__title">Цена</div>
+                        <div class="bottom-sheet__header__title">Цена</div>
                     </div>
 
-                    <div class="options-modal__items">
-                        <div class="options-modal__item">
+                    <div class="bottom-sheet__items">
+                        <div class="bottom-sheet__item">
                             <span class="currency">Рубль</span>
                             <span class="price-converted">18 567 000 ₽</span>
                         </div>
-                        <div class="options-modal__item">
+                        <div class="bottom-sheet__item">
                             <span class="currency">Евро</span>
                             <span class="price-converted">~ 12 000 €</span>
                         </div>
-                        <div class="options-modal__item">
+                        <div class="bottom-sheet__item">
                             <span class="currency">Рубль</span>
                             <span class="price-converted">~ 12 100 $</span>
                         </div>
