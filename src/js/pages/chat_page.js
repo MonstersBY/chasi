@@ -1,4 +1,6 @@
 import $ from "jquery";
+import Swiper from "swiper";
+import "swiper/css";
 
 //show chat on dialog click
 $(function () {
@@ -39,13 +41,13 @@ $(function () {
 //add photo
 $(".input--add-photo").on("change", function () {
     let input = this;
-    let thumbnailsContainer = $(this).closest(".chat__dialog__footer").find(".chat__dialog__thumbnails-container");
+    let thumbnailsContainer = $(this).closest(".chat__dialog__footer").find(".chat__dialog__thumbnails-container .swiper-wrapper");
 
     if (input.files && input.files.length > 0) {
         for (let i = 0; i < input.files.length; i++) {
             let file = input.files[i];
             let reader = new FileReader();
-            let thumb = $('<div class="chat__dialog__thumbnail"></div>');
+            let thumb = $('<div class="chat__dialog__thumbnail swiper-slide"></div>');
 
             reader.onload = function (e) {
                 thumb.append(
@@ -55,6 +57,9 @@ $(".input--add-photo").on("change", function () {
                 );
                 input.value = "";
                 updateButtonVisibility();
+                if (thumb.length > 0) {
+                    updateSwiper(thumbnailsContainer);
+                }
             };
 
             reader.readAsDataURL(file);
@@ -109,3 +114,16 @@ const updateButtonVisibility = function () {
     const observer = new MutationObserver(toggleSendButton);
     observer.observe(thumbnailsContainer[0], { childList: true, subtree: true });
 };
+
+//swiper
+function updateSwiper(thumbnailsContainer) {
+    const swiperContainer = thumbnailsContainer.closest(".chat__dialog__thumbnails-container");
+
+    if (swiperContainer.swiper) {
+        swiperContainer.swiper.destroy();
+    }
+
+    new Swiper(swiperContainer[0], {
+        slidesPerView: "auto",
+    });
+}
