@@ -85,4 +85,10 @@ if($('.profile').length) {
           $(this).toggle($(this).find('span').text().toLowerCase().indexOf(value) > -1)
         });
     });
+
+    $('.profile__img_delete').on('click', function (e) {
+        $(this).addClass('hidden')
+        $('.profile__img').addClass('empty')
+        $(".profile__img_menu").slideToggle()
+    })
 }
