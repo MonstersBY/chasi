@@ -27,6 +27,7 @@
     &__list {
         display: flex;
         gap: 2rem;
+        flex-wrap: wrap;
 
         &_endlessly {
             flex-wrap: wrap;

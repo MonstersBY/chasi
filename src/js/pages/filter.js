@@ -54,6 +54,14 @@ if($('.filter').length) {
             $('.filter__btn').removeClass('active')
         }
     }
+
+    document.querySelector('.filter__btn button').addEventListener('click', (e) => {
+        e.preventDefault()
+        if(document.querySelector('.filter__btn').classList.contains('active')) {
+            $('.filter__left').removeClass('open')
+        }
+    })
+
     $.expr[':'].hasValue = function(el,index,match) {
         return el.value != "";
     };
