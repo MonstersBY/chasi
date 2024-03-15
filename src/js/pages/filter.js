@@ -3,22 +3,24 @@ import IMask from "imask";
 
 if($('.filter').length) {
     const maskPriceFrom = IMask(document.getElementById("price-from"),   {
-        mask: 'от num',
+        // mask: 'от num',
+        mask: 'num',
         blocks: {
           num: {
             // nested masks are available!
             mask: Number,
-            thousandsSeparator: ' '
+            // thousandsSeparator: ' '
           }
         }
     });
     const maskPriceTo = IMask(document.getElementById("price-to"),   {
-        mask: 'до num',
+        // mask: 'до num',
+        mask: 'num',
         blocks: {
           num: {
             // nested masks are available!
             mask: Number,
-            thousandsSeparator: ' '
+            // thousandsSeparator: ' '
           }
         }
     });
@@ -49,7 +51,8 @@ if($('.filter').length) {
     // });
 
     const maskDateFrom = IMask(document.getElementById("date-from"), {
-        mask: 'от YYYY',
+        // mask: 'от YYYY',
+        mask: 'YYYY',
         blocks: {
             YYYY: {
                 mask: IMask.MaskedRange,
@@ -60,7 +63,8 @@ if($('.filter').length) {
     });
 
     const maskDateTo = IMask(document.getElementById("date-to"), {
-        mask: 'до YYYY',
+        // mask: 'до YYYY',
+        mask: 'YYYY',
         blocks: {
             YYYY: {
                 mask: IMask.MaskedRange,
