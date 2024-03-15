@@ -23,28 +23,73 @@ if($('.filter').length) {
         }
     });
 
-    const maskDateFrom = IMask(document.getElementById("date-from"),   {
-        mask: 'от num',
+    // const maskDateFrom = IMask(document.getElementById("date-from"),   {
+    //     mask: 'от num',
+    //     blocks: {
+    //       num: {
+    //         mask: Date,
+    //         min: new Date(1937, 0, 1),
+    //         max: new Date(2023, 0, 1),
+    //         lazy: false
+    //       }
+    //     }
+    // });
+
+
+        // const maskDateTo = IMask(document.getElementById("date-to"),   {
+    //     mask: 'до num',
+    //     blocks: {
+    //       num: {
+    //         mask: Date,
+    //         min: new Date(1937, 0, 1),
+    //         max: new Date(2023, 0, 1),
+    //         lazy: false
+    //       }
+    //     }
+    // });
+
+    const maskDateFrom = IMask(document.getElementById("date-from"), {
+        mask: 'от YYYY',
         blocks: {
-          num: {
-            mask: Date,
-            min: new Date(1937, 0, 1),
-            max: new Date(2023, 0, 1),
-            lazy: false
-          }
+            YYYY: {
+                mask: IMask.MaskedRange,
+                from: 1937,
+                to: new Date().getFullYear()
+            }
         }
     });
-    const maskDateTo = IMask(document.getElementById("date-to"),   {
-        mask: 'до num',
+
+    const maskDateTo = IMask(document.getElementById("date-to"), {
+        mask: 'до YYYY',
         blocks: {
-          num: {
-            mask: Date,
-            min: new Date(1937, 0, 1),
-            max: new Date(2023, 0, 1),
-            lazy: false
-          }
+            YYYY: {
+                mask: IMask.MaskedRange,
+                from: 1937,
+                to: new Date().getFullYear()
+            }
         }
     });
+
+    
+    // document.getElementById("date-from").addEventListener('input', () => {
+    // let year = document.getElementById("date-from").value.match(/\d+/)
+
+    //     console.log(year),
+    //     document.getElementById("date-to").value=''
+    //     const maskDateTo = IMask(document.getElementById("date-to"), {
+    //         mask: 'до YYYY',
+    //         blocks: {
+    //             YYYY: {
+    //                 mask: IMask.MaskedRange,
+    //                 from: year[0],
+    //                 to: new Date().getFullYear()
+    //             }
+    //         }
+    //     });
+
+    // })
+
+
     function filterShowed() {
         if($('.filter__container').find("input:checked").length || $('.filter__item_numbers').find("input").is(":hasValue")) {
             $('.filter__title').addClass('showed')
