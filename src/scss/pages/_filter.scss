@@ -288,7 +288,8 @@
             left: -100%;
             z-index: 3;
             overflow: auto;
-            height: 100vh;
+            // height: 100vh;
+            height: 100%;
             transition: left 0.5s ease-in-out;
 
             &.open {
