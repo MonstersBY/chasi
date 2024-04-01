@@ -8,14 +8,14 @@ if($('.characteristic').length) {
 
         $('.characteristic__dropdown_top').not(this).each(function () {
             $(this).closest('.characteristic__form_item').removeClass('active')
-            $('.characteristic').removeClass('open')
+            // $('.characteristic').removeClass('open')
            
         });
 
     })
     $('.characteristic__dropdown_bottom_header svg').on('click', function (evt) {
         $(this).closest('.characteristic__form_item').toggleClass('active')
-        // $('.characteristic').toggleClass('open')
+        $('.characteristic').toggleClass('open')
     })
     $(".characteristic__dropdown_search input").on("keyup", function() {
         var value = $(this).val().toLowerCase();
