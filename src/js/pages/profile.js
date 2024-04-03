@@ -13,7 +13,7 @@ if($('.profile').length) {
     });
 
     let photoCreating = document.querySelector('#photoCreating');
-    let imagesExtentions = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
+    let imagesExtentions = ["image/png", "image/jpg", "image/jpeg", "image/gif","image/webp"];
 
     function getRoundedCanvas(sourceCanvas) {
         var canvas = document.createElement('canvas');
@@ -40,21 +40,39 @@ if($('.profile').length) {
                 img.id = 'photoCreating';
                 img.src = URL.createObjectURL($(this)[0].files[0])
                 $('.photo-modal__img')[0].appendChild(img);
+                // let cropperAvatar = new Cropper(img, {
+                //     dragMode: 'move',
+                //     aspectRatio: 1,
+
+                //     center: false,
+                //     cropBoxMovable: false,
+                //     cropBoxResizable: false,
+                //     guides: false,
+
+                //     ready: function (event) {
+
+                //         this.cropperAvatar = cropperAvatar;
+                //     },
+                // });
+
                 let cropperAvatar = new Cropper(img, {
                     dragMode: 'move',
+                    viewMode: 3,
                     aspectRatio: 1,
 
                     center: false,
                     cropBoxMovable: false,
                     cropBoxResizable: false,
                     guides: false,
+                    // zoomable: false,
 
                     ready: function (event) {
 
                         this.cropperAvatar = cropperAvatar;
                     },
                 });
-                $('#cropImg').on('click',function(){
+
+                $('.cropImg').on('click',function(){
                     let croppedImage = getRoundedCanvas(cropperAvatar.getCroppedCanvas()).toDataURL()
 
                     $('.profile__img_set img')[0].src = croppedImage
@@ -63,6 +81,7 @@ if($('.profile').length) {
                     $('.photo-modal__img').find('#photoCreating').remove()
                     $('.profile__img_delete').removeClass('hidden')
                     $('.profile__img').removeClass('empty')
+                    $('body').removeClass('lock')
                 })
             }
         }
@@ -90,5 +109,6 @@ if($('.profile').length) {
         $(this).addClass('hidden')
         $('.profile__img').addClass('empty')
         $(".profile__img_menu").slideToggle()
+      
     })
 }
