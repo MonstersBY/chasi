@@ -58,6 +58,7 @@
                     & ~ .characteristic__form_input {
                         margin-bottom: 2.6rem;
                         position: relative;
+                        
 
                         .characteristic__dropdown_error-text {
                             position: absolute;
@@ -65,6 +66,7 @@
                             margin: 0;
                             left: 0;
                         }
+                    
                     }
                 }
                 .characteristic__dropdown_top {
@@ -72,8 +74,16 @@
                 }
                 .characteristic__form_input {
                     border: 0.1rem solid #ED3241;
+                 
                 }
             }
+            .characteristic__form_input {
+                & input {
+                    width: 100%;
+                }
+             
+            }
+        
 
             &--big {
                 align-items: flex-start;
