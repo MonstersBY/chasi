@@ -14,8 +14,19 @@ $('.profile__form_item input').on('input', function(evt) {
 });
 
 $('.dropdown_top').on('click', function(evt) {
+	// $(this).closest('.dropdown').toggleClass('open')
+	// $('.dropdown__blur').toggleClass('open')
+
+
 	$(this).closest('.dropdown').toggleClass('open')
 	$('.dropdown__blur').toggleClass('open')
+
+	$('.dropdown_top').not(this).each(function () {
+		$(this).closest('.dropdown').removeClass('open')
+		// $('.characteristic').removeClass('open')
+	   
+	});
+
 });
 
 $(document).on('click', function (e) {

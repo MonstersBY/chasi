@@ -9,7 +9,7 @@ $(document).ready(function () {
 		$('.seller-card-modal').addClass('active');
 	});
 	$('[data-modal="photo"]').on('click', () => {
-		$('.photo-modal').addClass('active');
+		// $('.photo-modal').addClass('active');
 	});
 	$('[data-modal="delete-review"]').on('click', () => {
 		$('.delete-review-modal').addClass('active');
@@ -31,7 +31,7 @@ $(document).ready(function () {
 		$('.exit-char-modal').addClass('active');
 	});
 
-	$('[data-modal]').on('click', () => {
+	$('[data-modal]:not([data-modal="photo"])').on('click', () => {
 		$('body').addClass('lock');
 	})
 
