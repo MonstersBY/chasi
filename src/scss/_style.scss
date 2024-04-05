@@ -230,14 +230,3 @@ body {
   }
 }
 
-.cr-slider-wrap {
-  display: none!important;
-}
-.cr-viewport.cr-vp-circle {
-    width: 30.3rem!important;
-    height: 30.3rem!important;
-    @media (max-width: 48em) {
-        width: 65.2rem!important;
-        height: 65.2rem!important;
-      }
-}
