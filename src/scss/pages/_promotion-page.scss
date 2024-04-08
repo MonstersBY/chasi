@@ -303,6 +303,13 @@
             font-weight: 600;
             line-height: 116.667%;
         }
+
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
     }
 }
 
@@ -315,7 +322,8 @@
             gap: 0;
             font-size: 3.2rem;
             line-height: 4.8rem;
-            height: 100vh;
+            // height: 100vh;
+            height: 100%;
             overflow-x: hidden;
         }
 
@@ -361,7 +369,8 @@
         }
 
         &__container {
-            margin-bottom: 33rem;
+            // margin-bottom: 33rem;
+            margin-bottom: 40rem;
         }
 
         &__title {
@@ -466,6 +475,9 @@
             padding: 4.8rem 3.2rem;
             margin-left: -3.2rem;
             margin-right: -3.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
         }
 
         #btnPublishAdv,
