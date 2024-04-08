@@ -5,7 +5,11 @@ import Croppie from "croppie";
 if ($(".profile").length) {
   //открытие меню загрузки фото
   $(".profile__img_set").on("click", () => {
-    $(".profile__img_menu").slideToggle();
+      $(".profile__img_menu").slideToggle();
+      $('.dropdown__blur').toggleClass('open')
+  });
+  $(".profile__img_header svg").on("click", () => {
+      $(".profile__img_menu").slideToggle();
   });
   //закрытие меню загрузки фото
   $(document).on("click", function (e) {
@@ -29,12 +33,17 @@ if ($(".profile").length) {
     "image/webp",
   ];
   let basic;
+
+  const getScrollbarWidth = () =>
+    window.innerWidth - document.documentElement.clientWidth;
   $(".profile__img_item input").on("change", function (e) {
     if (e.target.files.length) {
       if (imagesExtentions.includes(e.target.files[0].type)) {
         if (basic) {
           basic.destroy();
         }
+        let scrollWith = getScrollbarWidth();
+        document.querySelector("body").style.paddingRight = `${scrollWith}px`;
         $(".photo-modal").addClass("active");
         $("body").addClass("lock");
         basic = new Croppie($(".photo-modal__img")[0], {
@@ -61,6 +70,8 @@ if ($(".profile").length) {
               $(".profile__img_delete").removeClass("hidden");
               $(".profile__img").removeClass("empty");
               $("body").removeClass("lock");
+              document.querySelector("body").style.paddingRight = ``;
+              $('.dropdown__blur').removeClass('open')
             });
           $(".cropImg").unbind();
         });
@@ -160,8 +171,11 @@ if ($(".profile").length) {
   //закрытие выпадашек города и пола в мобилке
 
   $(".profile__form_item_bottom_head svg").on("click", function (e) {
+    $(this).closest(".profile__form_item").find('.dropdown_bottom').slideUp()
     $(this).closest(".profile__form_item").removeClass("open");
+
     $(".dropdown__blur").removeClass("open");
+    
   });
 
   //фильтрация города в соответствии с напечатанными данными
@@ -187,7 +201,14 @@ if ($(".profile").length) {
       .closest(".profile__form_item")
       .find(".profile__form_name")
       .addClass("active");
+      $(this).closest(".profile__form_item").find('.dropdown_bottom').slideUp()
     $(this).closest(".profile__form_item").removeClass("open");
     $(".dropdown__blur").removeClass("open");
   });
+
+
+      $(".modal-return").on("click", function (e) {
+        $(".dropdown__blur").removeClass("open");
+      });
+
 }

@@ -352,7 +352,7 @@
             background: #FFF;
             box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
             border-radius: 0.8rem;
-
+            z-index: 20;
             &_header {
                 display: none;
             }
@@ -789,6 +789,7 @@
                 position: fixed;
                 bottom: 0;
                 left: 0;
+                z-index: 20;
 
                 &_big {
                     // height: 90vh;

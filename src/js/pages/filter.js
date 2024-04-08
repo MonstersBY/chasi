@@ -9,7 +9,7 @@ if($('.filter').length) {
           num: {
             // nested masks are available!
             mask: Number,
-            // thousandsSeparator: ' '
+            thousandsSeparator: ' '
           }
         }
     });
@@ -20,7 +20,7 @@ if($('.filter').length) {
           num: {
             // nested masks are available!
             mask: Number,
-            // thousandsSeparator: ' '
+            thousandsSeparator: ' '
           }
         }
     });
