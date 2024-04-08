@@ -97,6 +97,9 @@ body {
   &__gray {
     background-color: #f1f3f3;
     color: #298267;
+    &--black {
+        color: #000000;
+    }
   }
 
   &-ico {

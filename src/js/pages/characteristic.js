@@ -3,17 +3,21 @@ import IMask from "imask";
 
 if($('.characteristic').length) {
     $('.characteristic__dropdown_top').on('click', function (evt) {
+        $(this).closest('.characteristic__dropdown').find('.characteristic__dropdown_bottom').slideToggle()
         $(this).closest('.characteristic__form_item').toggleClass('active')
         $('.characteristic').toggleClass('open')
 
         $('.characteristic__dropdown_top').not(this).each(function () {
+            $(this).closest('.characteristic__dropdown').find('.characteristic__dropdown_bottom').slideUp()
             $(this).closest('.characteristic__form_item').removeClass('active')
+           
             // $('.characteristic').removeClass('open')
            
         });
 
     })
     $('.characteristic__dropdown_bottom_header svg').on('click', function (evt) {
+        $(this).closest('.characteristic__dropdown').find('.characteristic__dropdown_bottom').slideToggle()
         $(this).closest('.characteristic__form_item').toggleClass('active')
         $('.characteristic').toggleClass('open')
     })
@@ -39,15 +43,24 @@ if($('.characteristic').length) {
         var value = $(this).find('span').text()
         $(this).closest('.characteristic__dropdown').find('.characteristic__dropdown_top_name').text(value)
         $(this).closest('.characteristic__dropdown').find('.characteristic__dropdown_top_name').addClass('selected')
+        $(this).closest('.characteristic__form_item').removeClass('active')
+        $(this).closest('.characteristic__form_item').find('.characteristic__dropdown_bottom').slideUp()
+        $('.characteristic').removeClass('open')
+        // $('.characteristic__form_down_addit_closed').slideToggle()
+
+
     })
     $('.characteristic__form_down_top').on('click', function (evt) {
         $(this).toggleClass('active')
         $('.characteristic__form_down_addit_closed').slideToggle()
     })
     $(document).on('click', function (e) {
-        if ($(e.target).closest(".characteristic__form_item").length === 0) {
-            $(".characteristic__form_item").removeClass('active')
+        // if ($(e.target).closest(".characteristic__form_item").length === 0) {
+            if (e.target.classList.contains('characteristic__blur') || ($(e.target).closest(".characteristic__form_item").length === 0 && window.innerWidth>768)){
+                $('.characteristic__dropdown').find('.characteristic__dropdown_bottom').slideUp()
+                $(".characteristic__form_item").removeClass('active')
             $('.characteristic').removeClass('open')
+
         }
     });
     
