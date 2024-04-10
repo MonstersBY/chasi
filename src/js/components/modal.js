@@ -34,7 +34,9 @@ $(document).ready(function () {
 
   $('[data-modal]:not([data-modal="photo"])').on("click", () => {
     let scrollWith = getScrollbarWidth();
-    document.querySelector("body").style.paddingRight = `${scrollWith}px`;
+    if (!document.querySelector("body").classList.contains('lock')) {
+      document.querySelector("body").style.paddingRight = `${scrollWith}px`;
+    }
     $("body").addClass("lock");
   });
 
