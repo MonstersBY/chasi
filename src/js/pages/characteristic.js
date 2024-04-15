@@ -68,7 +68,6 @@ if($('.characteristic').length) {
         const dropZoneElement = this.closest('.characteristic__photo_add');
     
         dropZoneElement.addEventListener('click', (e) => {
-            console.log(e.target);
             this.click();
         });
     
@@ -90,8 +89,6 @@ if($('.characteristic').length) {
     
     function updateProgress(dropZoneElement, files) {
         let progressElements = dropZoneElement.nextElementSibling;
-    
-        console.log(dropZoneElement);
     
         // // First time - remove the prompt
         // if (progressElements) {
@@ -125,6 +122,10 @@ if($('.characteristic').length) {
         })
     
     }
+    $('.characteristic__photo_added_close').on('click', function (evt) {
+        $(this).closest('.characteristic__photo_added').remove()
+        findText()
+    })
     function findText() {
         if($('.characteristic__photo_added').length) {
             if(!$('.characteristic__photo_added').find('.characteristic__photo_added_text').length) {
