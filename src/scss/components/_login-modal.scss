@@ -301,6 +301,13 @@
 
     .auth-modal-content__forgot-pwd {
     text-align: center;
+    &:last-of-type {
+      margin-bottom: 0;
+      margin-top: 2.4rem;
+      @media (max-width: 48em) {
+        margin-top: 4.8rem;
+      }
+    }
     }
 
     .btn {
@@ -341,6 +348,7 @@
   right: 1.6rem;
   transform: translateY(-50%);
 
+
   @media (max-width: 48em) {
     right: 3.2rem;
   }
@@ -348,11 +356,25 @@
   input {
     display: none;
   }
+
+  input:checked {
+    & ~ svg.isActive {
+      display: block;
+    }
+    & ~ svg.inActive {
+      display: none;
+    }
+  }
   svg {
     width: 2.4rem;
     height: 2.4rem;
     cursor: pointer;
-
+    &.isActive {
+      display: none;
+    }
+    &.inActive {
+      display: block;
+    }
     @media (max-width: 48em) {
       width: 4.8rem;
       height: 4.8rem;

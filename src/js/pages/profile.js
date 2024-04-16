@@ -61,11 +61,14 @@ if ($(".profile").length) {
         $(".cropImg").on("click", function (ev) {
           basic
             .result({
-              type: "blob",
+              // type: "blob",
+              type: "base64",
             })
             .then(function (resp) {
-              $(".profile__img_set img")[0].src =
-                window.URL.createObjectURL(resp);
+              // $(".profile__img_set img")[0].src =
+              //   window.URL.createObjectURL(resp);
+              $(".profile__img_set img")[0].src = resp ;
+
               $(".photo-modal").removeClass("active");
               $(".profile__img_delete").removeClass("hidden");
               $(".profile__img").removeClass("empty");
