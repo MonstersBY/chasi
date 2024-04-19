@@ -190,10 +190,12 @@ if($('.filter').length) {
     $('.main-page__sorting_bottom_head svg').on('click', function (evt) {
         $('.filter__blur').removeClass('active')
         $('.main-page__sorting').removeClass('active')
+
     })
     $('.main-page__sorting_bottom_item input').on('change', function (evt) {
         $(this).closest('.main-page__sorting_bottom_item').find('span').text()
         $(this).closest('.main-page__sorting').find('.main-page__sorting_top').find('span').text($(this).closest('.main-page__sorting_bottom_item').find('span').text())
+        $(this).closest('.main-page__sorting').removeClass('active')
     })
     $(document).on('click', function (e) {
         if ($(e.target).closest(".main-page__sorting").length === 0) {
