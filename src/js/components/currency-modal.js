@@ -7,6 +7,7 @@ $(function () {
             $(".currency-modal").addClass("active");
             $("body").addClass("lock");
             $(".bottom-sheet-wrapper").addClass("active");
+            $(".options-modal-wrapper").addClass("active");
             document.querySelector('body').style.paddingRight = ``;
         } else {
             $(".currency-list").slideToggle();
