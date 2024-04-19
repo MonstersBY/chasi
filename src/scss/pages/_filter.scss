@@ -5,7 +5,6 @@
   }
   &__blur {
     display: none;
-
     &.active {
       display: none;
     }
@@ -301,6 +300,7 @@
       }
     }
     &__right {
+      position: static;
       width: 100%;
       padding: 0;
       display: flex;
@@ -339,10 +339,12 @@
       left: 0;
       background: rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       z-index: 2;
 
       &.active {
         display: block;
+   
       }
     }
     &__dropdown {
