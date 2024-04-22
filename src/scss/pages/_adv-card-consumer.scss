@@ -543,8 +543,9 @@
         gap: 1.6rem;
 
         @media (max-width: 48em) {
-            height: unset;
-            width: unset;
+            // height: unset;
+            // width: unset;
+            width: 100%;
         }
 
         .adv-card__swiper {
@@ -552,8 +553,9 @@
             height: 54rem;
 
             @media (max-width: 48em) {
-                height: unset;
-                width: unset;
+                // height: unset;
+                // width: unset;
+                width: 100%;
             }
 
             .swiper-slide {
