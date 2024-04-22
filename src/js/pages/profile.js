@@ -10,6 +10,7 @@ if ($(".profile").length) {
   });
   $(".profile__img_header svg").on("click", () => {
       $(".profile__img_menu").slideToggle();
+      $('.dropdown__blur').toggleClass('open')
   });
   //закрытие меню загрузки фото
   $(document).on("click", function (e) {
