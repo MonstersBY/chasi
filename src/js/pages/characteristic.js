@@ -106,6 +106,7 @@ if($('.characteristic').length) {
     
             let fileImgElement = document.createElement('img');
             fileImgElement.src = URL.createObjectURL(files[id]);
+            fileImgElement.setAttribute('data-name', files[id].name);
             imgElement.append(fileImgElement);
     
             progressElements = document.createElement('div');
