@@ -458,7 +458,7 @@
                         <button class="btn btn__green btn--edit">
                             <span>Редактировать</span>
                         </button>
-                        <button class="btn btn__gray btn--archive">
+                        <button class="btn btn__gray btn--archive" data-modal="archive">
                             <span>Переместить в архив</span>
                         </button>
                     </div>
@@ -466,6 +466,37 @@
             </div>
         </section>
 
+
+        <!-- modal archive -->
+        <div class="archive-modal modal ">
+            <div class="modal-back"></div>
+            <div class="modal-wrapper">
+                <div class="modal-exit desktop">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 8L16 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M16 8L8 16" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="auth-modal-top-mobile mobile">
+                    <div class="modal-exit" data-modal="options">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="#031E16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div> 
+                    </div>
+                <div class="modal-content">
+                    <div class="modal__title">Вы точно хотите <br> переместить в архив?</div>
+                    <div class="modal__btn-wrapper">
+                        <div class="modal__text">Тариф продвижения не сохранится</div>
+                        <div class="modal__btn-box">
+                            <button class="btn btn__gray" data-modal="close-modal">Снять с публикации</button>
+                            <button class="btn btn__green exit" data-modal="close-modal">Отменить</button>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
         <!-- modal options menu mobile -->
         <div class="modal bottom-sheet options-modal mobile">
             <div class="modal-back"></div>
@@ -483,7 +514,7 @@
                             <span>Редактировать</span>
                             <input type="radio" name="reason" id="editModal" />
                         </label>
-                        <label for="sendToArchiveModal" class="bottom-sheet__item btn--unpublish--modal">
+                        <label for="sendToArchiveModal" class="bottom-sheet__item" data-modal="archive">
                             <span>Переместить в архив</span>
                             <input type="radio" name="reason" id="usendToArchiveModal" />
                         </label>
