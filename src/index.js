@@ -26,6 +26,7 @@ import "./js/components/change-email-modal";
 import "./js/components/change-password-modal";
 import "./js/components/recomendation-modal";
 import "./js/components/unpublish-modal";
+import "./js/components/archive-modal";
 import "./js/components/currency-modal";
 import "./js/components/fancybox-gallery";
 import "./js/components/send-code-timer";

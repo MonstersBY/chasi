@@ -97,6 +97,14 @@
       font-weight: 600;
       line-height: 150%;
       margin-top: auto;
+      &--green {
+        display: inline-block;
+        color: #fff;
+        padding: 0 0.8rem;
+        border-radius: 0.8rem;
+        background: #1d7d4d;
+        width: fit-content;
+      }
     }
     &-add {
       position: absolute;
