@@ -42,6 +42,8 @@ const entryPoints = {
   profile_service_info: path.resolve(__dirname, "src", "index.js"),
   adv_card_consumer_removed: path.resolve(__dirname, "src", "index.js"),
   contacts: path.resolve(__dirname, "src", "index.js"),
+  terms_of_use: path.resolve(__dirname, "src", "index.js"),
+  policy: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
