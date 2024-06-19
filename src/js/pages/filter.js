@@ -49,30 +49,35 @@ if($('.filter').length) {
     //       }
     //     }
     // });
-
-    const maskDateFrom = IMask(document.getElementById("date-from"), {
-        // mask: 'от YYYY',
-        mask: 'YYYY',
-        blocks: {
-            YYYY: {
-                mask: IMask.MaskedRange,
-                from: 1937,
-                to: new Date().getFullYear()
+    let maskDateFrom
+    if(document.getElementById("date-from")) {
+        maskDateFrom = IMask(document.getElementById("date-from"), {
+            // mask: 'от YYYY',
+            mask: 'YYYY',
+            blocks: {
+                YYYY: {
+                    mask: IMask.MaskedRange,
+                    from: 1937,
+                    to: new Date().getFullYear()
+                }
             }
-        }
-    });
+        });
+    }
 
-    const maskDateTo = IMask(document.getElementById("date-to"), {
-        // mask: 'до YYYY',
-        mask: 'YYYY',
-        blocks: {
-            YYYY: {
-                mask: IMask.MaskedRange,
-                from: 1937,
-                to: new Date().getFullYear()
+    let maskDateTo
+    if(document.getElementById("date-to")) {
+        maskDateTo = IMask(document.getElementById("date-to"), {
+            // mask: 'до YYYY',
+            mask: 'YYYY',
+            blocks: {
+                YYYY: {
+                    mask: IMask.MaskedRange,
+                    from: 1937,
+                    to: new Date().getFullYear()
+                }
             }
-        }
-    });
+        });
+    }
 
     
     // document.getElementById("date-from").addEventListener('input', () => {
