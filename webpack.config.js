@@ -44,6 +44,7 @@ const entryPoints = {
   contacts: path.resolve(__dirname, "src", "index.js"),
   terms_of_use: path.resolve(__dirname, "src", "index.js"),
   policy: path.resolve(__dirname, "src", "index.js"),
+  promotion: path.resolve(__dirname, "src", "index.js"),
   // Добавьте другие страницы здесь
 };
 
